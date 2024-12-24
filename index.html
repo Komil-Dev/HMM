@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Simple Page with Tailwind CSS</title>
+	<script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-teal-800 text-white">
+
+	<!-- Navbar -->
+	<header class="fixed top-0 left-0 w-full bg-teal-800 shadow-md z-10">
+		<div class="container mx-auto px-4 py-3 flex items-center justify-between">
+			<h1 class="text-yellow-500 font-bold text-xl">HMM Export</h1>
+			<nav class="hidden sm:flex space-x-4">
+				<a href="#home" class="text-white hover:text-yellow-500 font-bold">Bosh sahifa</a>
+				<a href="#products" class="text-white hover:text-yellow-500 font-bold">Mahsulotlar</a>
+				<a href="#about" class="text-white hover:text-yellow-500 font-bold">Biz haqimizda</a>
+				<a href="#certificates" class="text-white hover:text-yellow-500 font-bold">Sertifikatlar</a>
+				<a href="#contact" class="text-white hover:text-yellow-500 font-bold">Aloqa</a>
+			</nav>
+			<button id="menuButton" class="sm:hidden text-white">
+				<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+					class="w-6 h-6">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+				</svg>
+			</button>
+		</div>
+	</header>
+
+	<!-- Hero Section -->
+	<section id="home" class="mt-16 relative w-full h-64 bg-gray-200 flex justify-center items-center">
+		<h2 class="text-3xl font-bold text-teal-800">Bizning Ajoyib Hero Banner</h2>
+	</section>
+
+	<!-- Products Section -->
+	<section id="products" class="container mx-auto px-4 py-8">
+		<h2 class="text-yellow-500 text-center text-2xl font-bold mb-6">Bizning mahsulotlar</h2>
+		<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+			<div class="bg-white text-black shadow-md rounded-lg p-4">
+				<h3 class="text-lg font-bold mb-2">Mahsulot 1</h3>
+				<p class="text-sm">Bu mahsulotning qisqacha ta'rifi.</p>
+			</div>
+			<div class="bg-white text-black shadow-md rounded-lg p-4">
+				<h3 class="text-lg font-bold mb-2">Mahsulot 2</h3>
+				<p class="text-sm">Bu mahsulotning qisqacha ta'rifi.</p>
+			</div>
+			<div class="bg-white text-black shadow-md rounded-lg p-4">
+				<h3 class="text-lg font-bold mb-2">Mahsulot 3</h3>
+				<p class="text-sm">Bu mahsulotning qisqacha ta'rifi.</p>
+			</div>
+			<div class="bg-white text-black shadow-md rounded-lg p-4">
+				<h3 class="text-lg font-bold mb-2">Mahsulot 4</h3>
+				<p class="text-sm">Bu mahsulotning qisqacha ta'rifi.</p>
+			</div>
+		</div>
+	</section>
+
+	<!-- Footer -->
+	<footer class="bg-teal-900 py-4">
+		<div class="container mx-auto px-4 text-center">
+			<p class="text-sm text-yellow-500">&copy; 2024 HMM Export. Barcha huquqlar himoyalangan.</p>
+		</div>
+	</footer>
+</body>
+
+</html>
