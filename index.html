@@ -11,70 +11,148 @@
 <body class="bg-teal-800 text-white">
 
 	<!-- Navbar -->
-	<header class="fixed top-0 left-0 w-full bg-teal-800 shadow-md z-10">
+	<header class="fixed top-0 left-0 w-full bg-white shadow-md z-10">
 		<div class="container mx-auto px-4 py-3 flex items-center justify-between">
-			<h1 class="text-yellow-500 font-bold text-xl">HMM Export</h1>
-			<!-- Toggle Button -->
-			<input type="checkbox" id="menuToggle" class="peer hidden" />
-			<button id="menuButton" class="sm:hidden text-white peer-checked:hidden">
+			<!-- Left Side: Logo -->
+			<h1 class="text-green-800 font-bold text-xl">HMM Export</h1>
+
+			<!-- Menu Toggle for Mobile -->
+			<button id="menuButton" class="sm:hidden cursor-pointer">
 				<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-					class="w-6 h-6">
+					class="w-6 h-6 text-green-800">
 					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
 				</svg>
 			</button>
 
-			<!-- Navigation Menu -->
-			<nav id="navMenu" class="peer-checked:block hidden sm:flex space-x-4">
-				<a href="#home" class="text-white hover:text-yellow-500 font-bold">Bosh sahifa</a>
-				<a href="#products" class="text-white hover:text-yellow-500 font-bold">Mahsulotlar</a>
-				<a href="#about" class="text-white hover:text-yellow-500 font-bold">Biz haqimizda</a>
-				<a href="#certificates" class="text-white hover:text-yellow-500 font-bold">Sertifikatlar</a>
-				<a href="#contact" class="text-white hover:text-yellow-500 font-bold">Aloqa</a>
+			<!-- Center: Navigation Menu (Hidden on Mobile) -->
+			<nav id="navMenu" class="hidden sm:flex space-x-6 font-sans text-green-800">
+				<a href="#home" class="hover:text-green-600 font-bold">Bosh sahifa</a>
+				<a href="#products" class="hover:text-green-600 font-bold">Mahsulotlar</a>
+				<a href="#about" class="hover:text-green-600 font-bold">Biz haqimizda</a>
+				<a href="#certificates" class="hover:text-green-600 font-bold">Sertifikatlar</a>
+				<a href="#contact" class="hover:text-green-600 font-bold">Aloqa</a>
 			</nav>
+
+			<!-- Right Side: Phone Number (Hidden on Mobile) -->
+			<div class="hidden sm:flex items-center space-x-2">
+				<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="black" class="w-5 h-5">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+						d="M3 10.75a8.25 8.25 0 018.25-8.25h1.5A8.25 8.25 0 0121 10.75v2.5a8.25 8.25 0 01-8.25 8.25h-1.5A8.25 8.25 0 013 13.25v-2.5z" />
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+						d="M16.5 9.25l-5.25 3 5.25 3v-6z" />
+				</svg>
+				<span class="text-green-800 font-bold">+998 90 030 48 68</span>
+			</div>
+		</div>
+
+		<!-- Mobile Menu (Initially hidden) -->
+		<div id="mobileMenu"
+			class="absolute left-0 w-full top-16 py-4 px-6 space-y-4 bg-white transform transition-transform duration-500 ease-in-out translate-x-[-100%]">
+			<nav class="flex flex-col space-y-4 text-green-800">
+				<a href="#home" class="hover:text-green-600 font-bold">Bosh sahifa</a>
+				<a href="#products" class="hover:text-green-600 font-bold">Mahsulotlar</a>
+				<a href="#about" class="hover:text-green-600 font-bold">Biz haqimizda</a>
+				<a href="#certificates" class="hover:text-green-600 font-bold">Sertifikatlar</a>
+				<a href="#contact" class="hover:text-green-600 font-bold">Aloqa</a>
+			</nav>
+			<div class="flex items-center space-x-2 text-green-800 font-bold">
+				<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="black" class="w-5 h-5">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+						d="M3 10.75a8.25 8.25 0 018.25-8.25h1.5A8.25 8.25 0 0121 10.75v2.5a8.25 8.25 0 01-8.25 8.25h-1.5A8.25 8.25 0 013 13.25v-2.5z" />
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+						d="M16.5 9.25l-5.25 3 5.25 3v-6z" />
+				</svg>
+				<span class="text-green-800 font-bold">+998 90 030 48 68</span>
+			</div>
 		</div>
 	</header>
 
+	<!-- JavaScript for the toggle effect -->
+	<script>
+		const menuButton = document.getElementById('menuButton');
+		const mobileMenu = document.getElementById('mobileMenu');
+
+		// Add click event to menu button
+		menuButton.addEventListener('click', () => {
+			// Toggle the menu's transform property to slide it in or out
+			if (mobileMenu.style.transform === 'translateX(0%)') {
+				mobileMenu.style.transform = 'translateX(-100%)'; // Slide out
+			} else {
+				mobileMenu.style.transform = 'translateX(0%)'; // Slide in
+			}
+		});
+	</script>
+
+
+
+
 	<!-- Carousel Section -->
 	<section class="relative w-full h-[80vh] overflow-hidden">
-		<div id="carousel" class="flex transition-transform duration-500" style="transform: translateX(0);">
+		<div id="carousel" class="flex transition-transform duration-500 h-[80vh]">
 			<!-- Slide 1 -->
-			<div class="w-full flex-shrink-0 h-full bg-cover bg-center"
-				style="background-image: url('https://via.placeholder.com/1920x1080?text=Almonds');">
-				<div class="absolute bottom-10 left-10 text-white">
-					<h2 class="text-4xl font-bold">Almonds</h2>
-					<p class="text-lg">Healthy and nutritious dry fruits.</p>
+			<div class="relative w-full flex-shrink-0 h-full">
+				<!-- Background Image -->
+				<div class="absolute inset-0 bg-cover bg-center"
+					style="background-image: url('./img/introduction-carousel-4.jpg');">
+				</div>
+				<!-- Black Overlay -->
+				<div class="absolute inset-0 bg-black/50"></div>
+				<!-- Text Content -->
+				<div class="absolute inset-0 flex flex-col items-center justify-center text-center text-white">
+					<h2 class="text-4xl md:text-6xl font-bold">Qora Uzumlar</h2>
+					<p class="text-lg md:text-xl mt-2 max-w-md mx-auto">
+						Sog'lom va foydali quritilgan mevalar. Sifatli va vitaminlarga boy qora uzumlar.
+					</p>
+					<!-- Button -->
+					<button class="mt-4 bg-green-900 hover:bg-green-700 text-white font-bold py-2 px-6 rounded-full">
+						Buyurtma
+					</button>
 				</div>
 			</div>
-			<!-- Slide 2 -->
-			<div class="w-full flex-shrink-0 h-full bg-cover bg-center"
-				style="background-image: url('https://via.placeholder.com/1920x1080?text=Cashews');">
-				<div class="absolute bottom-10 left-10 text-white">
-					<h2 class="text-4xl font-bold">Cashews</h2>
-					<p class="text-lg">Perfect for snacks and recipes.</p>
+
+
+			<div class="relative w-full flex-shrink-0 h-full">
+				<!-- Background Image with Blur -->
+				<div class="absolute inset-0 bg-cover bg-center"
+					style="background-image: url('./img/introduction-carousel-2.jpg'); filter: blur(2px);">
+				</div>
+				<!-- Overlay -->
+				<div class="absolute inset-0 bg-black/30"></div>
+				<!-- Clear Text Content -->
+				<div class="relative z-10 flex flex-col items-center justify-center text-center text-white h-full">
+					<h2 class="text-4xl md:text-6xl font-bold">Almonds</h2>
+					<p class="text-lg md:text-xl mt-2">Healthy and nutritious dry fruits.</p>
 				</div>
 			</div>
-			<!-- Slide 3 -->
-			<div class="w-full flex-shrink-0 h-full bg-cover bg-center"
-				style="background-image: url('https://via.placeholder.com/1920x1080?text=Walnuts');">
-				<div class="absolute bottom-10 left-10 text-white">
-					<h2 class="text-4xl font-bold">Walnuts</h2>
-					<p class="text-lg">Rich in omega-3 and antioxidants.</p>
+			<div class="relative w-full flex-shrink-0 h-full">
+				<!-- Background Image with Blur -->
+				<div class="absolute inset-0 bg-cover bg-center"
+					style="background-image: url('./img/introduction-carousel-2.jpg'); filter: blur(2px);">
+				</div>
+				<!-- Overlay -->
+				<div class="absolute inset-0 bg-black/30"></div>
+				<!-- Clear Text Content -->
+				<div class="relative z-10 flex flex-col items-center justify-center text-center text-white h-full">
+					<h2 class="text-4xl md:text-6xl font-bold">Almonds</h2>
+					<p class="text-lg md:text-xl mt-2">Healthy and nutritious dry fruits.</p>
 				</div>
 			</div>
-			<div class="w-full flex-shrink-0 h-full bg-cover bg-center"
-				style="background-image: url('https://via.placeholder.com/1920x1080?text=Walnuts');">
-				<div class="absolute bottom-10 left-10 text-white">
-					<h2 class="text-4xl font-bold">Walnuts</h2>
-					<p class="text-lg">Rich in omega-3 and antioxidants.</p>
+			<div class="relative w-full flex-shrink-0 h-full">
+				<!-- Background Image with Blur -->
+				<div class="absolute inset-0 bg-cover bg-center"
+					style="background-image: url('./img/introduction-carousel-2.jpg'); filter: blur(2px);">
+				</div>
+				<!-- Overlay -->
+				<div class="absolute inset-0 bg-black/30"></div>
+				<!-- Clear Text Content -->
+				<div class="relative z-10 flex flex-col items-center justify-center text-center text-white h-full">
+					<h2 class="text-4xl md:text-6xl font-bold">Almonds</h2>
+					<p class="text-lg md:text-xl mt-2">Healthy and nutritious dry fruits.</p>
 				</div>
 			</div>
-			<div class="w-full flex-shrink-0 h-full bg-cover bg-center"
-				style="background-image: url('https://via.placeholder.com/1920x1080?text=Walnuts');">
-				<div class="absolute bottom-10 left-10 text-white">
-					<h2 class="text-4xl font-bold">Walnuts</h2>
-					<p class="text-lg">Rich in omega-3 and antioxidants.</p>
-				</div>
-			</div>
+		</div>
+
+
 		</div>
 
 		<!-- Dots Navigation -->
