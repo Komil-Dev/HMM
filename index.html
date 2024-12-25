@@ -6,15 +6,17 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>Simple Page with Tailwind CSS</title>
 	<script src="https://cdn.tailwindcss.com"></script>
+	<script src="https://cdn.jsdelivr.net/npm/heroicons@1.0.6/solid/phone-icon.js"></script>
+
 </head>
 
 <body class="bg-teal-800 text-white">
 
 	<!-- Navbar -->
-	<header class="fixed top-0 left-0 w-full bg-white shadow-md z-10">
-		<div class="container mx-auto px-4 py-3 flex items-center justify-between">
+	<header class="fixed top-0 left-0 w-full bg-white shadow-md z-10 h-[10vh]">
+		<div class="container mx-auto px-4 py-3 flex items-center justify-between h-full">
 			<!-- Left Side: Logo -->
-			<h1 class="text-green-800 font-bold text-xl">HMM Export</h1>
+			<h1 class="text-green-800 font-bold text-xl font-serif">HMM Export</h1>
 
 			<!-- Menu Toggle for Mobile -->
 			<button id="menuButton" class="sm:hidden cursor-pointer">
@@ -24,8 +26,8 @@
 				</svg>
 			</button>
 
-			<!-- Center: Navigation Menu (Hidden on Mobile) -->
-			<nav id="navMenu" class="hidden sm:flex space-x-6 font-sans text-green-800">
+			<!-- Center: Navigation Menu (Hidden on Mobile, shows on desktop) -->
+			<nav id="navMenu" class="hidden sm:flex space-x-8 font-serif text-green-800">
 				<a href="#home" class="hover:text-green-600 font-bold">Bosh sahifa</a>
 				<a href="#products" class="hover:text-green-600 font-bold">Mahsulotlar</a>
 				<a href="#about" class="hover:text-green-600 font-bold">Biz haqimizda</a>
@@ -47,16 +49,17 @@
 
 		<!-- Mobile Menu (Initially hidden) -->
 		<div id="mobileMenu"
-			class="absolute left-0 w-full top-16 py-4 px-6 space-y-4 bg-white transform transition-transform duration-500 ease-in-out translate-x-[-100%]">
-			<nav class="flex flex-col space-y-4 text-green-800">
+			class="absolute left-0 w-full top-16 py-4 px-6 space-y-4 bg-white transform transition-transform duration-500 ease-in-out translate-x-[-100%] sm:hidden">
+			<nav class="flex flex-col space-y-4 text-green-800 font-serif">
 				<a href="#home" class="hover:text-green-600 font-bold">Bosh sahifa</a>
 				<a href="#products" class="hover:text-green-600 font-bold">Mahsulotlar</a>
 				<a href="#about" class="hover:text-green-600 font-bold">Biz haqimizda</a>
 				<a href="#certificates" class="hover:text-green-600 font-bold">Sertifikatlar</a>
 				<a href="#contact" class="hover:text-green-600 font-bold">Aloqa</a>
 			</nav>
-			<div class="flex items-center space-x-2 text-green-800 font-bold">
-				<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="black" class="w-5 h-5">
+			<div class="flex items-center space-x-2 text-green-800 font-bold font-serif">
+				<svg class="w-5 h-5 text-green-800" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+					stroke="currentColor">
 					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
 						d="M3 10.75a8.25 8.25 0 018.25-8.25h1.5A8.25 8.25 0 0121 10.75v2.5a8.25 8.25 0 01-8.25 8.25h-1.5A8.25 8.25 0 013 13.25v-2.5z" />
 					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -64,6 +67,8 @@
 				</svg>
 				<span class="text-green-800 font-bold">+998 90 030 48 68</span>
 			</div>
+
+
 		</div>
 	</header>
 
