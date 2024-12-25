@@ -182,6 +182,7 @@
 	</section>
 
 	<!-- JavaScript for Carousel -->
+	<!-- JavaScript for Carousel -->
 	<script>
 		const carousel = document.getElementById("carousel");
 		const dots = document.querySelectorAll(".dot");
@@ -213,9 +214,16 @@
 			});
 		});
 
+		// Automatic Image Change every 2 seconds
+		setInterval(() => {
+			currentIndex = (currentIndex + 1) % slidesCount;
+			updateCarousel();
+		}, 2000); // Change slide every 2 seconds
+
 		// Initialize carousel
 		updateCarousel();
 	</script>
+
 	<!-- Products Section -->
 	<section id="products" class="container mx-auto px-4 py-8">
 		<h2 class="text-yellow-500 text-center text-2xl font-bold mb-6">Bizning mahsulotlar</h2>
