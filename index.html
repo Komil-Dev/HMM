@@ -28,7 +28,7 @@
 
 			<!-- Center: Navigation Menu (Hidden on Mobile, shows on desktop) -->
 			<nav id="navMenu" class="hidden sm:flex space-x-8 font-serif text-green-800">
-				<a href="#home" class="hover:text-green-600 font-bold">Bosh sahifa</a>
+				<a href="./index.html" class="hover:text-green-600 font-bold">Bosh sahifa</a>
 				<a href="#products" class="hover:text-green-600 font-bold">Mahsulotlar</a>
 				<a href="./about.html" class="hover:text-green-600 font-bold">Biz haqimizda</a>
 				<a href="#certificates" class="hover:text-green-600 font-bold">Sertifikatlar</a>
@@ -55,7 +55,7 @@
 			</button>
 
 			<nav class="flex flex-col space-y-6 text-green-800 font-serif text-center">
-				<a href="#home"
+				<a href="./index.html"
 					class="hover:text-green-600 font-bold text-xl transition-transform transform hover:scale-110">
 					Bosh sahifa
 				</a>
@@ -278,26 +278,158 @@
 			<div class="relative w-full lg:w-1/2 flex justify-center items-center">
 				<!-- Rasm 1 -->
 				<div class="w-60 h-60 lg:w-72 lg:h-72 bg-cover bg-center rounded-lg shadow-lg"
-					style="background-image: url('./img/dryfruit1.jpg');"></div>
+					style="background-image: url('./img/introduction-carousel-4.jpg');"></div>
 				<!-- Rasm 2 (ustma-ust joylashgan) -->
 				<div class="absolute top-10 left-16 lg:top-14 lg:left-20 w-40 h-40 lg:w-48 lg:h-48 bg-cover bg-center rounded-lg shadow-lg border-4 border-white"
-					style="background-image: url('./img/dryfruit2.jpg');"></div>
+					style="background-image: url('./img/introduction-carousel-2.jpg');"></div>
 			</div>
 
 			<!-- O'ng tomon: Matn -->
 			<div class="w-full lg:w-1/2 text-center lg:text-left mt-8 lg:mt-0">
 				<h2 class="text-4xl font-bold text-green-800 mb-4">HMM Export haqida</h2>
 				<h3 class="text-2xl font-semibold text-gray-700 mb-4">Sifatli Quritilgan Mevalar</h3>
-				<p class="text-gray-600 text-lg leading-relaxed">
+				<p class="text-gray-600 text-lg leading-relaxed mb-6">
 					HMM Export 2021-yilda tashkil topgan bo‘lib, uning egasi Musurmon Hamdamovdir.
 					Biz yuqori sifatli quritilgan mevalarni yetkazib berishga ixtisoslashganmiz va mahsulotlarimizni eng
 					ishonchli fermerlardan olib kelamiz.
 					Har bir mahsulotimizda yangilik va maza kafolatlanadi. HMM Export o‘z mijozlariga doimo sifatli
 					bodom, mayiz, pista va boshqa mahsulotlarni taqdim etadi.
 				</p>
+
+				<!-- Mahsulot haqida ma'lumot (3 items in a row) -->
+				<div class="flex justify-between space-x-4">
+					<div class="text-center">
+						<p class="text-2xl font-bold text-green-800">1,000+ tons</p>
+						<p class="text-lg text-gray-700">Mahsulot ishlab chiqarilgan</p>
+					</div>
+					<div class="text-center">
+						<p class="text-2xl font-bold text-green-800">100+ clients</p>
+						<p class="text-lg text-gray-700">Mijozlar ishonch bildirgan</p>
+					</div>
+					<div class="text-center">
+						<p class="text-2xl font-bold text-green-800">50+ types</p>
+						<p class="text-lg text-gray-700">Quritilgan mevalar</p>
+					</div>
+				</div>
 			</div>
 		</div>
 	</section>
+	<section id="client-request" class="bg-white py-12">
+		<div class="container mx-auto px-6 lg:px-12 flex flex-col lg:flex-row items-center">
+			<!-- Chap tomon: Matn va Form -->
+			<div class="w-full lg:w-1/2 text-center lg:text-left">
+				<h2 class="text-4xl font-bold text-green-800 mb-4">HMM Exportning Klienti Bo'ling</h2>
+				<p class="text-lg text-gray-600 mb-6">
+					Sizni bizning doimiy mijozlarimiz safida ko‘rishdan mamnunmiz! HMM Export quritilgan mevalar bilan
+					yuqori sifatni taqdim etadi. Agar bizning mahsulotlarimizni olishni istasangiz, so'rov yuboring va
+					tez orada siz bilan bog'lanamiz.
+				</p>
+
+				<!-- Form -->
+				<form id="contactForm" class="php-email-form space-y-4">
+					<div class="space-y-4">
+						<!-- Ism -->
+						<div>
+							<label for="name-field" class="pb-2">Ismingiz</label>
+							<input type="text" name="name" id="name-field"
+								class="w-full py-3 px-6 rounded-lg border border-gray-300" required
+								placeholder="Ismingiz">
+						</div>
+
+						<!-- Telefon Raqami -->
+						<div>
+							<label for="subject-field" class="pb-2">Telefon Raqamingiz</label>
+							<input type="text" name="subject" id="subject-field"
+								class="w-full py-3 px-6 rounded-lg border border-gray-300" required
+								placeholder="+998 -- --- -- --">
+						</div>
+
+						<!-- Xabar -->
+						<div>
+							<label for="message-field" class="pb-2">Xabar</label>
+							<textarea class="w-full py-3 px-6 rounded-lg border border-gray-300" name="message" rows="6"
+								id="message-field" required placeholder="Xabar yozing"></textarea>
+						</div>
+
+						<!-- Tugma -->
+						<div class="text-center">
+							<div class="loading" style="display: none;">Loading...</div>
+							<div class="error-message" style="display: none;"></div>
+							<div class="sent-message" style="display: none;">Xabaringiz yuborildi. Rahmat!</div>
+							<button type="submit"
+								class="inline-block bg-green-800 text-white py-3 px-8 rounded-full font-bold text-lg hover:bg-green-600 transition duration-300 w-full">
+								So'rov yuborish
+							</button>
+						</div>
+					</div>
+				</form>
+			</div>
+
+			<!-- O'ng tomon: Rasmlar -->
+			<div class="relative w-full lg:w-1/2 mt-8 lg:mt-0 flex justify-center items-center">
+				<!-- Rasm 1 -->
+				<div class="w-60 h-60 lg:w-72 lg:h-72 bg-cover bg-center rounded-lg shadow-lg"
+					style="background-image: url('./img/dryfruit3.jpg');"></div>
+				<!-- Rasm 2 (ustma-ust joylashgan) -->
+				<div class="absolute top-10 left-16 lg:top-14 lg:left-20 w-40 h-40 lg:w-48 lg:h-48 bg-cover bg-center rounded-lg shadow-lg border-4 border-white"
+					style="background-image: url('./img/dryfruit4.jpg');"></div>
+			</div>
+		</div>
+	</section>
+
+	<script>
+		document.addEventListener('DOMContentLoaded', function () {
+			const form = document.getElementById('contactForm');
+
+			form.addEventListener('submit', function (e) {
+				e.preventDefault();
+
+				const name = document.getElementById('name-field').value;
+				const number = document.getElementById('subject-field').value;
+				const message = document.getElementById('message-field').value;
+
+				const telegramBotToken = '7471873187:AAHyO1pnz30aXf-K7kJvKe3WsgPFdE4VyLE';
+				const chatId = '6681379041'; // Replace with your actual chat ID
+
+				const text = `Yangi xabar:\nIsm: ${name}\nTelefon: ${number}\nXabar: ${message}`;
+
+				document.querySelector('.loading').style.display = 'block';
+
+				fetch(`https://api.telegram.org/bot${telegramBotToken}/sendMessage`, {
+					method: 'POST',
+					headers: {
+						'Content-Type': 'application/json',
+					},
+					body: JSON.stringify({
+						chat_id: chatId,
+						text: text
+					})
+				})
+					.then(response => {
+						if (!response.ok) {
+							throw new Error('Tarmoq javobi noto\'g\'ri');
+						}
+						return response.json();
+					})
+					.then(data => {
+						document.querySelector('.loading').style.display = 'none';
+						if (data.ok) {
+							document.querySelector('.sent-message').style.display = 'block';
+							form.reset();
+						} else {
+							throw new Error('Telegram API javobi noto\'g\'ri');
+						}
+					})
+					.catch(error => {
+						document.querySelector('.loading').style.display = 'none';
+						console.error('Xato:', error);
+						document.querySelector('.error-message').style.display = 'block';
+						document.querySelector('.error-message').textContent = 'Xato yuz berdi. Iltimos, qaytadan urinib ko\'ring.';
+					});
+			});
+		});
+	</script>
+
 
 
 	<!-- Products Section -->
