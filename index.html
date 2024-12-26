@@ -332,7 +332,7 @@
 						<div>
 							<label for="name-field" class="pb-2">Ismingiz</label>
 							<input type="text" name="name" id="name-field"
-								class="w-full py-3 px-6 rounded-lg border border-gray-300" required
+								class="w-full py-3 px-6 rounded-lg border border-gray-300 text-gray-800" required
 								placeholder="Ismingiz">
 						</div>
 
@@ -340,8 +340,16 @@
 						<div>
 							<label for="subject-field" class="pb-2">Telefon Raqamingiz</label>
 							<input type="text" name="subject" id="subject-field"
-								class="w-full py-3 px-6 rounded-lg border border-gray-300" required
+								class="w-full py-3 px-6 rounded-lg border border-gray-300 text-gray-800" required
 								placeholder="+998 -- --- -- --">
+						</div>
+
+						<!-- Xabar -->
+						<div>
+							<label for="message-field" class="pb-2">Xabar</label>
+							<textarea class="w-full py-3 px-6 rounded-lg border border-gray-300 text-gray-800"
+								name="message" rows="6" id="message-field" required
+								placeholder="Xabar yozing"></textarea>
 						</div>
 
 						<!-- Tugma -->
@@ -356,6 +364,7 @@
 						</div>
 					</div>
 				</form>
+
 			</div>
 
 			<!-- O'ng tomon: Rasmlar -->
@@ -421,6 +430,7 @@
 					});
 			});
 		});
+
 	</script>
 
 
