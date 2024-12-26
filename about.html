@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="uz">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Biz haqimizda</title>
+	<script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-50 text-gray-800 font-serif">
+	<header class="fixed top-0 left-0 w-full bg-white shadow-md z-10 h-[10vh]">
+		<div class="container mx-auto px-4 py-3 flex items-center justify-between h-full">
+			<!-- Left Side: Logo -->
+			<h1 class="text-green-800 font-bold text-xl font-serif">HMM</h1>
+
+			<!-- Menu Toggle for Mobile -->
+			<button id="menuButton" class="sm:hidden cursor-pointer">
+				<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+					class="w-6 h-6 text-green-800">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+				</svg>
+			</button>
+
+			<!-- Center: Navigation Menu (Hidden on Mobile, shows on desktop) -->
+			<nav id="navMenu" class="hidden sm:flex space-x-8 font-serif text-green-800">
+				<a href="#home" class="hover:text-green-600 font-bold">Bosh sahifa</a>
+				<a href="#products" class="hover:text-green-600 font-bold">Mahsulotlar</a>
+				<a href="./about.html" class="hover:text-green-600 font-bold">Biz haqimizda</a>
+				<a href="#certificates" class="hover:text-green-600 font-bold">Sertifikatlar</a>
+				<a href="#contact" class="hover:text-green-600 font-bold">Aloqa</a>
+			</nav>
+
+			<!-- Right Side: Phone Number (Hidden on Mobile) -->
+			<div class="hidden sm:flex items-center space-x-2">
+
+
+				<span class="text-green-800 font-bold">📞 +998 90 030 48 68</span>
+			</div>
+		</div>
+
+		<!-- Mobile Menu (Initially hidden) -->
+		<div id="mobileMenu"
+			class="absolute left-0 w-full top-0 h-[100vh] bg-white transform transition-transform duration-500 ease-in-out translate-x-[-100%] sm:hidden flex flex-col justify-center items-center py-4 px-6">
+			<!-- Close Button -->
+			<button id="closeButton" class="absolute top-4 right-6 text-green-800">
+				<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+					class="w-6 h-6">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+				</svg>
+			</button>
+
+			<nav class="flex flex-col space-y-6 text-green-800 font-serif text-center">
+				<a href="#home"
+					class="hover:text-green-600 font-bold text-xl transition-transform transform hover:scale-110">
+					Bosh sahifa
+				</a>
+				<a href="#products"
+					class="hover:text-green-600 font-bold text-xl transition-transform transform hover:scale-110">
+					Mahsulotlar
+				</a>
+				<a href="./about.html"
+					class="hover:text-green-600 font-bold text-xl transition-transform transform hover:scale-110">
+					Biz haqimizda
+				</a>
+				<a href="#certificates"
+					class="hover:text-green-600 font-bold text-xl transition-transform transform hover:scale-110">
+					Sertifikatlar
+				</a>
+				<a href="#contact"
+					class="hover:text-green-600 font-bold text-xl transition-transform transform hover:scale-110">
+					Aloqa
+				</a>
+			</nav>
+
+			<div class="absolute bottom-4 flex items-center space-x-2 text-green-800 font-bold font-serif mb-[20%]">
+
+				<span class="text-green-800 font-bold">📞 +998 90 030 48 68</span>
+			</div>
+		</div>
+	</header>
+
+
+	<script>const menuButton = document.getElementById('menuButton');
+		const mobileMenu = document.getElementById('mobileMenu');
+		const closeButton = document.getElementById('closeButton');
+
+		// Toggle menu open/close
+		menuButton.addEventListener('click', () => {
+			mobileMenu.style.transform = 'translateX(0%)'; // Slide in
+		});
+
+		closeButton.addEventListener('click', () => {
+			mobileMenu.style.transform = 'translateX(-100%)'; // Slide out
+		});
+	</script>
+
+	<!-- Biz haqimizda -->
+	<section id="biz-haqimizda" class="py-12 bg-gray-100">
+		<div class="container mx-auto px-6 lg:px-12">
+			<h1 class="text-4xl font-bold text-center text-green-800 mb-6">Biz haqimizda</h1>
+			<p class="text-lg text-gray-700 leading-relaxed text-center">
+				HMM Export 2021-yilda tashkil topgan bo‘lib, quritilgan mevalar eksport qilishda yetakchi hisoblanadi.
+				Biz o‘z mijozlarimizga yuqori sifatli bodom, mayiz, pista va boshqa mahsulotlarni taklif qilamiz.
+				Har bir mahsulotimiz tabiatdan olingan sof ta’m va sifatni kafolatlaydi.
+			</p>
+		</div>
+	</section>
+
+	<!-- Xo'jayin va boshqa ishchilar -->
+	<section id="xo-jayin-va-ishchilar" class="py-12">
+		<div class="container mx-auto px-6 lg:px-12">
+			<h2 class="text-3xl font-bold text-green-800 mb-6">Xo'jayin va boshqa ishchilar</h2>
+
+			<!-- Xo'jayin -->
+			<div class="flex flex-col lg:flex-row items-center mb-12">
+				<!-- Rasmi -->
+				<div class="w-48 h-48 rounded-full bg-cover bg-center shadow-lg border-4 border-green-800"
+					style="background-image: url('./img/owner.jpg');"></div>
+				<!-- Ma'lumotlar -->
+				<div class="mt-6 lg:mt-0 lg:ml-8 text-center lg:text-left">
+					<h3 class="text-2xl font-semibold text-gray-800">Musurmon Hamdamov</h3>
+					<p class="text-lg text-gray-700 leading-relaxed">
+						HMM Export kompaniyasining asoschisi va xo‘jayini. 2021-yilda tashkil etilgan kompaniyamizni
+						muvaffaqiyatli boshqarib kelmoqda.
+						Musurmon Hamdamov doim sifatga katta e’tibor qaratadi va mijozlar ehtiyojlarini birinchi o‘ringa
+						qo‘yadi.
+					</p>
+				</div>
+			</div>
+
+			<!-- Boshqa ishchilar -->
+			<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+				<!-- Ishchi 1 -->
+				<div class="text-center">
+					<div class="w-32 h-32 mx-auto rounded-full bg-cover bg-center shadow-lg"
+						style="background-image: url('./img/worker1.jpg');"></div>
+					<h4 class="text-lg font-semibold text-gray-800 mt-4">Jamshid Karimov</h4>
+					<p class="text-gray-600 text-sm">Savdo menejeri</p>
+				</div>
+				<!-- Ishchi 2 -->
+				<div class="text-center">
+					<div class="w-32 h-32 mx-auto rounded-full bg-cover bg-center shadow-lg"
+						style="background-image: url('./img/worker2.jpg');"></div>
+					<h4 class="text-lg font-semibold text-gray-800 mt-4">Nigora Ismoilova</h4>
+					<p class="text-gray-600 text-sm">Marketing bo‘limi boshlig‘i</p>
+				</div>
+				<!-- Ishchi 3 -->
+				<div class="text-center">
+					<div class="w-32 h-32 mx-auto rounded-full bg-cover bg-center shadow-lg"
+						style="background-image: url('./img/worker3.jpg');"></div>
+					<h4 class="text-lg font-semibold text-gray-800 mt-4">Azamat Xudoyberganov</h4>
+					<p class="text-gray-600 text-sm">Sifat nazorati menejeri</p>
+				</div>
+			</div>
+		</div>
+	</section>
+</body>
+
+</html>

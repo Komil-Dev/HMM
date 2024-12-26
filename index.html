@@ -16,7 +16,7 @@
 	<header class="fixed top-0 left-0 w-full bg-white shadow-md z-10 h-[10vh]">
 		<div class="container mx-auto px-4 py-3 flex items-center justify-between h-full">
 			<!-- Left Side: Logo -->
-			<h1 class="text-green-800 font-bold text-xl font-serif">HMM Export</h1>
+			<h1 class="text-green-800 font-bold text-xl font-serif">HMM</h1>
 
 			<!-- Menu Toggle for Mobile -->
 			<button id="menuButton" class="sm:hidden cursor-pointer">
@@ -30,65 +30,74 @@
 			<nav id="navMenu" class="hidden sm:flex space-x-8 font-serif text-green-800">
 				<a href="#home" class="hover:text-green-600 font-bold">Bosh sahifa</a>
 				<a href="#products" class="hover:text-green-600 font-bold">Mahsulotlar</a>
-				<a href="#about" class="hover:text-green-600 font-bold">Biz haqimizda</a>
+				<a href="./about.html" class="hover:text-green-600 font-bold">Biz haqimizda</a>
 				<a href="#certificates" class="hover:text-green-600 font-bold">Sertifikatlar</a>
 				<a href="#contact" class="hover:text-green-600 font-bold">Aloqa</a>
 			</nav>
 
 			<!-- Right Side: Phone Number (Hidden on Mobile) -->
 			<div class="hidden sm:flex items-center space-x-2">
-				<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="black" class="w-5 h-5">
-					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-						d="M3 10.75a8.25 8.25 0 018.25-8.25h1.5A8.25 8.25 0 0121 10.75v2.5a8.25 8.25 0 01-8.25 8.25h-1.5A8.25 8.25 0 013 13.25v-2.5z" />
-					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-						d="M16.5 9.25l-5.25 3 5.25 3v-6z" />
-				</svg>
-				<span class="text-green-800 font-bold">+998 90 030 48 68</span>
+
+
+				<span class="text-green-800 font-bold">📞 +998 90 030 48 68</span>
 			</div>
 		</div>
 
 		<!-- Mobile Menu (Initially hidden) -->
 		<div id="mobileMenu"
-			class="absolute left-0 w-full top-16 py-4 px-6 space-y-4 bg-white transform transition-transform duration-500 ease-in-out translate-x-[-100%] sm:hidden">
-			<nav class="flex flex-col space-y-4 text-green-800 font-serif">
-				<a href="#home" class="hover:text-green-600 font-bold">Bosh sahifa</a>
-				<a href="#products" class="hover:text-green-600 font-bold">Mahsulotlar</a>
-				<a href="#about" class="hover:text-green-600 font-bold">Biz haqimizda</a>
-				<a href="#certificates" class="hover:text-green-600 font-bold">Sertifikatlar</a>
-				<a href="#contact" class="hover:text-green-600 font-bold">Aloqa</a>
-			</nav>
-			<div class="flex items-center space-x-2 text-green-800 font-bold font-serif">
-				<svg class="w-5 h-5 text-green-800" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-					stroke="currentColor">
-					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-						d="M3 10.75a8.25 8.25 0 018.25-8.25h1.5A8.25 8.25 0 0121 10.75v2.5a8.25 8.25 0 01-8.25 8.25h-1.5A8.25 8.25 0 013 13.25v-2.5z" />
-					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-						d="M16.5 9.25l-5.25 3 5.25 3v-6z" />
+			class="absolute left-0 w-full top-0 h-[100vh] bg-white transform transition-transform duration-500 ease-in-out translate-x-[-100%] sm:hidden flex flex-col justify-center items-center py-4 px-6">
+			<!-- Close Button -->
+			<button id="closeButton" class="absolute top-4 right-6 text-green-800">
+				<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+					class="w-6 h-6">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
 				</svg>
-				<span class="text-green-800 font-bold">+998 90 030 48 68</span>
+			</button>
+
+			<nav class="flex flex-col space-y-6 text-green-800 font-serif text-center">
+				<a href="#home"
+					class="hover:text-green-600 font-bold text-xl transition-transform transform hover:scale-110">
+					Bosh sahifa
+				</a>
+				<a href="#products"
+					class="hover:text-green-600 font-bold text-xl transition-transform transform hover:scale-110">
+					Mahsulotlar
+				</a>
+				<a href="./about.html"
+					class="hover:text-green-600 font-bold text-xl transition-transform transform hover:scale-110">
+					Biz haqimizda
+				</a>
+				<a href="#certificates"
+					class="hover:text-green-600 font-bold text-xl transition-transform transform hover:scale-110">
+					Sertifikatlar
+				</a>
+				<a href="#contact"
+					class="hover:text-green-600 font-bold text-xl transition-transform transform hover:scale-110">
+					Aloqa
+				</a>
+			</nav>
+
+			<div class="absolute bottom-4 flex items-center space-x-2 text-green-800 font-bold font-serif mb-[20%]">
+
+				<span class="text-green-800 font-bold">📞 +998 90 030 48 68</span>
 			</div>
-
-
 		</div>
 	</header>
 
-	<!-- JavaScript for the toggle effect -->
-	<script>
-		const menuButton = document.getElementById('menuButton');
-		const mobileMenu = document.getElementById('mobileMenu');
 
-		// Add click event to menu button
+	<script>const menuButton = document.getElementById('menuButton');
+		const mobileMenu = document.getElementById('mobileMenu');
+		const closeButton = document.getElementById('closeButton');
+
+		// Toggle menu open/close
 		menuButton.addEventListener('click', () => {
-			// Toggle the menu's transform property to slide it in or out
-			if (mobileMenu.style.transform === 'translateX(0%)') {
-				mobileMenu.style.transform = 'translateX(-100%)'; // Slide out
-			} else {
-				mobileMenu.style.transform = 'translateX(0%)'; // Slide in
-			}
+			mobileMenu.style.transform = 'translateX(0%)'; // Slide in
+		});
+
+		closeButton.addEventListener('click', () => {
+			mobileMenu.style.transform = 'translateX(-100%)'; // Slide out
 		});
 	</script>
-
-
 
 
 	<!-- Carousel Section -->
@@ -263,6 +272,33 @@
 		// Initialize carousel
 		updateCarousel();
 	</script>
+	<section id="about" class="bg-gray-100 py-12">
+		<div class="container mx-auto px-6 lg:px-12 flex flex-col lg:flex-row items-center">
+			<!-- Chap tomon: Rasmlar -->
+			<div class="relative w-full lg:w-1/2 flex justify-center items-center">
+				<!-- Rasm 1 -->
+				<div class="w-60 h-60 lg:w-72 lg:h-72 bg-cover bg-center rounded-lg shadow-lg"
+					style="background-image: url('./img/dryfruit1.jpg');"></div>
+				<!-- Rasm 2 (ustma-ust joylashgan) -->
+				<div class="absolute top-10 left-16 lg:top-14 lg:left-20 w-40 h-40 lg:w-48 lg:h-48 bg-cover bg-center rounded-lg shadow-lg border-4 border-white"
+					style="background-image: url('./img/dryfruit2.jpg');"></div>
+			</div>
+
+			<!-- O'ng tomon: Matn -->
+			<div class="w-full lg:w-1/2 text-center lg:text-left mt-8 lg:mt-0">
+				<h2 class="text-4xl font-bold text-green-800 mb-4">HMM Export haqida</h2>
+				<h3 class="text-2xl font-semibold text-gray-700 mb-4">Sifatli Quritilgan Mevalar</h3>
+				<p class="text-gray-600 text-lg leading-relaxed">
+					HMM Export 2021-yilda tashkil topgan bo‘lib, uning egasi Musurmon Hamdamovdir.
+					Biz yuqori sifatli quritilgan mevalarni yetkazib berishga ixtisoslashganmiz va mahsulotlarimizni eng
+					ishonchli fermerlardan olib kelamiz.
+					Har bir mahsulotimizda yangilik va maza kafolatlanadi. HMM Export o‘z mijozlariga doimo sifatli
+					bodom, mayiz, pista va boshqa mahsulotlarni taqdim etadi.
+				</p>
+			</div>
+		</div>
+	</section>
+
 
 	<!-- Products Section -->
 	<section id="products" class="container mx-auto px-4 py-8">
