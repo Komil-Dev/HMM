@@ -314,12 +314,17 @@
 			</div>
 		</div>
 	</section>
-	<section id="client-request" class="bg-white py-12">
-		<div class="container mx-auto px-6 lg:px-12 flex flex-col lg:flex-row items-center">
+	<section id="client-request" class="relative bg-cover bg-center py-12"
+		style="background-image: url('./img/your-background-image.jpg');">
+		<!-- Qoraytirish effekti -->
+		<div class="absolute inset-0 bg-black bg-opacity-50"></div>
+
+		<!-- Kontent -->
+		<div class="relative container mx-auto px-6 lg:px-12 flex flex-col lg:flex-row items-center">
 			<!-- Chap tomon: Matn va Form -->
 			<div class="w-full lg:w-1/2 text-center lg:text-left">
-				<h2 class="text-4xl font-bold text-green-800 mb-4">HMM Exportning Klienti Bo'ling</h2>
-				<p class="text-lg text-gray-600 mb-6">
+				<h2 class="text-4xl font-bold text-white mb-4">HMM Exportning Klienti Bo'ling</h2>
+				<p class="text-lg text-gray-300 mb-6">
 					Sizni bizning doimiy mijozlarimiz safida ko‘rishdan mamnunmiz! HMM Export quritilgan mevalar bilan
 					yuqori sifatni taqdim etadi. Agar bizning mahsulotlarimizni olishni istasangiz, so'rov yuboring va
 					tez orada siz bilan bog'lanamiz.
@@ -330,7 +335,7 @@
 					<div class="space-y-4">
 						<!-- Ism -->
 						<div>
-							<label for="name-field" class="pb-2">Ismingiz</label>
+							<label for="name-field" class="pb-2 text-white">Ismingiz</label>
 							<input type="text" name="name" id="name-field"
 								class="w-full py-3 px-6 rounded-lg border border-gray-300 text-gray-800" required
 								placeholder="Ismingiz">
@@ -338,18 +343,10 @@
 
 						<!-- Telefon Raqami -->
 						<div>
-							<label for="subject-field" class="pb-2">Telefon Raqamingiz</label>
-							<input type="text" name="subject" id="subject-field"
+							<label for="phone-field" class="pb-2 text-white">Telefon Raqamingiz</label>
+							<input type="text" name="phone" id="phone-field"
 								class="w-full py-3 px-6 rounded-lg border border-gray-300 text-gray-800" required
 								placeholder="+998 -- --- -- --">
-						</div>
-
-						<!-- Xabar -->
-						<div>
-							<label for="message-field" class="pb-2">Xabar</label>
-							<textarea class="w-full py-3 px-6 rounded-lg border border-gray-300 text-gray-800"
-								name="message" rows="6" id="message-field" required
-								placeholder="Xabar yozing"></textarea>
 						</div>
 
 						<!-- Tugma -->
@@ -366,16 +363,6 @@
 				</form>
 
 			</div>
-
-			<!-- O'ng tomon: Rasmlar -->
-			<div class="relative w-full lg:w-1/2 mt-8 lg:mt-0 flex justify-center items-center">
-				<!-- Rasm 1 -->
-				<div class="w-60 h-60 lg:w-72 lg:h-72 bg-cover bg-center rounded-lg shadow-lg"
-					style="background-image: url('./img/introduction-carousel-2.jpg');"></div>
-				<!-- Rasm 2 (ustma-ust joylashgan) -->
-				<div class="absolute top-10 left-16 lg:top-14 lg:left-20 w-40 h-40 lg:w-48 lg:h-48 bg-cover bg-center rounded-lg shadow-lg border-4 border-white"
-					style="background-image: url('./img/introduction-carousel-4.jpg');"></div>
-			</div>
 		</div>
 	</section>
 
@@ -387,13 +374,12 @@
 				e.preventDefault();
 
 				const name = document.getElementById('name-field').value;
-				const number = document.getElementById('subject-field').value;
-				const message = document.getElementById('message-field').value;
+				const phone = document.getElementById('phone-field').value;
 
 				const telegramBotToken = '7471873187:AAHyO1pnz30aXf-K7kJvKe3WsgPFdE4VyLE';
 				const chatId = '6681379041'; // Replace with your actual chat ID
 
-				const text = `Yangi xabar:\nIsm: ${name}\nTelefon: ${number}\nXabar: ${message}`;
+				const text = `Yangi xabar:\nIsm: ${name}\nTelefon: ${phone}`;
 
 				document.querySelector('.loading').style.display = 'block';
 
@@ -430,8 +416,8 @@
 					});
 			});
 		});
-
 	</script>
+
 
 
 
@@ -459,39 +445,39 @@
 	</section>
 
 	<!-- Footer -->
-	<footer class="bg-gray-900 text-white py-8">
+	<footer class="bg-white text-gray-800 py-8">
 		<div class="container mx-auto px-6 md:px-12">
 			<div class="flex flex-col lg:flex-row justify-between items-center lg:items-start">
 				<!-- Left side: Logo and description -->
 				<div class="mb-6 lg:mb-0 text-center lg:text-left">
-					<h2 class="text-2xl font-extrabold text-green-500">HMM Export</h2>
-					<p class="text-gray-400 text-sm mt-2">Sifatli quritilgan mevalar yetkazib beruvchi kompaniya</p>
+					<h2 class="text-2xl font-extrabold text-green-600">HMM Export</h2>
+					<p class="text-gray-600 text-sm mt-2">Sifatli quritilgan mevalar yetkazib beruvchi kompaniya</p>
 				</div>
 
 				<!-- Center: Quick Links -->
 				<div class="flex flex-col lg:flex-row lg:gap-10 text-center lg:text-left">
 					<div>
-						<h3 class="text-lg font-semibold text-green-500 mb-3">Tezkor Havolalar</h3>
+						<h3 class="text-lg font-semibold text-green-600 mb-3">Tezkor Havolalar</h3>
 						<ul class="space-y-2">
-							<li><a href="#about" class="hover:text-green-400">Biz haqimizda</a></li>
-							<li><a href="#services" class="hover:text-green-400">Xizmatlar</a></li>
-							<li><a href="#contact" class="hover:text-green-400">Bog'lanish</a></li>
-							<li><a href="#privacy" class="hover:text-green-400">Maxfiylik siyosati</a></li>
+							<li><a href="#about" class="hover:text-green-500">Biz haqimizda</a></li>
+							<li><a href="#services" class="hover:text-green-500">Xizmatlar</a></li>
+							<li><a href="#contact" class="hover:text-green-500">Bog'lanish</a></li>
+							<li><a href="#privacy" class="hover:text-green-500">Maxfiylik siyosati</a></li>
 						</ul>
 					</div>
 				</div>
 
 				<!-- Right side: Social Links -->
 				<div class="flex flex-col text-center lg:text-right gap-4">
-					<h3 class="text-lg font-semibold text-green-500">Bizni ijtimoiy tarmoqlarda toping:</h3>
+					<h3 class="text-lg font-semibold text-green-600">Bizni ijtimoiy tarmoqlarda toping:</h3>
 					<div class="flex justify-center lg:justify-end gap-4">
-						<a href="https://www.facebook.com" class="text-gray-400 hover:text-green-400">
+						<a href="https://www.facebook.com" class="text-gray-600 hover:text-green-500">
 							<i class="fab fa-facebook-f text-2xl"></i>
 						</a>
-						<a href="https://www.instagram.com" class="text-gray-400 hover:text-green-400">
+						<a href="https://www.instagram.com" class="text-gray-600 hover:text-green-500">
 							<i class="fab fa-instagram text-2xl"></i>
 						</a>
-						<a href="https://www.twitter.com" class="text-gray-400 hover:text-green-400">
+						<a href="https://www.twitter.com" class="text-gray-600 hover:text-green-500">
 							<i class="fab fa-twitter text-2xl"></i>
 						</a>
 					</div>
@@ -499,11 +485,12 @@
 			</div>
 
 			<!-- Bottom: Copyright -->
-			<div class="mt-8 text-center text-gray-500 text-sm">
+			<div class="mt-8 text-center text-gray-600 text-sm">
 				<p>&copy; 2024 HMM Export. Barcha huquqlar himoyalangan.</p>
 			</div>
 		</div>
 	</footer>
+
 
 
 </body>
