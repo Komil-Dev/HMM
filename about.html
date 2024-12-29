@@ -12,7 +12,13 @@
 	<link rel="icon" href="./img/photo_2024-12-26_16-27-14.jpg" type="image/jpeg" />
 </head>
 
-<body class=" font-serif">
+<body class="font-serif">
+
+	<!-- Loading Screen -->
+	<div id="loading" class="fixed inset-0 bg-white flex justify-center items-center z-50">
+		<div class="animate-spin rounded-full border-t-4 border-green-600 w-16 h-16"></div>
+	</div>
+
 	<header class="fixed top-0 left-0 w-full bg-white shadow-md z-10 h-[10vh]">
 		<div class="container mx-auto px-4 py-3 flex items-center justify-between h-full">
 			<!-- Left Side: Logo -->
@@ -37,8 +43,6 @@
 
 			<!-- Right Side: Phone Number (Hidden on Mobile) -->
 			<div class="hidden sm:flex items-center space-x-2">
-
-
 				<span class="text-green-800 font-bold">📞 +998 90 030 48 68</span>
 			</div>
 		</div>
@@ -78,14 +82,13 @@
 			</nav>
 
 			<div class="absolute bottom-4 flex items-center space-x-2 text-green-800 font-bold font-serif mb-[20%]">
-
 				<span class="text-green-800 font-bold">📞 +998 90 030 48 68</span>
 			</div>
 		</div>
 	</header>
 
-
-	<script>const menuButton = document.getElementById('menuButton');
+	<script>
+		const menuButton = document.getElementById('menuButton');
 		const mobileMenu = document.getElementById('mobileMenu');
 		const closeButton = document.getElementById('closeButton');
 
@@ -97,6 +100,13 @@
 		closeButton.addEventListener('click', () => {
 			mobileMenu.style.transform = 'translateX(-100%)'; // Slide out
 		});
+
+		// Hide the loading screen after 2 seconds
+		window.onload = function () {
+			setTimeout(function () {
+				document.getElementById('loading').style.display = 'none'; // Hide loading screen
+			}, 2000); // 2 seconds delay
+		};
 	</script>
 
 	<!-- Biz haqimizda -->
@@ -146,65 +156,27 @@
 				<div class="text-center">
 					<div class="w-32 h-32 mx-auto rounded-full bg-cover bg-center shadow-lg"
 						style="background-image: url('./img/worker2.jpg');"></div>
-					<h4 class="text-lg font-semibold text-gray-800 mt-4">Nigora Ismoilova</h4>
-					<p class="text-gray-600 text-sm">Marketing bo‘limi boshlig‘i</p>
+					<h4 class="text-lg font-semibold text-gray-800 mt-4">Sardorbek Rahimov</h4>
+					<p class="text-gray-600 text-sm">Kuryer</p>
 				</div>
 				<!-- Ishchi 3 -->
 				<div class="text-center">
 					<div class="w-32 h-32 mx-auto rounded-full bg-cover bg-center shadow-lg"
 						style="background-image: url('./img/worker3.jpg');"></div>
-					<h4 class="text-lg font-semibold text-gray-800 mt-4">Azamat Xudoyberganov</h4>
-					<p class="text-gray-600 text-sm">Sifat nazorati menejeri</p>
+					<h4 class="text-lg font-semibold text-gray-800 mt-4">Alisher Tursunov</h4>
+					<p class="text-gray-600 text-sm">Mijozlar bilan ishlash</p>
 				</div>
 			</div>
 		</div>
 	</section>
+
 	<!-- Footer -->
-	<footer class="bg-white text-gray-800 py-8">
-		<div class="container mx-auto px-6 md:px-12">
-			<div class="flex flex-col lg:flex-row justify-between items-center lg:items-start">
-				<!-- Left side: Logo and description -->
-				<div class="mb-6 lg:mb-0 text-center lg:text-left">
-					<h2 class="text-2xl font-extrabold text-green-600">HMM Export</h2>
-					<p class="text-gray-600 text-sm mt-2">Sifatli quritilgan mevalar yetkazib beruvchi kompaniya</p>
-				</div>
-
-				<!-- Center: Quick Links -->
-				<div class="flex flex-col lg:flex-row lg:gap-10 text-center lg:text-left">
-					<div>
-						<h3 class="text-lg font-semibold text-green-600 mb-3">Tezkor Havolalar</h3>
-						<ul class="space-y-2">
-							<li><a href="#about" class="hover:text-green-500">Biz haqimizda</a></li>
-							<li><a href="#services" class="hover:text-green-500">Xizmatlar</a></li>
-							<li><a href="#contact" class="hover:text-green-500">Bog'lanish</a></li>
-							<li><a href="#privacy" class="hover:text-green-500">Maxfiylik siyosati</a></li>
-						</ul>
-					</div>
-				</div>
-
-				<!-- Right side: Social Links -->
-				<div class="flex flex-col text-center lg:text-right gap-4">
-					<h3 class="text-lg font-semibold text-green-600">Bizni ijtimoiy tarmoqlarda toping:</h3>
-					<div class="flex justify-center lg:justify-end gap-4">
-						<a href="https://www.facebook.com" class="text-gray-600 hover:text-green-500">
-							<i class="fab fa-facebook-f text-2xl"></i>
-						</a>
-						<a href="https://www.instagram.com" class="text-gray-600 hover:text-green-500">
-							<i class="fab fa-instagram text-2xl"></i>
-						</a>
-						<a href="https://www.twitter.com" class="text-gray-600 hover:text-green-500">
-							<i class="fab fa-twitter text-2xl"></i>
-						</a>
-					</div>
-				</div>
-			</div>
-
-			<!-- Bottom: Copyright -->
-			<div class="mt-8 text-center text-gray-600 text-sm">
-				<p>&copy; 2024 HMM Export. Barcha huquqlar himoyalangan.</p>
-			</div>
+	<footer class="bg-green-800 text-white py-4">
+		<div class="container mx-auto text-center">
+			<p class="text-sm">&copy; 2024 HMM Export. Barcha huquqlar himoyalangan.</p>
 		</div>
 	</footer>
+
 </body>
 
 </html>

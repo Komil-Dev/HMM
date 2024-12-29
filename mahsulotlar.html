@@ -13,7 +13,10 @@
 </head>
 
 <body class="font-sans bg-gray-50">
-
+	<!-- Loading Screen -->
+	<div id="loading" class="fixed inset-0 bg-white flex justify-center items-center z-50">
+		<div class="animate-spin rounded-full border-t-4 border-green-600 w-16 h-16"></div>
+	</div>
 	<header class="fixed top-0 left-0 w-full bg-white shadow-md z-10 h-[10vh]">
 		<div class="container mx-auto px-4 py-3 flex items-center justify-between h-full">
 			<!-- Left Side: Logo -->
@@ -98,6 +101,11 @@
 		closeButton.addEventListener('click', () => {
 			mobileMenu.style.transform = 'translateX(-100%)'; // Slide out
 		});
+		window.onload = function () {
+			setTimeout(function () {
+				document.getElementById('loading').style.display = 'none'; // Hide loading screen
+			}, 1000); // 2 seconds delay
+		};
 	</script>
 
 	<!-- Product Category Section -->
