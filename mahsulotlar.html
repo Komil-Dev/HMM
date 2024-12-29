@@ -13,11 +13,9 @@
 
 <body>
 
-
 	<!-- Navbar -->
 	<header class="fixed top-0 left-0 w-full bg-white shadow-md z-10 h-[10vh]">
 		<div class="container mx-auto px-4 py-3 flex items-center justify-between h-full">
-			<!-- Left Side: Logo -->
 			<h1 class="text-green-800 font-bold text-xl font-serif">HMM</h1>
 
 			<!-- Menu Toggle for Mobile -->
@@ -31,7 +29,7 @@
 			<!-- Center: Navigation Menu (Hidden on Mobile, shows on desktop) -->
 			<nav id="navMenu" class="hidden sm:flex space-x-8 font-serif text-green-800">
 				<a href="./index.html" class="hover:text-green-600 font-bold">Bosh sahifa</a>
-				<a href=".//mahsulotlar.html" class="hover:text-green-600 font-bold">Mahsulotlar</a>
+				<a href="./mahsulotlar.html" class="hover:text-green-600 font-bold">Mahsulotlar</a>
 				<a href="./about.html" class="hover:text-green-600 font-bold">Biz haqimizda</a>
 				<a href="#certificates" class="hover:text-green-600 font-bold">Sertifikatlar</a>
 				<a href="#contact" class="hover:text-green-600 font-bold">Aloqa</a>
@@ -39,8 +37,6 @@
 
 			<!-- Right Side: Phone Number (Hidden on Mobile) -->
 			<div class="hidden sm:flex items-center space-x-2">
-
-
 				<span class="text-green-800 font-bold">📞 +998 90 030 48 68</span>
 			</div>
 		</div>
@@ -80,14 +76,13 @@
 			</nav>
 
 			<div class="absolute bottom-4 flex items-center space-x-2 text-green-800 font-bold font-serif mb-[20%]">
-
 				<span class="text-green-800 font-bold">📞 +998 90 030 48 68</span>
 			</div>
 		</div>
 	</header>
 
-
-	<script>const menuButton = document.getElementById('menuButton');
+	<script>
+		const menuButton = document.getElementById('menuButton');
 		const mobileMenu = document.getElementById('mobileMenu');
 		const closeButton = document.getElementById('closeButton');
 
@@ -101,18 +96,52 @@
 		});
 	</script>
 
-	<!-- Product Section -->
-	<section id="products" class="products section py-10">
+	<!-- Product Category Section -->
+	<section id="product-categories" class="products section py-10">
 		<div class="container mx-auto text-center mb-8">
-			<h2 class="text-3xl font-semibold">Mahsulotlarimiz</h2>
-			<p class="mt-4 text-lg">Bizning quruq mevalarimiz yuqori sifatli va tabiiy mahsulotlar bilan to'ldirilgan.
-				Siz uchun eng yaxshi mevalar taqdim etiladi.</p>
+			<h2 class="text-3xl font-semibold">Mahsulotlar Kategoriyalari</h2>
+			<p class="mt-4 text-lg">Har bir kategoriyadagi quruq mevalarni ko'ring.</p>
 		</div>
 
-		<div class="container mx-auto px-4">
-			<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+		<div class="flex justify-center space-x-8 mb-8">
+			<button id="apricots" class="category-button text-green-900 py-2 px-6 font-semibold">
+				Apricotlar
+			</button>
+			<button id="apples" class="category-button text-green-900 py-2 px-6 font-semibold">
+				Quruq Olma
+			</button>
+			<button id="figs" class="category-button text-green-900 py-2 px-6 font-semibold">
+				Quruq Anjir
+			</button>
+			<button id="magic-sliva" class="category-button text-green-900 py-2 px-6 font-semibold">
+				Magiz Sliva
+			</button>
+			<button id="orik" class="category-button text-green-900 py-2 px-6 font-semibold">
+				O'rik
+			</button>
+		</div>
 
-				<!-- Product Card 1 -->
+		<div id="product-cards"
+			class="container mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+
+			<!-- Apricot Category Cards (10 cards) -->
+			<div id="apricot-card" class="category-cards">
+				<!-- Repeat this structure for 10 products -->
+				<div class="bg-white rounded-lg shadow-lg overflow-hidden max-w-full sm:max-w-xs mx-auto">
+					<img src="./assets/img/dried-apricot.jpg" alt="Quruq Apricot" class="w-full h-48 object-cover">
+					<div class="p-4">
+						<h3 class="text-xl font-semibold">Quruq Apricot</h3>
+						<p class="mt-2">Tabiiy va mazali quruq apricotlar, siz uchun eng yaxshisi.</p>
+						<a href="/aloqa"
+							class="block mt-4 bg-green-900 text-white py-2 px-4 rounded-lg text-center hover:bg-green-600 transition duration-300 ease-in-out">Buyurtma
+							berish</a>
+					</div>
+				</div>
+				<!-- Repeat for other Apricot products (9 more cards) -->
+			</div>
+
+			<!-- Apple Category Cards (10 cards) -->
+			<div id="apple-card" class="category-cards">
 				<div class="bg-white rounded-lg shadow-lg overflow-hidden max-w-full sm:max-w-xs mx-auto">
 					<img src="./assets/img/dried-apple.jpg" alt="Quruq Olma" class="w-full h-48 object-cover">
 					<div class="p-4">
@@ -123,22 +152,11 @@
 							berish</a>
 					</div>
 				</div>
+				<!-- Repeat for other Apple products (9 more cards) -->
+			</div>
 
-				<!-- Product Card 2 -->
-				<div class="bg-white rounded-lg shadow-lg overflow-hidden max-w-full sm:max-w-xs mx-auto">
-					<img src="./assets/img/dried-banana.jpg" alt="Quruq Banan" class="w-full h-48 object-cover">
-					<div class="p-4">
-						<h3 class="text-xl font-semibold">Quruq Banan</h3>
-						<p class="mt-2">Sog'lom va mazali quruq banan, har doim eng yaxshi sifatda.</p>
-						<a href="/aloqa"
-							class="block mt-4 bg-green-900 text-white py-2 px-4 rounded-lg text-center hover:bg-green-600 transition duration-300 ease-in-out">Buyurtma
-							berish</a>
-					</div>
-				</div>
-
-
-
-				<!-- Product Card 5 -->
+			<!-- Figs Category Cards (10 cards) -->
+			<div id="fig-card" class="category-cards">
 				<div class="bg-white rounded-lg shadow-lg overflow-hidden max-w-full sm:max-w-xs mx-auto">
 					<img src="./assets/img/dried-figs.jpg" alt="Quruq Anjir" class="w-full h-48 object-cover">
 					<div class="p-4">
@@ -149,70 +167,69 @@
 							berish</a>
 					</div>
 				</div>
+				<!-- Repeat for other Figs products (9 more cards) -->
+			</div>
 
-				<!-- Product Card 6 -->
-				<!-- Product Card -->
+			<!-- Magic Sliva Category Cards (10 cards) -->
+			<div id="magic-sliva-card" class="category-cards">
 				<div class="bg-white rounded-lg shadow-lg overflow-hidden max-w-full sm:max-w-xs mx-auto">
-					<img src="./assets/img/dried-apple.jpg" alt="Quruq Olma" class="w-full h-48 object-cover">
+					<img src="./assets/img/magic-sliva.jpg" alt="Magiz Sliva" class="w-full h-48 object-cover">
 					<div class="p-4">
-						<h3 class="text-xl font-semibold">Quruq Olma</h3>
-						<p class="mt-2">Tabiiy quruq olma, ajoyib ta'm va foydali xususiyatlarga ega.</p>
+						<h3 class="text-xl font-semibold">Magiz duration-300 ease-in-out">Buyurtma berish</a>
+					</div>
+				</div>
+				<!-- Repeat for other Magic Sliva products (9 more cards) -->
+			</div>
+
+			<!-- O'rik Category Cards (10 cards) -->
+			<div id="orik-card" class="category-cards">
+				<div class="bg-white rounded-lg shadow-lg overflow-hidden max-w-full sm:max-w-xs mx-auto">
+					<img src="./assets/img/dried-orik.jpg" alt="O'rik" class="w-full h-48 object-cover">
+					<div class="p-4">
+						<h3 class="text-xl font-semibold">O'rik</h3>
+						<p class="mt-2">Mazali va foydali quruq o'rik mahsulotlari.</p>
 						<a href="/aloqa"
 							class="block mt-4 bg-green-900 text-white py-2 px-4 rounded-lg text-center hover:bg-green-600 transition duration-300 ease-in-out">Buyurtma
 							berish</a>
 					</div>
 				</div>
-
-
+				<!-- Repeat for other O'rik products (9 more cards) -->
 			</div>
+
 		</div>
 	</section>
+
 	<!-- Footer -->
-	<footer class="bg-white text-gray-800 py-8">
-		<div class="container mx-auto px-6 md:px-12">
-			<div class="flex flex-col lg:flex-row justify-between items-center lg:items-start">
-				<!-- Left side: Logo and description -->
-				<div class="mb-6 lg:mb-0 text-center lg:text-left">
-					<h2 class="text-2xl font-extrabold text-green-600">HMM Export</h2>
-					<p class="text-gray-600 text-sm mt-2">Sifatli quritilgan mevalar yetkazib beruvchi kompaniya</p>
-				</div>
-
-				<!-- Center: Quick Links -->
-				<div class="flex flex-col lg:flex-row lg:gap-10 text-center lg:text-left">
-					<div>
-						<h3 class="text-lg font-semibold text-green-600 mb-3">Tezkor Havolalar</h3>
-						<ul class="space-y-2">
-							<li><a href="#about" class="hover:text-green-500">Biz haqimizda</a></li>
-							<li><a href="#services" class="hover:text-green-500">Xizmatlar</a></li>
-							<li><a href="#contact" class="hover:text-green-500">Bog'lanish</a></li>
-							<li><a href="#privacy" class="hover:text-green-500">Maxfiylik siyosati</a></li>
-						</ul>
-					</div>
-				</div>
-
-				<!-- Right side: Social Links -->
-				<div class="flex flex-col text-center lg:text-right gap-4">
-					<h3 class="text-lg font-semibold text-green-600">Bizni ijtimoiy tarmoqlarda toping:</h3>
-					<div class="flex justify-center lg:justify-end gap-4">
-						<a href="https://www.facebook.com" class="text-gray-600 hover:text-green-500">
-							<i class="fab fa-facebook-f text-2xl"></i>
-						</a>
-						<a href="https://www.instagram.com" class="text-gray-600 hover:text-green-500">
-							<i class="fab fa-instagram text-2xl"></i>
-						</a>
-						<a href="https://www.twitter.com" class="text-gray-600 hover:text-green-500">
-							<i class="fab fa-twitter text-2xl"></i>
-						</a>
-					</div>
-				</div>
-			</div>
-
-			<!-- Bottom: Copyright -->
-			<div class="mt-8 text-center text-gray-600 text-sm">
-				<p>&copy; 2024 HMM Export. Barcha huquqlar himoyalangan.</p>
-			</div>
+	<footer class="bg-green-900 text-white py-6">
+		<div class="container mx-auto text-center">
+			<p class="text-sm">&copy; 2024 HMM. Barcha huquqlar himoyalangan.</p>
 		</div>
 	</footer>
+
+	<!-- JavaScript to Show Category Cards -->
+	<script>
+		const categoryButtons = document.querySelectorAll(".category-button");
+		const allCategoryCards = document.querySelectorAll(".category-cards");
+
+		// Show all products by default
+		allCategoryCards.forEach(card => card.style.display = "block");
+
+		// Add click event to category buttons
+		categoryButtons.forEach(button => {
+			button.addEventListener("click", () => {
+				const categoryId = button.id + "-card";
+
+				// Hide all category cards
+				allCategoryCards.forEach(card => card.style.display = "none");
+
+				// Show only the selected category
+				const selectedCategory = document.getElementById(categoryId);
+				if (selectedCategory) {
+					selectedCategory.style.display = "block";
+				}
+			});
+		});
+	</script>
 
 </body>
 
