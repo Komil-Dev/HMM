@@ -2,13 +2,17 @@
 <html lang="uz">
 
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Biz haqimizda</title>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Simple Page with Tailwind CSS</title>
 	<script src="https://cdn.tailwindcss.com"></script>
+	<script src="https://cdn.jsdelivr.net/npm/heroicons@1.0.6/solid/phone-icon.js"></script>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
+	<!-- Add favicon -->
+	<link rel="icon" href="./img/photo_2024-12-26_16-27-14.jpg" type="image/jpeg" />
 </head>
 
-<body class="bg-gray-50 text-gray-800 font-serif">
+<body class=" font-serif">
 	<header class="fixed top-0 left-0 w-full bg-white shadow-md z-10 h-[10vh]">
 		<div class="container mx-auto px-4 py-3 flex items-center justify-between h-full">
 			<!-- Left Side: Logo -->
@@ -25,7 +29,7 @@
 			<!-- Center: Navigation Menu (Hidden on Mobile, shows on desktop) -->
 			<nav id="navMenu" class="hidden sm:flex space-x-8 font-serif text-green-800">
 				<a href="./index.html" class="hover:text-green-600 font-bold">Bosh sahifa</a>
-				<a href="#products" class="hover:text-green-600 font-bold">Mahsulotlar</a>
+				<a href=".//mahsulotlar.html" class="hover:text-green-600 font-bold">Mahsulotlar</a>
 				<a href="./about.html" class="hover:text-green-600 font-bold">Biz haqimizda</a>
 				<a href="#certificates" class="hover:text-green-600 font-bold">Sertifikatlar</a>
 				<a href="#contact" class="hover:text-green-600 font-bold">Aloqa</a>
@@ -51,11 +55,11 @@
 			</button>
 
 			<nav class="flex flex-col space-y-6 text-green-800 font-serif text-center">
-				<a href="index.html"
+				<a href="./index.html"
 					class="hover:text-green-600 font-bold text-xl transition-transform transform hover:scale-110">
 					Bosh sahifa
 				</a>
-				<a href="#products"
+				<a href="./mahsulotlar.html"
 					class="hover:text-green-600 font-bold text-xl transition-transform transform hover:scale-110">
 					Mahsulotlar
 				</a>
