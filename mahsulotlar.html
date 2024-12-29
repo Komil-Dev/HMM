@@ -5,20 +5,20 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Mahsulotlar - Quruq Mevalar</title>
+	<meta name="description"
+		content="HMM eksport mahsulotlari - yuqori sifatli quruq mevalar. Apricotlar, quruq olma, anjir va boshqa mahsulotlarni ko'rib chiqing.">
 	<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 	<script src="https://cdn.tailwindcss.com"></script>
-	<script src="https://cdn.jsdelivr.net/npm/heroicons@1.0.6/solid/phone-icon.js"></script>
 	<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
 </head>
 
-<body>
+<body class="font-sans bg-gray-50">
 
 	<!-- Navbar -->
 	<header class="fixed top-0 left-0 w-full bg-white shadow-md z-10 h-[10vh]">
 		<div class="container mx-auto px-4 py-3 flex items-center justify-between h-full">
 			<h1 class="text-green-800 font-bold text-xl font-serif">HMM</h1>
 
-			<!-- Menu Toggle for Mobile -->
 			<button id="menuButton" class="sm:hidden cursor-pointer">
 				<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
 					class="w-6 h-6 text-green-800">
@@ -26,7 +26,6 @@
 				</svg>
 			</button>
 
-			<!-- Center: Navigation Menu (Hidden on Mobile, shows on desktop) -->
 			<nav id="navMenu" class="hidden sm:flex space-x-8 font-serif text-green-800">
 				<a href="./index.html" class="hover:text-green-600 font-bold">Bosh sahifa</a>
 				<a href="./mahsulotlar.html" class="hover:text-green-600 font-bold">Mahsulotlar</a>
@@ -35,167 +34,38 @@
 				<a href="#contact" class="hover:text-green-600 font-bold">Aloqa</a>
 			</nav>
 
-			<!-- Right Side: Phone Number (Hidden on Mobile) -->
 			<div class="hidden sm:flex items-center space-x-2">
-				<span class="text-green-800 font-bold">📞 +998 90 030 48 68</span>
-			</div>
-		</div>
-
-		<!-- Mobile Menu (Initially hidden) -->
-		<div id="mobileMenu"
-			class="absolute left-0 w-full top-0 h-[100vh] bg-white transform transition-transform duration-500 ease-in-out translate-x-[-100%] sm:hidden flex flex-col justify-center items-center py-4 px-6">
-			<!-- Close Button -->
-			<button id="closeButton" class="absolute top-4 right-6 text-green-800">
-				<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-					class="w-6 h-6">
-					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-				</svg>
-			</button>
-
-			<nav class="flex flex-col space-y-6 text-green-800 font-serif text-center">
-				<a href="./index.html"
-					class="hover:text-green-600 font-bold text-xl transition-transform transform hover:scale-110">
-					Bosh sahifa
-				</a>
-				<a href="./mahsulotlar.html"
-					class="hover:text-green-600 font-bold text-xl transition-transform transform hover:scale-110">
-					Mahsulotlar
-				</a>
-				<a href="./about.html"
-					class="hover:text-green-600 font-bold text-xl transition-transform transform hover:scale-110">
-					Biz haqimizda
-				</a>
-				<a href="#certificates"
-					class="hover:text-green-600 font-bold text-xl transition-transform transform hover:scale-110">
-					Sertifikatlar
-				</a>
-				<a href="#contact"
-					class="hover:text-green-600 font-bold text-xl transition-transform transform hover:scale-110">
-					Aloqa
-				</a>
-			</nav>
-
-			<div class="absolute bottom-4 flex items-center space-x-2 text-green-800 font-bold font-serif mb-[20%]">
 				<span class="text-green-800 font-bold">📞 +998 90 030 48 68</span>
 			</div>
 		</div>
 	</header>
 
-	<script>
-		const menuButton = document.getElementById('menuButton');
-		const mobileMenu = document.getElementById('mobileMenu');
-		const closeButton = document.getElementById('closeButton');
-
-		// Toggle menu open/close
-		menuButton.addEventListener('click', () => {
-			mobileMenu.style.transform = 'translateX(0%)'; // Slide in
-		});
-
-		closeButton.addEventListener('click', () => {
-			mobileMenu.style.transform = 'translateX(-100%)'; // Slide out
-		});
-	</script>
-
 	<!-- Product Category Section -->
-	<section id="product-categories" class="products section py-10">
+	<section id="product-categories" class="products section py-10 mt-[10vh]">
 		<div class="container mx-auto text-center mb-8">
 			<h2 class="text-3xl font-semibold">Mahsulotlar Kategoriyalari</h2>
 			<p class="mt-4 text-lg">Har bir kategoriyadagi quruq mevalarni ko'ring.</p>
 		</div>
 
-		<div class="flex justify-center space-x-8 mb-8">
-			<button id="apricots" class="category-button text-green-900 py-2 px-6 font-semibold">
-				Apricotlar
-			</button>
-			<button id="apples" class="category-button text-green-900 py-2 px-6 font-semibold">
-				Quruq Olma
-			</button>
-			<button id="figs" class="category-button text-green-900 py-2 px-6 font-semibold">
-				Quruq Anjir
-			</button>
-			<button id="magic-sliva" class="category-button text-green-900 py-2 px-6 font-semibold">
-				Magiz Sliva
-			</button>
-			<button id="orik" class="category-button text-green-900 py-2 px-6 font-semibold">
-				O'rik
-			</button>
+		<div class="flex justify-center space-x-4 mb-8 flex-wrap">
+			<button id="apricots"
+				class="category-button active-category text-green-900 py-2 px-6 font-semibold border border-green-800 rounded hover:bg-green-800 hover:text-white transition duration-300">Apricotlar</button>
+			<button id="apples"
+				class="category-button text-green-900 py-2 px-6 font-semibold border border-green-800 rounded hover:bg-green-800 hover:text-white transition duration-300">Quruq
+				Olma</button>
+			<button id="figs"
+				class="category-button text-green-900 py-2 px-6 font-semibold border border-green-800 rounded hover:bg-green-800 hover:text-white transition duration-300">Quruq
+				Anjir</button>
+			<button id="magic-sliva"
+				class="category-button text-green-900 py-2 px-6 font-semibold border border-green-800 rounded hover:bg-green-800 hover:text-white transition duration-300">Magiz
+				Sliva</button>
+			<button id="orik"
+				class="category-button text-green-900 py-2 px-6 font-semibold border border-green-800 rounded hover:bg-green-800 hover:text-white transition duration-300">O'rik</button>
 		</div>
 
 		<div id="product-cards"
 			class="container mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-
-			<!-- Apricot Category Cards (10 cards) -->
-			<div id="apricot-card" class="category-cards">
-				<!-- Repeat this structure for 10 products -->
-				<div class="bg-white rounded-lg shadow-lg overflow-hidden max-w-full sm:max-w-xs mx-auto">
-					<img src="./assets/img/dried-apricot.jpg" alt="Quruq Apricot" class="w-full h-48 object-cover">
-					<div class="p-4">
-						<h3 class="text-xl font-semibold">Quruq Apricot</h3>
-						<p class="mt-2">Tabiiy va mazali quruq apricotlar, siz uchun eng yaxshisi.</p>
-						<a href="/aloqa"
-							class="block mt-4 bg-green-900 text-white py-2 px-4 rounded-lg text-center hover:bg-green-600 transition duration-300 ease-in-out">Buyurtma
-							berish</a>
-					</div>
-				</div>
-				<!-- Repeat for other Apricot products (9 more cards) -->
-			</div>
-
-			<!-- Apple Category Cards (10 cards) -->
-			<div id="apple-card" class="category-cards">
-				<div class="bg-white rounded-lg shadow-lg overflow-hidden max-w-full sm:max-w-xs mx-auto">
-					<img src="./assets/img/dried-apple.jpg" alt="Quruq Olma" class="w-full h-48 object-cover">
-					<div class="p-4">
-						<h3 class="text-xl font-semibold">Quruq Olma</h3>
-						<p class="mt-2">Tabiiy quruq olma, ajoyib ta'm va foydali xususiyatlarga ega.</p>
-						<a href="/aloqa"
-							class="block mt-4 bg-green-900 text-white py-2 px-4 rounded-lg text-center hover:bg-green-600 transition duration-300 ease-in-out">Buyurtma
-							berish</a>
-					</div>
-				</div>
-				<!-- Repeat for other Apple products (9 more cards) -->
-			</div>
-
-			<!-- Figs Category Cards (10 cards) -->
-			<div id="fig-card" class="category-cards">
-				<div class="bg-white rounded-lg shadow-lg overflow-hidden max-w-full sm:max-w-xs mx-auto">
-					<img src="./assets/img/dried-figs.jpg" alt="Quruq Anjir" class="w-full h-48 object-cover">
-					<div class="p-4">
-						<h3 class="text-xl font-semibold">Quruq Anjir</h3>
-						<p class="mt-2">Tabiiy quruq anjir, ko'plab foydali xususiyatlari bilan mashhur.</p>
-						<a href="/aloqa"
-							class="block mt-4 bg-green-900 text-white py-2 px-4 rounded-lg text-center hover:bg-green-600 transition duration-300 ease-in-out">Buyurtma
-							berish</a>
-					</div>
-				</div>
-				<!-- Repeat for other Figs products (9 more cards) -->
-			</div>
-
-			<!-- Magic Sliva Category Cards (10 cards) -->
-			<div id="magic-sliva-card" class="category-cards">
-				<div class="bg-white rounded-lg shadow-lg overflow-hidden max-w-full sm:max-w-xs mx-auto">
-					<img src="./assets/img/magic-sliva.jpg" alt="Magiz Sliva" class="w-full h-48 object-cover">
-					<div class="p-4">
-						<h3 class="text-xl font-semibold">Magiz duration-300 ease-in-out">Buyurtma berish</a>
-					</div>
-				</div>
-				<!-- Repeat for other Magic Sliva products (9 more cards) -->
-			</div>
-
-			<!-- O'rik Category Cards (10 cards) -->
-			<div id="orik-card" class="category-cards">
-				<div class="bg-white rounded-lg shadow-lg overflow-hidden max-w-full sm:max-w-xs mx-auto">
-					<img src="./assets/img/dried-orik.jpg" alt="O'rik" class="w-full h-48 object-cover">
-					<div class="p-4">
-						<h3 class="text-xl font-semibold">O'rik</h3>
-						<p class="mt-2">Mazali va foydali quruq o'rik mahsulotlari.</p>
-						<a href="/aloqa"
-							class="block mt-4 bg-green-900 text-white py-2 px-4 rounded-lg text-center hover:bg-green-600 transition duration-300 ease-in-out">Buyurtma
-							berish</a>
-					</div>
-				</div>
-				<!-- Repeat for other O'rik products (9 more cards) -->
-			</div>
-
+			<!-- Cards will be dynamically inserted here -->
 		</div>
 	</section>
 
@@ -206,30 +76,85 @@
 		</div>
 	</footer>
 
-	<!-- JavaScript to Show Category Cards -->
+	<!-- JavaScript to Show Cards -->
+	<!-- JavaScript to Show Cards -->
 	<script>
+		const products = {
+			apricots: [
+				{ title: "Quruq Apricot", img: "./img/introduction-carousel-2.jpg", desc: "Mazali quruq apricotlar." },
+				{ title: "Apricot Mix", img: "./img/introduction-carousel-2.jpg", desc: "Turli xil aralashmalar." },
+				{ title: "Apricot Deluxe", img: "./img/introduction-carousel-2.jpg", desc: "Yuqori sifatli apricotlar." },
+				{ title: "Apricot Max", img: "./img/introduction-carousel-2.jpg", desc: "Cheksiz mazali." },
+				{ title: "Apricot Premium", img: "./img/introduction-carousel-2.jpg", desc: "Eksklyuziv mahsulot." },
+			],
+			apples: [
+				{ title: "Quruq Olma", img: "./img/photo_2024-12-26_16-27-14.jpg", desc: "Foydali va mazali." },
+				{ title: "Apple Rings", img: "./assets/img/dried-apple.jpg", desc: "Ajoyib ko'rinish." },
+				{ title: "Apple Snacks", img: "./assets/img/dried-apple.jpg", desc: "Tabiiy snack." },
+				{ title: "Sweet Apple", img: "./assets/img/dried-apple.jpg", desc: "Shirin olma." },
+				{ title: "Premium Apple", img: "./assets/img/dried-apple.jpg", desc: "Sifatli tanlov." },
+			],
+			figs: [
+				{ title: "Quruq Anjir", img: "./assets/img/dried-figs.jpg", desc: "Sog'liq uchun foydali." },
+				{ title: "Fig Mix", img: "./assets/img/dried-figs.jpg", desc: "Turli xil aralashmalar." },
+				{ title: "Deluxe Figs", img: "./assets/img/dried-figs.jpg", desc: "Yuqori sifat." },
+				{ title: "Sweet Fig", img: "./assets/img/dried-figs.jpg", desc: "Tabiiy shirinlik." },
+				{ title: "Premium Fig", img: "./assets/img/dried-figs.jpg", desc: "Eksklyuziv mahsulot." },
+			],
+			"magic-sliva": [
+				{ title: "Magiz Sliva", img: "./assets/img/magic-sliva.jpg", desc: "Mazali quruq meva." },
+				{ title: "Sliva Mix", img: "./assets/img/magic-sliva.jpg", desc: "Turli xil aralashmalar." },
+				{ title: "Deluxe Sliva", img: "./assets/img/magic-sliva.jpg", desc: "Yuqori sifat." },
+				{ title: "Sweet Sliva", img: "./assets/img/magic-sliva.jpg", desc: "Tabiiy shirinlik." },
+				{ title: "Premium Sliva", img: "./assets/img/magic-sliva.jpg", desc: "Eksklyuziv mahsulot." },
+			],
+			orik: [
+				{ title: "O'rik", img: "./assets/img/dried-orik.jpg", desc: "Tabiiy quruq o'rik." },
+				{ title: "O'rik Mix", img: "./assets/img/dried-orik.jpg", desc: "Aralashmalar." },
+				{ title: "O'rik Deluxe", img: "./assets/img/dried-orik.jpg", desc: "Yuqori sifat." },
+				{ title: "Sweet O'rik", img: "./assets/img/dried-orik.jpg", desc: "Mazali o'rik." },
+				{ title: "Premium O'rik", img: "./assets/img/dried-orik.jpg", desc: "Eksklyuziv mahsulot." },
+			],
+		};
+		const productCards = document.getElementById("product-cards");
 		const categoryButtons = document.querySelectorAll(".category-button");
-		const allCategoryCards = document.querySelectorAll(".category-cards");
 
-		// Show all products by default
-		allCategoryCards.forEach(card => card.style.display = "block");
+		function displayProducts(category) {
+			productCards.innerHTML = ""; // Clear existing cards
 
-		// Add click event to category buttons
+			products[category].forEach(product => {
+				const card = `
+					<div class="bg-white rounded-lg shadow-lg overflow-hidden max-w-full sm:max-w-xs w-96 mx-auto">
+						<img src="${product.img}" alt="${product.title}" loading="lazy" class="w-full h-48 object-cover">
+						<div class="p-4">
+							<h3 class="text-xl font-semibold">${product.title}</h3>
+							<p class="mt-2">${product.desc}</p>
+							<a href="/aloqa" class="block mt-4 bg-green-900 text-white py-2 px-4 rounded-lg text-center hover:bg-green-600 transition duration-300 ease-in-out">Buyurtma berish</a>
+						</div>
+					</div>
+				`;
+				productCards.innerHTML += card;
+			});
+		}
+
 		categoryButtons.forEach(button => {
-			button.addEventListener("click", () => {
-				const categoryId = button.id + "-card";
-
-				// Hide all category cards
-				allCategoryCards.forEach(card => card.style.display = "none");
-
-				// Show only the selected category
-				const selectedCategory = document.getElementById(categoryId);
-				if (selectedCategory) {
-					selectedCategory.style.display = "block";
-				}
+			button.addEventListener("click", (e) => {
+				categoryButtons.forEach(btn => btn.classList.remove("active-category"));
+				e.target.classList.add("active-category");
+				displayProducts(button.id);
 			});
 		});
+
+		// Display default category (apricots) on load
+		displayProducts("apricots");
 	</script>
+
+	<style>
+		.active-category {
+			background-color: #15803d;
+			color: white;
+		}
+	</style>
 
 </body>
 
