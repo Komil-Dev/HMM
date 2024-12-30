@@ -549,6 +549,118 @@
 			</div>
 		</div>
 	</section>
+	<!-- Aloqa ma'lumotlari bo'limi -->
+	<section id="contact-info" class="bg-gray-100 py-16">
+		<div class="container mx-auto px-6 lg:px-12">
+			<h2 class="text-4xl font-bold text-center text-green-800 mb-8">Biz bilan bog'lanish</h2>
+			<div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+				<!-- Chap tomon: Manzil ma'lumotlari -->
+				<div class="lg:col-span-1">
+					<div class="space-y-6">
+						<!-- Manzil -->
+						<div class="manzil-item p-4">
+							<h3 class="text-2xl font-semibold text-gray-800 hover:text-green-800">
+								Davlat: O‘zbekiston
+							</h3>
+							<hr class="border-green-800 my-4" />
+							<p class="text-xl text-gray-700">Viloyat: Samarqand</p>
+							<hr class="border-green-800 my-4" />
+							<p class="text-xl text-gray-700">Shahar: Samarqand shahri</p>
+							<hr class="border-green-800 my-4" />
+							<p class="text-xl text-gray-700">Tuman: Samarkand tuman</p>
+						</div>
+					</div>
+				</div>
+
+				<!-- O'ng tomon: Xarita (kengroq) -->
+				<div class="lg:col-span-2">
+					<iframe id="map"
+						src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2994.7214860974377!2d66.978913815269!3d39.65486597946014!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f4d19b0cf824a69%3A0xa1af6cbd2ec20702!2sSamarkand%2C%20Uzbekistan!5e0!3m2!1sen!2sus!4v1676961268712!5m2!1sen!2sus"
+						class="w-full h-[60vh] rounded-lg shadow-lg border-4 border-green-800" style="border:0;"
+						allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+
+
+
+	<!-- Forma bo'limi -->
+	<!-- Forma bo'limi -->
+	<section id="contact-form" class="relative py-16 bg-cover bg-center h-[80vh]"
+		style="background-image: url('./img/introduction-carousel-4.jpg');">
+		<div class="absolute inset-0 bg-black bg-opacity-60"></div>
+		<div class="container mx-auto px-6 lg:px-12 relative z-10">
+			<div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+				<!-- Forma bo'limi -->
+				<div class="bg-transparent p-8 shadow-lg rounded-lg space-y-6">
+
+
+					<!-- Form -->
+					<form id="contactForm" class="space-y-6 mt-[-5%]">
+						<div>
+							<label for="name-field" class="block text-white font-medium mb-2">Ismingiz</label>
+							<input type="text" name="name" id="name-field"
+								class="w-full p-3 border border-gray-300 rounded-lg text-white bg-transparent placeholder-white"
+								required />
+						</div>
+						<hr class="border-white opacity-50" />
+						<div>
+							<label for="subject-field" class="block text-white font-medium mb-2">Telefon raqam</label>
+							<input type="text" name="subject" id="subject-field" placeholder="+998 -- --- -- --"
+								class="w-full p-3 border border-gray-300 rounded-lg text-white bg-transparent placeholder-white"
+								required />
+						</div>
+						<hr class="border-white opacity-50" />
+						<div>
+							<label for="message-field" class="block text-white font-medium mb-2">Xabaringiz</label>
+							<textarea name="message" id="message-field" rows="2"
+								class="w-full p-3 border border-gray-300 rounded-lg text-white bg-transparent placeholder-white"
+								required></textarea>
+						</div>
+						<hr class="border-white opacity-50" />
+						<div class="text-center">
+							<button type="submit"
+								class="px-6 py-3 bg-green-800 text-white font-medium rounded-lg hover:bg-green-700 transition">Xabarni
+								yuboring</button>
+						</div>
+					</form>
+				</div>
+
+				<!-- Kompaniya ma'lumotlari bo'limi -->
+				<div class="space-y-6">
+					<div class="space-y-4">
+						<div class="flex items-center space-x-4">
+							<i class="bi bi-geo-alt text-white text-2xl"></i>
+							<div>
+								<h3 class="text-xl font-semibold text-white">Manzil</h3>
+								<p class="text-white">Samarqand, O‘zbekiston</p>
+							</div>
+						</div>
+						<hr class="border-white opacity-50" />
+						<div class="flex items-center space-x-4">
+							<i class="bi bi-telephone text-white text-2xl"></i>
+							<div>
+								<h3 class="text-xl font-semibold text-white">Qo'ng'iroq qiling</h3>
+								<p class="text-white">+998 33 126 16 26</p>
+							</div>
+						</div>
+						<hr class="border-white opacity-50" />
+						<div class="flex items-center space-x-4">
+							<i class="bi bi-clock text-white text-2xl"></i>
+							<div>
+								<h3 class="text-xl font-semibold text-white">Ish vaqti</h3>
+								<p class="text-white">Du-Sh: 9:00-21:00</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
 
 	<!-- Footer -->
 	<footer class="bg-white text-gray-800 py-8">
