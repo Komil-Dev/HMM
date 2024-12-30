@@ -17,33 +17,31 @@
 	<div id="loading" class="fixed inset-0 bg-white flex justify-center items-center z-50">
 		<div class="animate-spin rounded-full border-t-4 border-green-600 w-16 h-16"></div>
 	</div>
-	<header class="fixed top-0 left-0 w-full bg-white shadow-md z-10 h-[10vh]">
+	<header class="fixed top-0 left-0 w-full bg-gradient-to-r from-green-800 to-green-600 shadow-md z-10 h-[10vh]">
 		<div class="container mx-auto px-4 py-3 flex items-center justify-between h-full">
 			<!-- Left Side: Logo -->
-			<h1 class="text-green-800 font-bold text-xl font-serif">HMM</h1>
+			<h1 class="text-white font-bold text-xl font-serif">HMM Export</h1>
 
 			<!-- Menu Toggle for Mobile -->
-			<button id="menuButton" class="sm:hidden cursor-pointer">
+			<button id="menuButton" class="sm:hidden cursor-pointer text-white">
 				<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-					class="w-6 h-6 text-green-800">
+					class="w-6 h-6">
 					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
 				</svg>
 			</button>
 
 			<!-- Center: Navigation Menu (Hidden on Mobile, shows on desktop) -->
-			<nav id="navMenu" class="hidden sm:flex space-x-8 font-serif text-green-800">
-				<a href="./index.html" class="hover:text-green-600 font-bold">Bosh sahifa</a>
-				<a href=".//mahsulotlar.html" class="hover:text-green-600 font-bold">Mahsulotlar</a>
-				<a href="./about.html" class="hover:text-green-600 font-bold">Biz haqimizda</a>
-				<a href="#certificates" class="hover:text-green-600 font-bold">Sertifikatlar</a>
-				<a href="#contact" class="hover:text-green-600 font-bold">Aloqa</a>
+			<nav id="navMenu" class="hidden sm:flex space-x-8 text-white">
+				<a href="./index.html" class="hover:text-green-200 font-semibold">Bosh sahifa</a>
+				<a href="./mahsulotlar.html" class="hover:text-green-200 font-semibold">Mahsulotlar</a>
+				<a href="./about.html" class="hover:text-green-200 font-semibold">Biz haqimizda</a>
+				<a href="#certificates" class="hover:text-green-200 font-semibold">Sertifikatlar</a>
+				<a href="#contact" class="hover:text-green-200 font-semibold">Aloqa</a>
 			</nav>
 
 			<!-- Right Side: Phone Number (Hidden on Mobile) -->
-			<div class="hidden sm:flex items-center space-x-2">
-
-
-				<span class="text-green-800 font-bold">📞 +998 90 030 48 68</span>
+			<div class="hidden sm:flex items-center space-x-2 text-white">
+				<span class="font-semibold">📞 +998 90 030 48 68</span>
 			</div>
 		</div>
 
@@ -101,12 +99,15 @@
 		closeButton.addEventListener('click', () => {
 			mobileMenu.style.transform = 'translateX(-100%)'; // Slide out
 		});
+		// Hide the loading screen after 2 seconds
 		window.onload = function () {
 			setTimeout(function () {
 				document.getElementById('loading').style.display = 'none'; // Hide loading screen
 			}, 1000); // 2 seconds delay
 		};
 	</script>
+
+
 
 	<!-- Product Category Section -->
 	<section id="product-categories" class="products section py-10 mt-[10vh]">
@@ -272,7 +273,27 @@
 			color: white;
 		}
 	</style>
+	<!-- Telegram Button -->
+	<a href="https://t.me/Komil_KX" target="_blank"
+		class="fixed bottom-6 right-6 bg-green-600 p-4 rounded-full shadow-lg text-white hover:bg-green-700 transition duration-300 ease-in-out transform hover:scale-110 hidden">
+		<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+			stroke="currentColor" class="w-6 h-6">
+			<path
+				d="M20.553 3.447a2 2 0 0 0-2.828 0l-13 13a2 2 0 0 0 0 2.828l6 6a2 2 0 0 0 2.828 0l13-13a2 2 0 0 0 0-2.828l-6-6a2 2 0 0 0-2.828 0l-4.88 4.88-3.627-1.451 1.451 3.627 4.88-4.88a2 2 0 0 0 2.828 0l6 6a2 2 0 0 0 0 2.828l-13 13a2 2 0 0 0-2.828 0l-6-6a2 2 0 0 0-2.828 0z" />
+		</svg>
 
+	</a>
+
+	<script>
+		window.onscroll = function () {
+			var button = document.querySelector("a[href='https://t.me/Komil_KX']");
+			if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+				button.classList.remove('hidden');
+			} else {
+				button.classList.add('hidden');
+			}
+		};
+	</script>
 </body>
 
 </html>
