@@ -120,18 +120,15 @@
 				class="category-button active-category text-green-900 py-2 px-4 sm:px-6 font-semibold border border-green-800 rounded-[15px] hover:bg-green-800 hover:text-white transition duration-300">
 				Apricotlar
 			</button>
-			<button id="apples"
+			<button id="raisons"
 				class="category-button text-green-900 py-2 px-4 sm:px-6 font-semibold border border-green-800 rounded-[15px] hover:bg-green-800 hover:text-white transition duration-300">
-				Quruq Olma
+				Raisons
 			</button>
-			<button id="figs"
+			<button id="prunes"
 				class="category-button text-green-900 py-2 px-4 sm:px-6 font-semibold border border-green-800 rounded-[15px] hover:bg-green-800 hover:text-white transition duration-300">
-				Quruq Anjir
+				Prunes and mix fruits
 			</button>
-			<button id="magic-sliva"
-				class="category-button text-green-900 py-2 px-4 sm:px-6 font-semibold border border-green-800 rounded-[15px] hover:bg-green-800 hover:text-white transition duration-300">
-				Magiz Sliva
-			</button>
+
 			<button id="orik"
 				class="category-button text-green-900 py-2 px-4 sm:px-6 font-semibold border border-green-800 rounded-[15px] hover:bg-green-800 hover:text-white transition duration-300">
 				O'rik
@@ -143,6 +140,7 @@
 		<div id="product-cards"
 			class="container mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
 			<!-- Cards will be dynamically inserted here -->
+
 		</div>
 	</section>
 
@@ -199,33 +197,39 @@
 	<script>
 		const products = {
 			apricots: [
-				{ title: "Quruq Apricot", img: "./img/introduction-carousel-2.jpg", desc: "Mazali quruq apricotlar." },
-				{ title: "Apricot Mix", img: "./img/introduction-carousel-2.jpg", desc: "Turli xil aralashmalar." },
-				{ title: "Apricot Deluxe", img: "./img/introduction-carousel-2.jpg", desc: "Yuqori sifatli apricotlar." },
-				{ title: "Apricot Max", img: "./img/introduction-carousel-2.jpg", desc: "Cheksiz mazali." },
-				{ title: "Apricot Premium", img: "./img/introduction-carousel-2.jpg", desc: "Eksklyuziv mahsulot." },
+				{ title: "Quruq Apricot", img: "https://trustagro.uz/wp-content/uploads/2021/02/IMG_0171-1-scaled.jpg", desc: "Mazali quruq apricotlar." },
+				{ title: "Apricot Lemon", img: "https://trustagro.uz/wp-content/uploads/2021/02/3.jpg", desc: "Turli xil aralashmalar." },
+				{ title: "Apricot Deluxe", img: "https://trustagro.uz/wp-content/uploads/2021/02/9.jpg", desc: "Yuqori sifatli apricotlar." },
+				{ title: "Apricot Max", img: "https://trustagro.uz/wp-content/uploads/2021/02/7.jpg", desc: "Cheksiz mazali." },
+				{ title: "Apricot Premium", img: "https://trustagro.uz/wp-content/uploads/2021/02/4.jpg", desc: "Eksklyuziv mahsulot." },
+				{ title: "Soft Apricot", img: "https://trustagro.uz/wp-content/uploads/2021/02/2.jpg", desc: "Yumshoq va shirin apricotlar." },
+				{ title: "Apricot Natural", img: "https://trustagro.uz/wp-content/uploads/2021/02/5.jpg", desc: "Tabiiy va foydali." },
+				{ title: "Mixed Apricots", img: "https://trustagro.uz/wp-content/uploads/2021/02/6.jpg", desc: "Turli xil quruq apricotlar." },
 			],
-			apples: [
-				{ title: "Quruq Olma", img: "./img/photo_2024-12-26_16-27-14.jpg", desc: "Foydali va mazali." },
-				{ title: "Apple Rings", img: "./assets/img/dried-apple.jpg", desc: "Ajoyib ko'rinish." },
-				{ title: "Apple Snacks", img: "./assets/img/dried-apple.jpg", desc: "Tabiiy snack." },
-				{ title: "Sweet Apple", img: "./assets/img/dried-apple.jpg", desc: "Shirin olma." },
-				{ title: "Premium Apple", img: "./assets/img/dried-apple.jpg", desc: "Sifatli tanlov." },
+
+			raisons: [
+				{ title: "Golden Raisins", img: "https://trustagro.uz/wp-content/uploads/2021/02/13.jpg", desc: "Oltin rangli mazali mayiz." },
+				{ title: "Black Raisins", img: "https://trustagro.uz/wp-content/uploads/2021/02/17.jpg", desc: "Tabiiy qora mayiz." },
+				{ title: "Golden Raison Chalipar", img: "https://trustagro.uz/wp-content/uploads/2021/02/12.jpg", desc: "Yashil rangli foydali mayiz." },
+				{ title: " Raisins Obtobiy", img: "https://trustagro.uz/wp-content/uploads/2021/02/14.jpg", desc: "Uzumning urug‘siz turidan tayyorlangan." },
+				{ title: " Raisins Kunaki", img: "https://trustagro.uz/wp-content/uploads/2021/02/17.jpg", desc: "Sifatli va tanlangan mayiz." },
+				{ title: "Raisons Qizilcha", img: "https://trustagro.uz/wp-content/uploads/2021/02/18.jpg", desc: "Foydali va ekologik toza." },
+				{ title: "Sweet Raisins", img: "https://trustagro.uz/wp-content/uploads/2021/02/16.jpg", desc: "Tabiiy shirin mazali." },
+				{ title: "Mixed Raisins", img: "https://trustagro.uz/wp-content/uploads/2021/02/11.jpg", desc: "Turli xildagi mayizlar aralashmasi." },
 			],
-			figs: [
-				{ title: "Quruq Anjir", img: "./assets/img/dried-figs.jpg", desc: "Sog'liq uchun foydali." },
-				{ title: "Fig Mix", img: "./assets/img/dried-figs.jpg", desc: "Turli xil aralashmalar." },
-				{ title: "Deluxe Figs", img: "./assets/img/dried-figs.jpg", desc: "Yuqori sifat." },
-				{ title: "Sweet Fig", img: "./assets/img/dried-figs.jpg", desc: "Tabiiy shirinlik." },
-				{ title: "Premium Fig", img: "./assets/img/dried-figs.jpg", desc: "Eksklyuziv mahsulot." },
+
+			prunes: [
+				{ title: "Quruq Prune", img: "https://trustagro.uz/wp-content/uploads/2021/02/19.jpg", desc: "Mazali va foydali prunelar." },
+				{ title: "Soft Prune", img: "https://trustagro.uz/wp-content/uploads/2021/02/20.jpg", desc: "Yumshoq va shirali." },
+				{ title: "Prune Ispanka", img: "https://trustagro.uz/wp-content/uploads/2021/02/21.jpg", desc: "Turli xil aralashmalar." },
+				{ title: "Deluxe Prune", img: "https://trustagro.uz/wp-content/uploads/2021/02/IMG_2836.jpg", desc: "Yuqori sifatli mahsulot." },
+				{ title: "Sweet Prune", img: "https://trustagro.uz/wp-content/uploads/2021/02/IMG_2836-1.jpg", desc: "Tabiiy shirin prunelar." },
+				{ title: "Premium Prune", img: "https://trustagro.uz/wp-content/uploads/2021/02/24.jpg", desc: "Eksklyuziv va mazali." },
+				{ title: "Natural Prune", img: "https://trustagro.uz/wp-content/uploads/2021/02/22.jpg", desc: "Tabiiy va foydali." },
+				{ title: "Golden Prune", img: "https://trustagro.uz/wp-content/uploads/2021/02/23.jpg", desc: "Yorqin va shirin." },
 			],
-			"magic-sliva": [
-				{ title: "Magiz Sliva", img: "./assets/img/magic-sliva.jpg", desc: "Mazali quruq meva." },
-				{ title: "Sliva Mix", img: "./assets/img/magic-sliva.jpg", desc: "Turli xil aralashmalar." },
-				{ title: "Deluxe Sliva", img: "./assets/img/magic-sliva.jpg", desc: "Yuqori sifat." },
-				{ title: "Sweet Sliva", img: "./assets/img/magic-sliva.jpg", desc: "Tabiiy shirinlik." },
-				{ title: "Premium Sliva", img: "./assets/img/magic-sliva.jpg", desc: "Eksklyuziv mahsulot." },
-			],
+
+
 			orik: [
 				{ title: "O'rik", img: "./assets/img/dried-orik.jpg", desc: "Tabiiy quruq o'rik." },
 				{ title: "O'rik Mix", img: "./assets/img/dried-orik.jpg", desc: "Aralashmalar." },
@@ -247,7 +251,7 @@
 						<div class="p-4">
 							<h3 class="text-xl font-semibold">${product.title}</h3>
 							<p class="mt-2">${product.desc}</p>
-							<a href="/aloqa" class="block mt-4 bg-green-900 text-white py-2 px-4 rounded-lg text-center hover:bg-green-600 transition duration-300 ease-in-out">Buyurtma berish</a>
+							<a href="/aloqa.html" class="block mt-4 bg-green-900 text-white py-2 px-4 rounded-lg text-center hover:bg-green-600 transition duration-300 ease-in-out">Buyurtma berish</a>
 						</div>
 					</div>
 				`;
