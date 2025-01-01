@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="uz">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Mahsus takliflar va arzon narxlar haqida ma'lumot olish uchun sahifa.">
+	<title>Mahsus Takliflar - HMM Export</title>
+	<script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 font-roboto">
+
+	<div id="loading" class="fixed inset-0 bg-white flex justify-center items-center z-50">
+		<div class="animate-spin rounded-full border-t-4 border-green-600 w-16 h-16"></div>
+	</div>
+	<!-- Navbar -->
+	<header class="fixed top-0 left-0 w-full bg-gradient-to-r from-green-800 to-green-600 shadow-md z-10 h-[10vh]">
+		<div class="container mx-auto px-4 py-3 flex items-center justify-between h-full">
+			<!-- Left Side: Logo -->
+			<h1 class="text-white font-bold text-xl font-serif">HMM Export</h1>
+
+			<!-- Menu Toggle for Mobile -->
+			<button id="menuButton" class="sm:hidden cursor-pointer text-white">
+				<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+					class="w-6 h-6">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+				</svg>
+			</button>
+
+			<!-- Center: Navigation Menu (Hidden on Mobile, shows on desktop) -->
+			<nav id="navMenu" class="hidden sm:flex space-x-8 text-white">
+				<a href="./index.html" class="hover:text-green-200 font-semibold">Bosh sahifa</a>
+				<a href="./mahsulotlar.html" class="hover:text-green-200 font-semibold">Mahsulotlar</a>
+				<a href="./about.html" class="hover:text-green-200 font-semibold">Biz haqimizda</a>
+				<a href="./aloqa.html" class="hover:text-green-200 font-semibold">Aloqa</a>
+				<a href="./special.html" class="hover:text-green-200 font-semibold">Mahsus Takliflar</a>
+			</nav>
+
+			<!-- Right Side: Phone Number (Hidden on Mobile) -->
+			<div class="hidden sm:flex items-center space-x-2 text-white">
+				<span class="font-semibold">📞 +998 90 030 48 68</span>
+			</div>
+		</div>
+
+		<!-- Mobile Menu (Initially hidden) -->
+		<div id="mobileMenu"
+			class="absolute left-0 w-full top-0 h-[100vh] bg-white transform transition-transform duration-500 ease-in-out translate-x-[-100%] sm:hidden flex flex-col justify-center items-center py-4 px-6">
+			<!-- Close Button -->
+			<button id="closeButton" class="absolute top-4 right-6 text-green-800">
+				<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+					class="w-6 h-6">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+				</svg>
+			</button>
+
+			<nav class="flex flex-col space-y-6 text-green-800 font-serif text-center">
+				<a href="./index.html"
+					class="hover:text-green-600 font-bold text-xl transition-transform transform hover:scale-110">
+					Bosh sahifa
+				</a>
+				<a href="./mahsulotlar.html"
+					class="hover:text-green-600 font-bold text-xl transition-transform transform hover:scale-110">
+					Mahsulotlar
+				</a>
+				<a href="./about.html"
+					class="hover:text-green-600 font-bold text-xl transition-transform transform hover:scale-110">
+					Biz haqimizda
+				</a>
+
+				<a href="./aloqa.html"
+					class="hover:text-green-600 font-bold text-xl transition-transform transform hover:scale-110">
+					Aloqa
+				</a>
+				<a href="./special.html"
+					class="hover:text-green-600 font-bold text-xl transition-transform transform hover:scale-110">
+					Mahsus takliflar
+				</a>
+			</nav>
+
+			<div class="absolute bottom-4 flex items-center space-x-2 text-green-800 font-bold font-serif mb-[20%]">
+
+				<span class="text-green-800 font-bold">📞 +998 90 030 48 68</span>
+			</div>
+		</div>
+	</header>
+
+
+	<script>const menuButton = document.getElementById('menuButton');
+		const mobileMenu = document.getElementById('mobileMenu');
+		const closeButton = document.getElementById('closeButton');
+
+		// Toggle menu open/close
+		menuButton.addEventListener('click', () => {
+			mobileMenu.style.transform = 'translateX(0%)'; // Slide in
+		});
+
+		closeButton.addEventListener('click', () => {
+			mobileMenu.style.transform = 'translateX(-100%)'; // Slide out
+		});
+		// Hide the loading screen after 2 seconds
+		window.onload = function () {
+			setTimeout(function () {
+				document.getElementById('loading').style.display = 'none'; // Hide loading screen
+			}, 1000); // 2 seconds delay
+		};
+	</script>
+
+	<!-- Mahsus Taklif Section -->
+	<section class="py-20 bg-white">
+		<div class="container mx-auto text-center px-6 lg:px-12">
+			<h2 class="text-5xl font-bold text-green-800 mb-4">Mahsus Taklif</h2>
+			<p class="text-xl text-gray-700 mb-8">Bizning mijozlarimiz uchun arzon narxlar va eksklyuziv takliflar.
+				Faqatgina bizda!</p>
+
+			<!-- O‘rtada chiroyli yozuv -->
+			<div class="bg-gradient-to-r from-green-500 to-green-800 text-white py-12 rounded-lg shadow-lg">
+				<h3 class="text-4xl font-semibold mb-4">Arzon Narxlar Shu Yerde!</h3>
+				<p class="text-lg">Sizni ajoyib takliflar va arzon narxlar kutmoqda. Takliflarimizni qo‘lga kiritish
+					uchun tezda bog‘laning!</p>
+			</div>
+		</div>
+	</section>
+
+</body>
+
+</html>

@@ -12,6 +12,10 @@
 </head>
 
 <body class="bg-gray-100 font-robotoCondensed">
+	<div id="loading" class="fixed inset-0 bg-white flex justify-center items-center z-50">
+		<div class="animate-spin rounded-full border-t-4 border-green-600 w-16 h-16"></div>
+	</div>
+	<!-- Navbar -->
 	<header class="fixed top-0 left-0 w-full bg-gradient-to-r from-green-800 to-green-600 shadow-md z-10 h-[10vh]">
 		<div class="container mx-auto px-4 py-3 flex items-center justify-between h-full">
 			<!-- Left Side: Logo -->
@@ -30,8 +34,8 @@
 				<a href="./index.html" class="hover:text-green-200 font-semibold">Bosh sahifa</a>
 				<a href="./mahsulotlar.html" class="hover:text-green-200 font-semibold">Mahsulotlar</a>
 				<a href="./about.html" class="hover:text-green-200 font-semibold">Biz haqimizda</a>
-				<a href="#certificates" class="hover:text-green-200 font-semibold">Sertifikatlar</a>
 				<a href="./aloqa.html" class="hover:text-green-200 font-semibold">Aloqa</a>
+				<a href="./special.html" class="hover:text-green-200 font-semibold">Mahsus Takliflar</a>
 			</nav>
 
 			<!-- Right Side: Phone Number (Hidden on Mobile) -->
@@ -64,13 +68,14 @@
 					class="hover:text-green-600 font-bold text-xl transition-transform transform hover:scale-110">
 					Biz haqimizda
 				</a>
-				<a href="#certificates"
-					class="hover:text-green-600 font-bold text-xl transition-transform transform hover:scale-110">
-					Sertifikatlar
-				</a>
+
 				<a href="./aloqa.html"
 					class="hover:text-green-600 font-bold text-xl transition-transform transform hover:scale-110">
 					Aloqa
+				</a>
+				<a href="./special.html"
+					class="hover:text-green-600 font-bold text-xl transition-transform transform hover:scale-110">
+					Mahsus takliflar
 				</a>
 			</nav>
 
@@ -82,22 +87,7 @@
 	</header>
 
 
-	<section class="relative bg-cover bg-center h-[90vh]"
-		style="background-image: url('./img/photo_2024-12-26_16-27-14.jpg');">
-		<div class="absolute inset-0 bg-black bg-opacity-50"></div>
-		<div class="relative z-10 flex items-center justify-center text-center text-white px-4 py-20">
-			<div>
-				<h2 class="text-5xl font-bold">HMM Export</h2>
-				<p class="text-lg mt-4">Biz bilan bog'laning va yuqori sifatli quritilgan mevalar haqida ma'lumot oling.
-				</p>
-				<a href="#contact-form"
-					class="mt-6 inline-block bg-green-800 text-white py-3 px-6 rounded-lg text-xl hover:bg-green-700 transition">Aloqa
-					qiling</a>
-			</div>
-		</div>
-	</section>
-	<script>
-		const menuButton = document.getElementById('menuButton');
+	<script>const menuButton = document.getElementById('menuButton');
 		const mobileMenu = document.getElementById('mobileMenu');
 		const closeButton = document.getElementById('closeButton');
 
@@ -109,7 +99,6 @@
 		closeButton.addEventListener('click', () => {
 			mobileMenu.style.transform = 'translateX(-100%)'; // Slide out
 		});
-
 		// Hide the loading screen after 2 seconds
 		window.onload = function () {
 			setTimeout(function () {
