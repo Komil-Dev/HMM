@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="uz">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description"
+		content="HMM Export bilan bog'lanish uchun aloqa sahifasi. Yangi mijozlar uchun mahsulotlar haqida ma'lumot olish imkoniyati." />
+	<title>Aloqa - HMM Export</title>
+	<script src="https://cdn.tailwindcss.com"></script>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body class="bg-gray-100 font-robotoCondensed">
+	<header class="fixed top-0 left-0 w-full bg-gradient-to-r from-green-800 to-green-600 shadow-md z-10 h-[10vh]">
+		<div class="container mx-auto px-4 py-3 flex items-center justify-between h-full">
+			<!-- Left Side: Logo -->
+			<h1 class="text-white font-bold text-xl font-serif">HMM Export</h1>
+
+			<!-- Menu Toggle for Mobile -->
+			<button id="menuButton" class="sm:hidden cursor-pointer text-white">
+				<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+					class="w-6 h-6">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+				</svg>
+			</button>
+
+			<!-- Center: Navigation Menu (Hidden on Mobile, shows on desktop) -->
+			<nav id="navMenu" class="hidden sm:flex space-x-8 text-white">
+				<a href="./index.html" class="hover:text-green-200 font-semibold">Bosh sahifa</a>
+				<a href="./mahsulotlar.html" class="hover:text-green-200 font-semibold">Mahsulotlar</a>
+				<a href="./about.html" class="hover:text-green-200 font-semibold">Biz haqimizda</a>
+				<a href="#certificates" class="hover:text-green-200 font-semibold">Sertifikatlar</a>
+				<a href="./aloqa.html" class="hover:text-green-200 font-semibold">Aloqa</a>
+			</nav>
+
+			<!-- Right Side: Phone Number (Hidden on Mobile) -->
+			<div class="hidden sm:flex items-center space-x-2 text-white">
+				<span class="font-semibold">📞 +998 90 030 48 68</span>
+			</div>
+		</div>
+
+		<!-- Mobile Menu (Initially hidden) -->
+		<div id="mobileMenu"
+			class="absolute left-0 w-full top-0 h-[100vh] bg-white transform transition-transform duration-500 ease-in-out translate-x-[-100%] sm:hidden flex flex-col justify-center items-center py-4 px-6">
+			<!-- Close Button -->
+			<button id="closeButton" class="absolute top-4 right-6 text-green-800">
+				<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+					class="w-6 h-6">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+				</svg>
+			</button>
+
+			<nav class="flex flex-col space-y-6 text-green-800 font-serif text-center">
+				<a href="./index.html"
+					class="hover:text-green-600 font-bold text-xl transition-transform transform hover:scale-110">
+					Bosh sahifa
+				</a>
+				<a href="./mahsulotlar.html"
+					class="hover:text-green-600 font-bold text-xl transition-transform transform hover:scale-110">
+					Mahsulotlar
+				</a>
+				<a href="./about.html"
+					class="hover:text-green-600 font-bold text-xl transition-transform transform hover:scale-110">
+					Biz haqimizda
+				</a>
+				<a href="#certificates"
+					class="hover:text-green-600 font-bold text-xl transition-transform transform hover:scale-110">
+					Sertifikatlar
+				</a>
+				<a href="./aloqa.html"
+					class="hover:text-green-600 font-bold text-xl transition-transform transform hover:scale-110">
+					Aloqa
+				</a>
+			</nav>
+
+			<div class="absolute bottom-4 flex items-center space-x-2 text-green-800 font-bold font-serif mb-[20%]">
+
+				<span class="text-green-800 font-bold">📞 +998 90 030 48 68</span>
+			</div>
+		</div>
+	</header>
+
+
+	<script>const menuButton = document.getElementById('menuButton');
+		const mobileMenu = document.getElementById('mobileMenu');
+		const closeButton = document.getElementById('closeButton');
+
+		// Toggle menu open/close
+		menuButton.addEventListener('click', () => {
+			mobileMenu.style.transform = 'translateX(0%)'; // Slide in
+		});
+
+		closeButton.addEventListener('click', () => {
+			mobileMenu.style.transform = 'translateX(-100%)'; // Slide out
+		});
+		// Hide the loading screen after 2 seconds
+		window.onload = function () {
+			setTimeout(function () {
+				document.getElementById('loading').style.display = 'none'; // Hide loading screen
+			}, 1000); // 2 seconds delay
+		};
+	</script>
+
+
+	<!-- Aloqa sahifasi bo'limi -->
+	<section id="client-request" class="bg-white py-12">
+		<div class="container mx-auto px-6 lg:px-12 flex flex-col lg:flex-row items-center">
+			<!-- Chap tomon: Matn va Form -->
+			<div class="w-full lg:w-1/2 text-center lg:text-left">
+				<h2 class="text-4xl font-bold text-green-800 mb-4">HMM Exportning Klienti Bo'ling</h2>
+				<p class="text-lg text-gray-600 mb-6">
+					Sizni bizning doimiy mijozlarimiz safida ko‘rishdan mamnunmiz! HMM Export quritilgan mevalar bilan
+					yuqori sifatni taqdim etadi. Agar bizning mahsulotlarimizni olishni istasangiz, so'rov yuboring va
+					tez orada siz bilan bog'lanamiz.
+				</p>
+
+				<!-- Form -->
+				<form id="contactForm" class="php-email-form space-y-4">
+					<div class="space-y-4">
+						<!-- Ism -->
+						<div>
+							<label for="name-field" class="pb-2 block text-gray-700">Ismingiz</label>
+							<input type="text" name="name" id="name-field"
+								class="w-full py-3 px-6 rounded-lg border border-gray-300 text-gray-800" required
+								placeholder="Ismingiz">
+						</div>
+
+						<!-- Telefon Raqami -->
+						<div>
+							<label for="phone-field" class="pb-2 block text-gray-700">Telefon Raqamingiz</label>
+							<input type="text" name="phone" id="phone-field"
+								class="w-full py-3 px-6 rounded-lg border border-gray-300 text-gray-800" required
+								placeholder="+998 -- --- -- --">
+						</div>
+
+						<!-- Tugma -->
+						<div class="text-center">
+							<div class="loading" style="display: none;">Loading...</div>
+							<div class="error-message text-red-500" style="display: none;"></div>
+							<div class="sent-message text-green-600" style="display: none;">Xabaringiz yuborildi.
+								Rahmat!</div>
+							<button type="submit"
+								class="inline-block bg-green-800 text-white py-3 px-8 rounded-full font-bold text-lg hover:bg-green-600 transition duration-300 w-full">
+								So'rov yuborish
+							</button>
+						</div>
+					</div>
+				</form>
+			</div>
+
+			<!-- O'ng tomon: Rasmlar -->
+			<div class="relative w-full lg:w-1/2 mt-8 lg:mt-0 flex justify-center items-center">
+				<!-- Rasm 1 -->
+				<div class="w-60 h-60 lg:w-72 lg:h-72 bg-cover bg-center rounded-lg shadow-lg"
+					style="background-image: url('./img/introduction-carousel-2.jpg');"></div>
+				<!-- Rasm 2 (ustma-ust joylashgan) -->
+				<div class="absolute top-10 left-16 lg:top-14 lg:left-20 w-40 h-40 lg:w-48 lg:h-48 bg-cover bg-center rounded-lg shadow-lg border-4 border-white"
+					style="background-image: url('./img/introduction-carousel-4.jpg');"></div>
+			</div>
+		</div>
+	</section>
+
+	<script>
+		document.addEventListener('DOMContentLoaded', function () {
+			const form = document.getElementById('contactForm');
+
+			form.addEventListener('submit', function (e) {
+				e.preventDefault();
+
+				const name = document.getElementById('name-field').value;
+				const phone = document.getElementById('phone-field').value;
+
+				const telegramBotToken = '7471873187:AAHyO1pnz30aXf-K7kJvKe3WsgPFdE4VyLE';
+				const chatId = '6681379041'; // Replace with your actual chat ID
+
+				const text = `Yangi xabar:\nIsm: ${name}\nTelefon: ${phone}`;
+
+				document.querySelector('.loading').style.display = 'block';
+
+				fetch(`https://api.telegram.org/bot${telegramBotToken}/sendMessage`, {
+					method: 'POST',
+					headers: {
+						'Content-Type': 'application/json',
+					},
+					body: JSON.stringify({
+						chat_id: chatId,
+						text: text
+					})
+				})
+					.then(response => {
+						if (!response.ok) {
+							throw new Error('Tarmoq javobi noto\'g\'ri');
+						}
+						return response.json();
+					})
+					.then(data => {
+						document.querySelector('.loading').style.display = 'none';
+						if (data.ok) {
+							document.querySelector('.sent-message').style.display = 'block';
+							form.reset();
+						} else {
+							throw new Error('Telegram API javobi noto\'g\'ri');
+						}
+					})
+					.catch(error => {
+						document.querySelector('.loading').style.display = 'none';
+						console.error('Xato:', error);
+						document.querySelector('.error-message').style.display = 'block';
+						document.querySelector('.error-message').textContent = 'Xato yuz berdi. Iltimos, qaytadan urinib ko\'ring.';
+					});
+			});
+		});
+	</script>
+</body>
+
+</html>
