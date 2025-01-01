@@ -566,7 +566,8 @@
 	</section>
 	<!-- Forma bo'limi -->
 	<h2 class="text-4xl font-bold text-center text-green-800 mb-8">Biz bilan bog'lanish</h2>
-	<!-- Forma bo'limi -->
+
+
 	<section id="contact-form" class="relative py-16 bg-cover bg-center h-[80vh]"
 		style="background-image: url('./img/introduction-carousel-4.jpg');">
 		<div class="absolute inset-0 bg-black bg-opacity-60"></div>
@@ -574,7 +575,7 @@
 			<div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
 				<!-- Forma bo'limi -->
 				<div class="bg-transparent p-8 shadow-lg rounded-lg space-y-6">
-					<form id="contactForm" class="space-y-6 mt-[-5%]">
+					<form id="contactForm" class="space-y-6 mt-[-5%]" onsubmit="handleFormSubmit(event)">
 						<div>
 							<label for="name-field" class="block text-white font-medium mb-2">Ismingiz</label>
 							<input type="text" name="name" id="name-field"
@@ -589,11 +590,12 @@
 								required />
 						</div>
 						<hr class="border-white opacity-50" />
+						<!-- Yangi text input -->
 						<div>
-							<label for="message-field" class="block text-white font-medium mb-2">Xabaringiz</label>
-							<textarea name="message" id="message-field" rows="2"
+							<label for="message-field" class="block text-white font-medium mb-2">Xabar</label>
+							<input type="text" name="message" id="message-field" placeholder="Qo'shimcha xabar..."
 								class="w-full p-3 border border-gray-300 rounded-lg text-white bg-transparent placeholder-white"
-								required></textarea>
+								required />
 						</div>
 						<hr class="border-white opacity-50" />
 						<div class="text-center">
@@ -610,67 +612,60 @@
 				<div class="error-message" style="display:none;"></div>
 
 				<script>
-					document.addEventListener('DOMContentLoaded', function () {
-						const form = document.getElementById('contactForm');
+					function handleFormSubmit(event) {
+						event.preventDefault(); // Formning oddiy yuborilishini oldini olish
 
-						form.addEventListener('submit', function (e) {
-							e.preventDefault(); // Prevent form from submitting normally
+						// Formdan qiymatlar olish
+						const name = document.getElementById('name-field').value;
+						const number = document.getElementById('subject-field').value;
+						const message = document.getElementById('message-field').value; // Yangi inputdan qiymat olish
 
-							// Get form field values
-							const name = document.getElementById('name-field').value;
-							const number = document.getElementById('subject-field').value;
-							const message = document.getElementById('message-field').value;
+						const telegramBotToken = '7471873187:AAHyO1pnz30aXf-K7kJvKe3WsgPFdE4VyLE'; // Botning tokeni
+						const chatId = '6681379041'; // Sizning chat ID (asl chat ID bilan almashtiring)
 
-							const telegramBotToken = '7471873187:AAHyO1pnz30aXf-K7kJvKe3WsgPFdE4VyLE'; // Your bot's token
-							const chatId = '6681379041'; // Your chat ID (replace with your actual chat ID)
+						const text = `Yangi xabar:\nIsm: ${name}\nTelefon: ${number}\nXabar: ${message}`;
 
-							const text = `Yangi xabar:\nIsm: ${name}\nTelefon: ${number}\nXabar: ${message}`;
+						// Yuklanayotgan indikatorni ko'rsatish
+						document.querySelector('.loading').style.display = 'block';
 
-							// Show loading indicator
-							document.querySelector('.loading').style.display = 'block';
-
-							// Send data to Telegram API using fetch
-							fetch(`https://api.telegram.org/bot${telegramBotToken}/sendMessage`, {
-								method: 'POST',
-								headers: {
-									'Content-Type': 'application/json',
-								},
-								body: JSON.stringify({
-									chat_id: chatId,
-									text: text
-								})
+						// Telegram API orqali xabar yuborish
+						fetch(`https://api.telegram.org/bot${telegramBotToken}/sendMessage`, {
+							method: 'POST',
+							headers: {
+								'Content-Type': 'application/json',
+							},
+							body: JSON.stringify({
+								chat_id: chatId,
+								text: text
 							})
-								.then(response => {
-									if (!response.ok) {
-										throw new Error('Tarmoq javobi noto‘g‘ri');
-									}
-									return response.json();
-								})
-								.then(data => {
-									// Hide loading indicator
-									document.querySelector('.loading').style.display = 'none';
+						})
+							.then(response => {
+								if (!response.ok) {
+									throw new Error('Tarmoq javobi noto‘g‘ri');
+								}
+								return response.json();
+							})
+							.then(data => {
+								// Yuklanayotgan indikatorni yashirish
+								document.querySelector('.loading').style.display = 'none';
 
-									if (data.ok) {
-										// Show success message
-										document.querySelector('.sent-message').style.display = 'block';
-										// Reset the form
-										form.reset();
-									} else {
-										throw new Error('Telegram API javobi noto‘g‘ri');
-									}
-								})
-								.catch(error => {
-									// Hide loading indicator and show error message
-									document.querySelector('.loading').style.display = 'none';
-									console.error('Xato:', error);
-									document.querySelector('.error-message').style.display = 'block';
-									document.querySelector('.error-message').textContent = 'Xato yuz berdi. Iltimos, qaytadan urinib ko‘ring.';
-								});
-						});
-					});
+								if (data.ok) {
+									// Muvaffaqiyatli xabar yuborilganda
+									document.querySelector('.sent-message').style.display = 'block';
+									document.getElementById('contactForm').reset(); // Formani tozalash
+								} else {
+									throw new Error('Telegram API javobi noto‘g‘ri');
+								}
+							})
+							.catch(error => {
+								// Xato yuz berishi holatida
+								document.querySelector('.loading').style.display = 'none';
+								console.error('Xato:', error);
+								document.querySelector('.error-message').style.display = 'block';
+								document.querySelector('.error-message').textContent = 'Xato yuz berdi. Iltimos, qaytadan urinib ko‘ring.';
+							});
+					}
 				</script>
-
-				<!-- Kompaniya ma'lumotlari bo'limi -->
 				<div class="space-y-6">
 					<div class="space-y-4">
 						<div class="flex items-center space-x-4">
@@ -701,6 +696,7 @@
 			</div>
 		</div>
 	</section>
+
 
 
 	<!-- Aloqa ma'lumotlari bo'limi -->
@@ -741,66 +737,94 @@
 
 
 
+	<div id="telegram-manager" class="fixed bottom-5 right-5 z-50">
+		<a href="https://t.me/Komil_KX" target="_blank" rel="noopener noreferrer">
+			<img src="https://trustagro.uz/wp-content/themes/trustagro/assets/icons/telegram-manager.svg"
+				alt="Telegram Icon" class="w-16 h-16 hover:scale-105 transition-transform duration-300">
+		</a>
+	</div>
 
 
 
 
 	<!-- Footer -->
-	<footer class="bg-white text-gray-800 py-8">
-		<div class="container mx-auto px-6 md:px-12">
-			<div class="flex flex-col lg:flex-row justify-between items-center lg:items-start">
-				<!-- Left side: Logo and description -->
-				<div class="mb-6 lg:mb-0 text-center lg:text-left">
-					<h2 class="text-2xl font-extrabold text-green-600">HMM Export</h2>
-					<p class="text-gray-600 text-sm mt-2">Sifatli quritilgan mevalar yetkazib beruvchi kompaniya</p>
+
+
+
+	<footer class="p-4 bg-white sm:p-6 dark:bg-white">
+		<div class="mx-auto max-w-screen-xl">
+			<div class="md:flex md:justify-between">
+				<div class="mb-6 md:mb-0">
+					<a href="./index.htm" class="flex items-center">
+						<span class="self-center text-2xl font-semibold whitespace-nowrap text-[#004225]">HMM
+							export</span>
+					</a>
+					<p class="text-[#004225] mt-2">Quruq mevalar eksport qiluvchi kompaniyamiz.</p>
+
 				</div>
 
-				<!-- Center: Quick Links -->
-				<div class="flex flex-col lg:flex-row lg:gap-10 text-center lg:text-left">
+				<div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3 animate-fade-up">
 					<div>
-						<h3 class="text-lg font-semibold text-green-600 mb-3">Tezkor Havolalar</h3>
-						<ul class="space-y-2">
-							<li><a href="#about" class="hover:text-green-500">Biz haqimizda</a></li>
-							<li><a href="#services" class="hover:text-green-500">Xizmatlar</a></li>
-							<li><a href="#contact" class="hover:text-green-500">Bog'lanish</a></li>
-							<li><a href="#privacy" class="hover:text-green-500">Maxfiylik siyosati</a></li>
+						<h2 class="mb-6 text-sm font-semibold text-[#004225] uppercase dark:text-[#004225]">
+							Resurslar
+						</h2>
+						<ul class="text-[#004225] dark:text-[#004225]">
+							<li class="mb-4">
+								<a href="https://t.me/Komil_KX" class="hover:underline">KomilDev</a>
+							</li>
+							<li>
+								<a href="https://github.com/Komil-Dev" class="hover:underline">Git Hub</a>
+							</li>
+						</ul>
+					</div>
+					<div>
+						<h2 class="mb-6 text-sm font-semibold text-[#004225] uppercase dark:text-[#004225]">Bizni
+							kuzatib boring</h2>
+						<ul class="text-[#004225] dark:text-[#004225]">
+							<li class="mb-4">
+								<a href="https://t.me/Komil_KX" class="hover:underline">Telegram</a>
+							</li>
+							<li>
+								<a href="https://www.instagram.com/Komil_dev." class="hover:underline">Instagram</a>
+							</li>
 						</ul>
 					</div>
 				</div>
-
-				<!-- Right side: Social Links -->
-				<div class="flex flex-col text-center lg:text-right gap-4">
-					<h3 class="text-lg font-semibold text-green-600">Bizni ijtimoiy tarmoqlarda toping:</h3>
-					<div class="flex justify-center lg:justify-end gap-4">
-						<a href="https://www.facebook.com" class="text-gray-600 hover:text-green-500">
-							<i class="fab fa-facebook-f text-2xl"></i>
-						</a>
-						<a href="https://www.instagram.com" class="text-gray-600 hover:text-green-500">
-							<i class="fab fa-instagram text-2xl"></i>
-						</a>
-						<a href="https://www.twitter.com" class="text-gray-600 hover:text-green-500">
-							<i class="fab fa-twitter text-2xl"></i>
-						</a>
-					</div>
-				</div>
 			</div>
 
-			<!-- Bottom: Copyright -->
-			<div class="mt-8 text-center text-gray-600 text-sm">
-				<p>&copy; 2024 HMM Export. Barcha huquqlar himoyalangan.</p>
+			<hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+			<!-- Developer Section -->
+			<div class="developer mt-8 text-center text-gray-500 text-sm">
+				<a href="https://t.me/Komil_KX" class="hover:text-green-500">Developed by KomilDev</a>
+			</div>
+			<div class="sm:flex sm:items-center sm:justify-between">
+				<span class="text-sm text-[#004225] sm:text-center dark:text-[#004225]">© 2025 <a
+						href="https://t.me/Lentalar_2025" class="hover:underline">HMM export™</a>. Barcha huquqlar
+					himoyalangan.</span>
+				<div class="flex mt-4 space-x-6 sm:justify-center sm:mt-0">
+					<a href="#" class="text-[#004225] hover:text-[#004225] dark:hover:text-[#004225]">
+						<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+							<path fill-rule="evenodd"
+								d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
+								clip-rule="evenodd" />
+						</svg>
+					</a>
+					<a href="#" class="text-[#004225] hover:text-[#004225] dark:hover:text-[#004225]">
+						<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+							<path fill-rule="evenodd"
+								d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"
+								clip-rule="evenodd" />
+						</svg>
+					</a>
+				</div>
 			</div>
 		</div>
 	</footer>
-	<!-- Telegram Button -->
-	<a href="https://t.me/Komil_KX" target="_blank"
-		class="fixed bottom-6 right-6 bg-green-600 p-4 rounded-full shadow-lg text-white hover:bg-green-700 transition duration-300 ease-in-out transform hover:scale-110 hidden">
-		<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-			stroke="currentColor" class="w-6 h-6">
-			<path
-				d="M20.553 3.447a2 2 0 0 0-2.828 0l-13 13a2 2 0 0 0 0 2.828l6 6a2 2 0 0 0 2.828 0l13-13a2 2 0 0 0 0-2.828l-6-6a2 2 0 0 0-2.828 0l-4.88 4.88-3.627-1.451 1.451 3.627 4.88-4.88a2 2 0 0 0 2.828 0l6 6a2 2 0 0 0 0 2.828l-13 13a2 2 0 0 0-2.828 0l-6-6a2 2 0 0 0-2.828 0z" />
-		</svg>
 
-	</a>
+
+
+
+
 
 	<script>
 		window.onscroll = function () {

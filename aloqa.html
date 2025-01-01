@@ -82,7 +82,22 @@
 	</header>
 
 
-	<script>const menuButton = document.getElementById('menuButton');
+	<section class="relative bg-cover bg-center h-[90vh]"
+		style="background-image: url('./img/photo_2024-12-26_16-27-14.jpg');">
+		<div class="absolute inset-0 bg-black bg-opacity-50"></div>
+		<div class="relative z-10 flex items-center justify-center text-center text-white px-4 py-20">
+			<div>
+				<h2 class="text-5xl font-bold">HMM Export</h2>
+				<p class="text-lg mt-4">Biz bilan bog'laning va yuqori sifatli quritilgan mevalar haqida ma'lumot oling.
+				</p>
+				<a href="#contact-form"
+					class="mt-6 inline-block bg-green-800 text-white py-3 px-6 rounded-lg text-xl hover:bg-green-700 transition">Aloqa
+					qiling</a>
+			</div>
+		</div>
+	</section>
+	<script>
+		const menuButton = document.getElementById('menuButton');
 		const mobileMenu = document.getElementById('mobileMenu');
 		const closeButton = document.getElementById('closeButton');
 
@@ -94,6 +109,7 @@
 		closeButton.addEventListener('click', () => {
 			mobileMenu.style.transform = 'translateX(-100%)'; // Slide out
 		});
+
 		// Hide the loading screen after 2 seconds
 		window.onload = function () {
 			setTimeout(function () {
@@ -102,116 +118,253 @@
 		};
 	</script>
 
+	<!-- Aloqa ma'lumotlari bo'limi -->
+	<section id="contact-info" class="bg-gray-100 py-16">
+		<div class="container mx-auto px-6 lg:px-12">
 
-	<!-- Aloqa sahifasi bo'limi -->
-	<section id="client-request" class="bg-white py-12">
-		<div class="container mx-auto px-6 lg:px-12 flex flex-col lg:flex-row items-center">
-			<!-- Chap tomon: Matn va Form -->
-			<div class="w-full lg:w-1/2 text-center lg:text-left">
-				<h2 class="text-4xl font-bold text-green-800 mb-4">HMM Exportning Klienti Bo'ling</h2>
-				<p class="text-lg text-gray-600 mb-6">
-					Sizni bizning doimiy mijozlarimiz safida ko‘rishdan mamnunmiz! HMM Export quritilgan mevalar bilan
-					yuqori sifatni taqdim etadi. Agar bizning mahsulotlarimizni olishni istasangiz, so'rov yuboring va
-					tez orada siz bilan bog'lanamiz.
-				</p>
-
-				<!-- Form -->
-				<form id="contactForm" class="php-email-form space-y-4">
-					<div class="space-y-4">
-						<!-- Ism -->
-						<div>
-							<label for="name-field" class="pb-2 block text-gray-700">Ismingiz</label>
-							<input type="text" name="name" id="name-field"
-								class="w-full py-3 px-6 rounded-lg border border-gray-300 text-gray-800" required
-								placeholder="Ismingiz">
-						</div>
-
-						<!-- Telefon Raqami -->
-						<div>
-							<label for="phone-field" class="pb-2 block text-gray-700">Telefon Raqamingiz</label>
-							<input type="text" name="phone" id="phone-field"
-								class="w-full py-3 px-6 rounded-lg border border-gray-300 text-gray-800" required
-								placeholder="+998 -- --- -- --">
-						</div>
-
-						<!-- Tugma -->
-						<div class="text-center">
-							<div class="loading" style="display: none;">Loading...</div>
-							<div class="error-message text-red-500" style="display: none;"></div>
-							<div class="sent-message text-green-600" style="display: none;">Xabaringiz yuborildi.
-								Rahmat!</div>
-							<button type="submit"
-								class="inline-block bg-green-800 text-white py-3 px-8 rounded-full font-bold text-lg hover:bg-green-600 transition duration-300 w-full">
-								So'rov yuborish
-							</button>
+			<div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+				<!-- Chap tomon: Manzil ma'lumotlari -->
+				<div class="lg:col-span-1">
+					<div class="space-y-6">
+						<!-- Manzil -->
+						<div class="manzil-item p-4">
+							<h3 class="text-2xl font-semibold text-gray-800 hover:text-green-800">
+								Davlat: O‘zbekiston
+							</h3>
+							<hr class="border-green-800 my-4" />
+							<p class="text-xl text-gray-700">Viloyat: Samarqand</p>
+							<hr class="border-green-800 my-4" />
+							<p class="text-xl text-gray-700">Shahar: Samarqand shahri</p>
+							<hr class="border-green-800 my-4" />
+							<p class="text-xl text-gray-700">Tuman: Urgut tuman</p>
+							<hr class="border-green-800 my-4" />
+							<p class="text-xl text-gray-700">Qishloq: G'o's</p>
 						</div>
 					</div>
-				</form>
-			</div>
+				</div>
 
-			<!-- O'ng tomon: Rasmlar -->
-			<div class="relative w-full lg:w-1/2 mt-8 lg:mt-0 flex justify-center items-center">
-				<!-- Rasm 1 -->
-				<div class="w-60 h-60 lg:w-72 lg:h-72 bg-cover bg-center rounded-lg shadow-lg"
-					style="background-image: url('./img/introduction-carousel-2.jpg');"></div>
-				<!-- Rasm 2 (ustma-ust joylashgan) -->
-				<div class="absolute top-10 left-16 lg:top-14 lg:left-20 w-40 h-40 lg:w-48 lg:h-48 bg-cover bg-center rounded-lg shadow-lg border-4 border-white"
-					style="background-image: url('./img/introduction-carousel-4.jpg');"></div>
+				<!-- O'ng tomon: Xarita (kengroq) -->
+				<div class="lg:col-span-2">
+					<iframe id="map"
+						src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2994.7214860974377!2d66.978913815269!3d39.65486597946014!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f4d19b0cf824a69%3A0xa1af6cbd2ec20702!2sSamarkand%2C%20Uzbekistan!5e0!3m2!1sen!2sus!4v1676961268712!5m2!1sen!2sus"
+						class="w-full h-[60vh] rounded-lg shadow-lg border-4 border-green-800" style="border:0;"
+						allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+				</div>
 			</div>
 		</div>
 	</section>
+	<section id="contact-form" class="relative py-16 bg-cover bg-center h-[80vh]"
+		style="background-image: url('./img/introduction-carousel-4.jpg');">
+		<div class="absolute inset-0 bg-black bg-opacity-60"></div>
+		<div class="container mx-auto px-6 lg:px-12 relative z-10">
+			<div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+				<!-- Forma bo'limi -->
+				<div class="bg-transparent p-8 shadow-lg rounded-lg space-y-6">
+					<form id="contactForm" class="space-y-6 mt-[-5%]" onsubmit="handleFormSubmit(event)">
+						<div>
+							<label for="name-field" class="block text-white font-medium mb-2">Ismingiz</label>
+							<input type="text" name="name" id="name-field"
+								class="w-full p-3 border border-gray-300 rounded-lg text-white bg-transparent placeholder-white"
+								required />
+						</div>
+						<hr class="border-white opacity-50" />
+						<div>
+							<label for="subject-field" class="block text-white font-medium mb-2">Telefon raqam</label>
+							<input type="text" name="subject" id="subject-field" placeholder="+998 -- --- -- --"
+								class="w-full p-3 border border-gray-300 rounded-lg text-white bg-transparent placeholder-white"
+								required />
+						</div>
+						<hr class="border-white opacity-50" />
+						<!-- Yangi text input -->
+						<div>
+							<label for="message-field" class="block text-white font-medium mb-2">Xabar</label>
+							<input type="text" name="message" id="message-field" placeholder="Qo'shimcha xabar..."
+								class="w-full p-3 border border-gray-300 rounded-lg text-white bg-transparent placeholder-white"
+								required />
+						</div>
+						<hr class="border-white opacity-50" />
+						<div class="text-center">
+							<button type="submit"
+								class="px-6 py-3 bg-green-800 text-white font-medium rounded-lg hover:bg-green-700 transition">Xabarni
+								yuboring</button>
+						</div>
+					</form>
+				</div>
 
-	<script>
-		document.addEventListener('DOMContentLoaded', function () {
-			const form = document.getElementById('contactForm');
+				<!-- Loading and success/error messages -->
+				<div class="loading" style="display:none;">Yuklanmoqda...</div>
+				<div class="sent-message" style="display:none;">Xabar muvaffaqiyatli yuborildi!</div>
+				<div class="error-message" style="display:none;"></div>
 
-			form.addEventListener('submit', function (e) {
-				e.preventDefault();
+				<script>
+					function handleFormSubmit(event) {
+						event.preventDefault(); // Formning oddiy yuborilishini oldini olish
 
-				const name = document.getElementById('name-field').value;
-				const phone = document.getElementById('phone-field').value;
+						// Formdan qiymatlar olish
+						const name = document.getElementById('name-field').value;
+						const number = document.getElementById('subject-field').value;
+						const message = document.getElementById('message-field').value; // Yangi inputdan qiymat olish
 
-				const telegramBotToken = '7471873187:AAHyO1pnz30aXf-K7kJvKe3WsgPFdE4VyLE';
-				const chatId = '6681379041'; // Replace with your actual chat ID
+						const telegramBotToken = '7471873187:AAHyO1pnz30aXf-K7kJvKe3WsgPFdE4VyLE'; // Botning tokeni
+						const chatId = '6681379041'; // Sizning chat ID (asl chat ID bilan almashtiring)
 
-				const text = `Yangi xabar:\nIsm: ${name}\nTelefon: ${phone}`;
+						const text = `Yangi xabar:\nIsm: ${name}\nTelefon: ${number}\nXabar: ${message}`;
 
-				document.querySelector('.loading').style.display = 'block';
+						// Yuklanayotgan indikatorni ko'rsatish
+						document.querySelector('.loading').style.display = 'block';
 
-				fetch(`https://api.telegram.org/bot${telegramBotToken}/sendMessage`, {
-					method: 'POST',
-					headers: {
-						'Content-Type': 'application/json',
-					},
-					body: JSON.stringify({
-						chat_id: chatId,
-						text: text
-					})
-				})
-					.then(response => {
-						if (!response.ok) {
-							throw new Error('Tarmoq javobi noto\'g\'ri');
-						}
-						return response.json();
-					})
-					.then(data => {
-						document.querySelector('.loading').style.display = 'none';
-						if (data.ok) {
-							document.querySelector('.sent-message').style.display = 'block';
-							form.reset();
-						} else {
-							throw new Error('Telegram API javobi noto\'g\'ri');
-						}
-					})
-					.catch(error => {
-						document.querySelector('.loading').style.display = 'none';
-						console.error('Xato:', error);
-						document.querySelector('.error-message').style.display = 'block';
-						document.querySelector('.error-message').textContent = 'Xato yuz berdi. Iltimos, qaytadan urinib ko\'ring.';
-					});
-			});
-		});
-	</script>
+						// Telegram API orqali xabar yuborish
+						fetch(`https://api.telegram.org/bot${telegramBotToken}/sendMessage`, {
+							method: 'POST',
+							headers: {
+								'Content-Type': 'application/json',
+							},
+							body: JSON.stringify({
+								chat_id: chatId,
+								text: text
+							})
+						})
+							.then(response => {
+								if (!response.ok) {
+									throw new Error('Tarmoq javobi noto‘g‘ri');
+								}
+								return response.json();
+							})
+							.then(data => {
+								// Yuklanayotgan indikatorni yashirish
+								document.querySelector('.loading').style.display = 'none';
+
+								if (data.ok) {
+									// Muvaffaqiyatli xabar yuborilganda
+									document.querySelector('.sent-message').style.display = 'block';
+									document.getElementById('contactForm').reset(); // Formani tozalash
+								} else {
+									throw new Error('Telegram API javobi noto‘g‘ri');
+								}
+							})
+							.catch(error => {
+								// Xato yuz berishi holatida
+								document.querySelector('.loading').style.display = 'none';
+								console.error('Xato:', error);
+								document.querySelector('.error-message').style.display = 'block';
+								document.querySelector('.error-message').textContent = 'Xato yuz berdi. Iltimos, qaytadan urinib ko‘ring.';
+							});
+					}
+				</script>
+				<div class="space-y-6">
+					<div class="space-y-4">
+						<div class="flex items-center space-x-4">
+							<i class="bi bi-geo-alt text-white text-2xl"></i>
+							<div>
+								<h3 class="text-xl font-semibold text-white">Manzil</h3>
+								<p class="text-white">Samarqand, O‘zbekiston</p>
+							</div>
+						</div>
+						<hr class="border-white opacity-50" />
+						<div class="flex items-center space-x-4">
+							<i class="bi bi-telephone text-white text-2xl"></i>
+							<div>
+								<h3 class="text-xl font-semibold text-white">Qo'ng'iroq qiling</h3>
+								<p class="text-white">+998 33 126 16 26</p>
+							</div>
+						</div>
+						<hr class="border-white opacity-50" />
+						<div class="flex items-center space-x-4">
+							<i class="bi bi-envelope text-white text-2xl"></i>
+							<div>
+								<h3 class="text-xl font-semibold text-white">Email</h3>
+								<p class="text-white">hmm.export@gmail.com</p>
+							</div>
+						</div>
+						<hr class="border-white opacity-50" />
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<div id="telegram-manager" class="fixed bottom-5 right-5 z-50">
+		<a href="https://t.me/Komil_KX" target="_blank" rel="noopener noreferrer">
+			<img src="https://trustagro.uz/wp-content/themes/trustagro/assets/icons/telegram-manager.svg"
+				alt="Telegram Icon" class="w-16 h-16 hover:scale-105 transition-transform duration-300">
+		</a>
+	</div>
+
+
+
+
+	<!-- Footer -->
+
+
+
+	<footer class="p-4 bg-white sm:p-6 dark:bg-white">
+		<div class="mx-auto max-w-screen-xl">
+			<div class="md:flex md:justify-between">
+				<div class="mb-6 md:mb-0">
+					<a href="./index.htm" class="flex items-center">
+						<span class="self-center text-2xl font-semibold whitespace-nowrap text-[#004225]">HMM
+							export</span>
+					</a>
+					<p class="text-[#004225] mt-2">Quruq mevalar eksport qiluvchi kompaniyamiz.</p>
+
+				</div>
+
+				<div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3 animate-fade-up">
+					<div>
+						<h2 class="mb-6 text-sm font-semibold text-[#004225] uppercase dark:text-[#004225]">
+							Resurslar
+						</h2>
+						<ul class="text-[#004225] dark:text-[#004225]">
+							<li class="mb-4">
+								<a href="https://t.me/Komil_KX" class="hover:underline">KomilDev</a>
+							</li>
+							<li>
+								<a href="https://github.com/Komil-Dev" class="hover:underline">Git Hub</a>
+							</li>
+						</ul>
+					</div>
+					<div>
+						<h2 class="mb-6 text-sm font-semibold text-[#004225] uppercase dark:text-[#004225]">Bizni
+							kuzatib boring</h2>
+						<ul class="text-[#004225] dark:text-[#004225]">
+							<li class="mb-4">
+								<a href="https://t.me/Komil_KX" class="hover:underline">Telegram</a>
+							</li>
+							<li>
+								<a href="https://www.instagram.com/Komil_dev." class="hover:underline">Instagram</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+			<!-- Developer Section -->
+			<div class="developer mt-8 text-center text-gray-500 text-sm">
+				<a href="https://t.me/Komil_KX" class="hover:text-green-500">Developed by KomilDev</a>
+			</div>
+			<div class="sm:flex sm:items-center sm:justify-between">
+				<span class="text-sm text-[#004225] sm:text-center dark:text-[#004225]">© 2025 <a
+						href="https://t.me/Lentalar_2025" class="hover:underline">HMM export™</a>. Barcha huquqlar
+					himoyalangan.</span>
+				<div class="flex mt-4 space-x-6 sm:justify-center sm:mt-0">
+					<a href="#" class="text-[#004225] hover:text-[#004225] dark:hover:text-[#004225]">
+						<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+							<path fill-rule="evenodd"
+								d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
+								clip-rule="evenodd" />
+						</svg>
+					</a>
+					<a href="#" class="text-[#004225] hover:text-[#004225] dark:hover:text-[#004225]">
+						<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+							<path fill-rule="evenodd"
+								d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"
+								clip-rule="evenodd" />
+						</svg>
+					</a>
+				</div>
+			</div>
+		</div>
+	</footer>
 </body>
 
 </html>
