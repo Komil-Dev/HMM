@@ -4,33 +4,18 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description"
-		content="HMM Export bilan bog'lanish uchun aloqa sahifasi. Yangi mijozlar uchun mahsulotlar haqida ma'lumot olish imkoniyati." />
 	<title>Aloqa - HMM Export</title>
-	<meta name="title" content="HMM export | Uzbekistan">
-	<meta name="description" content="HMM export dry fruits to world ">
-	<meta name="keywords" content="Dry fruits,nuts,prunes">
-	<meta name="robots" content="index, follow">
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<meta name="language" content="English">
-	<meta name="revisit-after" content="1 days">
-	<meta name="author" content="KomilDev">
-
-	<link rel="canonical" href="https://hmmexport.netlify.app/">
 	<script src="https://cdn.tailwindcss.com"></script>
-	<script src="https://cdn.jsdelivr.net/npm/heroicons@1.0.6/solid/phone-icon.js"></script>
-	<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
-	<!-- Add favicon -->
-	<link rel="icon" href="./img/photo_2024-12-26_16-27-14.jpg" type="image/jpeg" />
-	<script src="https://cdn.tailwindcss.com"></script>
-	<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+		rel="stylesheet">
 </head>
 
-<body class="bg-gray-100 font-robotoCondensed">
+<body class="bg-gray-50 font-[Poppins]">
+	<!-- Loading Spinner -->
 	<div id="loading" class="fixed inset-0 bg-white flex justify-center items-center z-50">
 		<div class="animate-spin rounded-full border-t-4 border-green-600 w-16 h-16"></div>
 	</div>
-	<!-- Navbar -->
+
 	<header class="fixed top-0 left-0 w-full bg-gradient-to-r from-green-800 to-green-600 shadow-md z-10 h-[10vh]">
 		<div class="container mx-auto px-4 py-3 flex items-center justify-between h-full">
 			<!-- Left Side: Logo -->
@@ -122,184 +107,148 @@
 		};
 	</script>
 
-	<!-- Aloqa ma'lumotlari bo'limi -->
-	<section id="contact-info" class="bg-gray-100 py-16">
-		<div class="container mx-auto px-6 lg:px-12">
+	<!-- Main Content -->
+	<main class="pt-20">
+		<!-- Order Form Section -->
+		<section class="py-12 bg-gradient-to-b from-green-50 to-white">
+			<div class="container mx-auto px-4 max-w-4xl">
+				<div class="bg-white rounded-xl shadow-xl p-8">
+					<h2 class="text-3xl font-bold text-center text-green-800 mb-8">Mahsulot buyurtma berish</h2>
 
-			<div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
-				<!-- Chap tomon: Manzil ma'lumotlari -->
-				<div class="lg:col-span-1">
-					<div class="space-y-6">
-						<!-- Manzil -->
-						<div class="manzil-item p-4">
-							<h3 class="text-2xl font-semibold text-gray-800 hover:text-green-800">
-								Davlat: O‘zbekiston
-							</h3>
-							<hr class="border-green-800 my-4" />
-							<p class="text-xl text-gray-700">Viloyat: Samarqand</p>
-							<hr class="border-green-800 my-4" />
-							<p class="text-xl text-gray-700">Shahar: Samarqand shahri</p>
-							<hr class="border-green-800 my-4" />
-							<p class="text-xl text-gray-700">Tuman: Urgut tuman</p>
-							<hr class="border-green-800 my-4" />
-							<p class="text-xl text-gray-700">Qishloq: G'o's</p>
+					<form id="contactForm" class="space-y-6" onsubmit="handleFormSubmit(event)">
+						<!-- Personal Info -->
+						<div class="grid md:grid-cols-2 gap-6">
+							<div>
+								<label for="name-field" class="block text-gray-700 font-medium mb-2">Ismingiz</label>
+								<input type="text" id="name-field"
+									class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-green-500 focus:border-green-500"
+									required>
+							</div>
+							<div>
+								<label for="subject-field" class="block text-gray-700 font-medium mb-2">Telefon
+									raqam</label>
+								<input type="tel" id="subject-field"
+									class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-green-500 focus:border-green-500"
+									placeholder="+998 __ ___ __ __" required>
+							</div>
 						</div>
-					</div>
-				</div>
 
-				<!-- O'ng tomon: Xarita (kengroq) -->
-				<div class="lg:col-span-2">
-					<iframe id="map"
-						src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2994.7214860974377!2d66.978913815269!3d39.65486597946014!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f4d19b0cf824a69%3A0xa1af6cbd2ec20702!2sSamarkand%2C%20Uzbekistan!5e0!3m2!1sen!2sus!4v1676961268712!5m2!1sen!2sus"
-						class="w-full h-[60vh] rounded-lg shadow-lg border-4 border-green-800" style="border:0;"
-						allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-				</div>
-			</div>
-		</div>
-	</section>
-	<section id="contact-form" class="relative py-16 bg-cover bg-center h-[80vh]"
-		style="background-image: url('./img/introduction-carousel-4.jpg');">
-		<div class="absolute inset-0 bg-black bg-opacity-60"></div>
-		<div class="container mx-auto px-6 lg:px-12 relative z-10">
-			<div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-				<!-- Forma bo'limi -->
-				<div class="bg-transparent p-8 shadow-lg rounded-lg space-y-6">
-					<form id="contactForm" class="space-y-6 mt-[-5%]" onsubmit="handleFormSubmit(event)">
+						<!-- Product Selection -->
 						<div>
-							<label for="name-field" class="block text-white font-medium mb-2">Ismingiz</label>
-							<input type="text" name="name" id="name-field"
-								class="w-full p-3 border border-gray-300 rounded-lg text-white bg-transparent placeholder-white"
-								required />
+							<label for="product-field" class="block text-gray-700 font-medium mb-2">Mahsulot
+								turi</label>
+							<select id="product-field"
+								class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-green-500 focus:border-green-500">
+								<option value="">Mahsulotni tanlang</option>
+								<option value="yong'oq">Yong'oq</option>
+								<option value="bodom">Bodom</option>
+								<option value="pisda">Pista</option>
+								<option value="mayiz">Mayiz</option>
+							</select>
 						</div>
-						<hr class="border-white opacity-50" />
+
+						<!-- Quantity -->
 						<div>
-							<label for="subject-field" class="block text-white font-medium mb-2">Telefon raqam</label>
-							<input type="text" name="subject" id="subject-field" placeholder="+998 -- --- -- --"
-								class="w-full p-3 border border-gray-300 rounded-lg text-white bg-transparent placeholder-white"
-								required />
+							<label for="quantity-field" class="block text-gray-700 font-medium mb-2">Miqdori
+								(kg)</label>
+							<input type="number" id="quantity-field"
+								class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-green-500 focus:border-green-500"
+								min="1" required>
 						</div>
-						<hr class="border-white opacity-50" />
-						<!-- Yangi text input -->
+
+						<!-- Additional Message -->
 						<div>
-							<label for="message-field" class="block text-white font-medium mb-2">Xabar</label>
-							<input type="text" name="message" id="message-field" placeholder="Qo'shimcha xabar..."
-								class="w-full p-3 border border-gray-300 rounded-lg text-white bg-transparent placeholder-white"
-								required />
+							<label for="message-field" class="block text-gray-700 font-medium mb-2">Qo'shimcha
+								xabar</label>
+							<textarea id="message-field"
+								class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-green-500 focus:border-green-500"
+								rows="4"></textarea>
 						</div>
-						<hr class="border-white opacity-50" />
+
+						<!-- Submit Button -->
 						<div class="text-center">
 							<button type="submit"
-								class="px-6 py-3 bg-green-800 text-white font-medium rounded-lg hover:bg-green-700 transition">Xabarni
-								yuboring</button>
+								class="bg-green-600 text-white px-8 py-3 rounded-lg hover:bg-green-700 transition transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2">
+								Buyurtma berish
+							</button>
 						</div>
 					</form>
 				</div>
+			</div>
+		</section>
 
-				<!-- Loading and success/error messages -->
-				<div class="loading" style="display:none;">Yuklanmoqda...</div>
-				<div class="sent-message" style="display:none;">Xabar muvaffaqiyatli yuborildi!</div>
-				<div class="error-message" style="display:none;"></div>
+		<!-- Location Section -->
+		<section class="py-12 bg-white">
+			<div class="container mx-auto px-4">
+				<div class="grid md:grid-cols-2 gap-8 items-center">
+					<!-- Map -->
+					<div class="rounded-xl overflow-hidden shadow-lg">
+						<iframe
+							src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2994.7214860974377!2d66.978913815269!3d39.65486597946014!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f4d19b0cf824a69%3A0xa1af6cbd2ec20702!2sSamarkand%2C%20Uzbekistan!5e0!3m2!1sen!2sus!4v1676961268712!5m2!1sen!2sus"
+							class="w-full h-[400px]" style="border:0;" allowfullscreen="" loading="lazy">
+						</iframe>
+					</div>
 
-				<script>
-					function handleFormSubmit(event) {
-						event.preventDefault(); // Formning oddiy yuborilishini oldini olish
+					<!-- Contact Info -->
+					<div class="space-y-6 p-6 bg-green-50 rounded-xl">
+						<h3 class="text-2xl font-bold text-green-800">Bizning manzil</h3>
+						<div class="space-y-4">
+							<div class="flex items-center space-x-4">
+								<div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
+									<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-600" fill="none"
+										viewBox="0 0 24 24" stroke="currentColor">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+											d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+											d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+									</svg>
+								</div>
+								<div>
+									<h4 class="font-semibold">Manzil:</h4>
+									<p>Samarqand viloyati, Urgut tumani, G'o's qishlog'i</p>
+								</div>
+							</div>
+							<div class="flex items-center space-x-4">
+								<div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
+									<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-600" fill="none"
+										viewBox="0 0 24 24" stroke="currentColor">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+											d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+									</svg>
+								</div>
+								<div>
+									<h4 class="font-semibold">Telefon:</h4>
+									<p>+998 90 030 48 68</p>
 
-						// Formdan qiymatlar olish
-						const name = document.getElementById('name-field').value;
-						const number = document.getElementById('subject-field').value;
-						const message = document.getElementById('message-field').value; // Yangi inputdan qiymat olish
-
-						const telegramBotToken = '7471873187:AAHyO1pnz30aXf-K7kJvKe3WsgPFdE4VyLE'; // Botning tokeni
-						const chatId = '6681379041'; // Sizning chat ID (asl chat ID bilan almashtiring)
-
-						const text = `Yangi xabar:\nIsm: ${name}\nTelefon: ${number}\nXabar: ${message}`;
-
-						// Yuklanayotgan indikatorni ko'rsatish
-						document.querySelector('.loading').style.display = 'block';
-
-						// Telegram API orqali xabar yuborish
-						fetch(`https://api.telegram.org/bot${telegramBotToken}/sendMessage`, {
-							method: 'POST',
-							headers: {
-								'Content-Type': 'application/json',
-							},
-							body: JSON.stringify({
-								chat_id: chatId,
-								text: text
-							})
-						})
-							.then(response => {
-								if (!response.ok) {
-									throw new Error('Tarmoq javobi noto‘g‘ri');
-								}
-								return response.json();
-							})
-							.then(data => {
-								// Yuklanayotgan indikatorni yashirish
-								document.querySelector('.loading').style.display = 'none';
-
-								if (data.ok) {
-									// Muvaffaqiyatli xabar yuborilganda
-									document.querySelector('.sent-message').style.display = 'block';
-									document.getElementById('contactForm').reset(); // Formani tozalash
-								} else {
-									throw new Error('Telegram API javobi noto‘g‘ri');
-								}
-							})
-							.catch(error => {
-								// Xato yuz berishi holatida
-								document.querySelector('.loading').style.display = 'none';
-								console.error('Xato:', error);
-								document.querySelector('.error-message').style.display = 'block';
-								document.querySelector('.error-message').textContent = 'Xato yuz berdi. Iltimos, qaytadan urinib ko‘ring.';
-							});
-					}
-				</script>
-				<div class="space-y-6">
-					<div class="space-y-4">
-						<div class="flex items-center space-x-4">
-							<i class="bi bi-geo-alt text-white text-2xl"></i>
-							<div>
-								<h3 class="text-xl font-semibold text-white">Manzil</h3>
-								<p class="text-white">Samarqand, O‘zbekiston</p>
+								</div>
+							</div>
+							<div class="flex items-center space-x-4">
+								<div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
+									<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-600" fill="none"
+										viewBox="0 0 24 24" stroke="currentColor">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+											d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+									</svg>
+								</div>
+								<div>
+									<h4 class="font-semibold">Email:</h4>
+									<p>hmm.export@gmail.com</p>
+								</div>
 							</div>
 						</div>
-						<hr class="border-white opacity-50" />
-						<div class="flex items-center space-x-4">
-							<i class="bi bi-telephone text-white text-2xl"></i>
-							<div>
-								<h3 class="text-xl font-semibold text-white">Qo'ng'iroq qiling</h3>
-								<p class="text-white">+998 33 126 16 26</p>
-							</div>
-						</div>
-						<hr class="border-white opacity-50" />
-						<div class="flex items-center space-x-4">
-							<i class="bi bi-envelope text-white text-2xl"></i>
-							<div>
-								<h3 class="text-xl font-semibold text-white">Email</h3>
-								<p class="text-white">hmm.export@gmail.com</p>
-							</div>
-						</div>
-						<hr class="border-white opacity-50" />
 					</div>
 				</div>
 			</div>
-		</div>
-	</section>
+		</section>
+	</main>
+
+
 	<div id="telegram-manager" class="fixed bottom-5 right-5 z-50">
 		<a href="https://t.me/Komil_KX" target="_blank" rel="noopener noreferrer">
 			<img src="https://trustagro.uz/wp-content/themes/trustagro/assets/icons/telegram-manager.svg"
 				alt="Telegram Icon" class="w-16 h-16 hover:scale-105 transition-transform duration-300">
 		</a>
 	</div>
-
-
-
-
-	<!-- Footer -->
-
-
-
 	<footer class="p-4 bg-white sm:p-6 dark:bg-white">
 		<div class="mx-auto max-w-screen-xl">
 			<div class="md:flex md:justify-between">
@@ -369,6 +318,55 @@
 			</div>
 		</div>
 	</footer>
+
+	<script>
+		// Form submission handler
+		function handleFormSubmit(event) {
+			event.preventDefault();
+
+			const name = document.getElementById('name-field').value;
+			const phone = document.getElementById('subject-field').value;
+			const product = document.getElementById('product-field').value;
+			const quantity = document.getElementById('quantity-field').value;
+			const message = document.getElementById('message-field').value;
+
+			const telegramBotToken = '7471873187:AAHyO1pnz30aXf-K7kJvKe3WsgPFdE4VyLE';
+			const chatId = '6681379041';
+
+			const text = `Yangi buyurtma:\n\nIsm: ${name}\nTelefon: ${phone}\nMahsulot: ${product}\nMiqdori: ${quantity} kg\nXabar: ${message}`;
+
+			fetch(`https://api.telegram.org/bot${telegramBotToken}/sendMessage`, {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json',
+				},
+				body: JSON.stringify({
+					chat_id: chatId,
+					text: text
+				})
+			})
+				.then(response => response.json())
+				.then(data => {
+					if (data.ok) {
+						alert('Buyurtmangiz muvaffaqiyatli yuborildi!');
+						document.getElementById('contactForm').reset();
+					} else {
+						throw new Error('Xatolik yuz berdi');
+					}
+				})
+				.catch(error => {
+					console.error('Error:', error);
+					alert('Xatolik yuz berdi. Iltimos, qayta urinib ko\'ring.');
+				});
+		}
+
+		// Loading screen
+		window.onload = function () {
+			setTimeout(function () {
+				document.getElementById('loading').style.display = 'none';
+			}, 1000);
+		};
+	</script>
 </body>
 
 </html>
