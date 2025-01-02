@@ -7,29 +7,33 @@
 	<meta name="description" content="Mahsus takliflar va arzon narxlar haqida ma'lumot olish uchun sahifa.">
 	<title>Mahsus Takliflar - HMM Export</title>
 	<meta name="title" content="HMM export | Uzbekistan">
-	<meta name="description" content="HMM export dry fruits to world ">
-	<meta name="keywords" content="Dry fruits,nuts,prunes">
+	<meta name="description" content="HMM export quruq mevalar eksporti">
+	<meta name="keywords" content="Quruq mevalar,yong'oqlar,mayiz">
 	<meta name="robots" content="index, follow">
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<meta name="language" content="English">
+	<meta name="language" content="Uzbek">
 	<meta name="revisit-after" content="1 days">
 	<meta name="author" content="KomilDev">
-
-	<link rel="canonical" href="https://hmmexport.netlify.app/">
 	<script src="https://cdn.tailwindcss.com"></script>
-	<script src="https://cdn.jsdelivr.net/npm/heroicons@1.0.6/solid/phone-icon.js"></script>
-	<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
-	<!-- Add favicon -->
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+		rel="stylesheet">
 	<link rel="icon" href="./img/photo_2024-12-26_16-27-14.jpg" type="image/jpeg" />
-	<script src="https://cdn.tailwindcss.com"></script>
+	<style>
+		body {
+			font-family: 'Poppins', sans-serif;
+		}
+
+		.offer-card:hover {
+			transform: translateY(-5px);
+		}
+	</style>
 </head>
 
-<body class="bg-gray-100 font-roboto">
-
+<body class="bg-gray-50">
+	<!-- Loading Screen -->
 	<div id="loading" class="fixed inset-0 bg-white flex justify-center items-center z-50">
 		<div class="animate-spin rounded-full border-t-4 border-green-600 w-16 h-16"></div>
 	</div>
-	<!-- Navbar -->
+
 	<header class="fixed top-0 left-0 w-full bg-gradient-to-r from-green-800 to-green-600 shadow-md z-10 h-[10vh]">
 		<div class="container mx-auto px-4 py-3 flex items-center justify-between h-full">
 			<!-- Left Side: Logo -->
@@ -121,21 +125,119 @@
 		};
 	</script>
 
-	<!-- Mahsus Taklif Section -->
-	<section class="py-20 bg-white">
-		<div class="container mx-auto text-center px-6 lg:px-12">
-			<h2 class="text-5xl font-bold text-green-800 mb-4">Mahsus Taklif</h2>
-			<p class="text-xl text-gray-700 mb-8">Bizning mijozlarimiz uchun arzon narxlar va eksklyuziv takliflar.
-				Faqatgina bizda!</p>
 
-			<!-- O‘rtada chiroyli yozuv -->
-			<div class="bg-gradient-to-r from-green-500 to-green-800 text-white py-12 rounded-lg shadow-lg">
-				<h3 class="text-4xl font-semibold mb-4">Arzon Narxlar Shu Yerde!</h3>
-				<p class="text-lg">Sizni ajoyib takliflar va arzon narxlar kutmoqda. Takliflarimizni qo‘lga kiritish
-					uchun tezda bog‘laning!</p>
+
+	<!-- Hero Section -->
+	<section class="bg-white min-h-[80vh] flex items-center justify-center mt-[10vh] text-green-800">
+		<div class="container mx-auto px-4 text-center">
+			<h1 class="text-4xl md:text-6xl font-bold mb-4 animate-fade-down">Bizning Mahsus Takliflar</h1>
+			<p class="text-xl md:text-2xl mb-4 text-green-700">Eng sara mahsulotlar, eng qulay narxlarda</p>
+			<div class="max-w-3xl mx-auto mb-8">
+				<p class="text-lg text-green-600 mb-4">
+					HMM Export kompaniyasi O'zbekistonning eng sifatli quruq mevalarini dunyo bozorlariga taqdim etadi
+				</p>
+				<p class="text-lg text-green-600">
+					Biz bilan hamkorlik qiling va yuqori sifatli mahsulotlarimizdan bahramand bo'ling
+				</p>
+			</div>
+			<a href="#offers"
+				class="inline-block bg-green-800 text-white px-8 py-3 rounded-full font-semibold hover:bg-green-700 transition duration-300">
+				Maxsus Takliflarni Ko'rish
+			</a>
+		</div>
+	</section>
+
+	<!-- Special Offers Grid -->
+	<section id="offers" class="py-20 bg-gray-50">
+		<div class="container mx-auto px-4">
+			<h2 class="text-3xl md:text-4xl font-bold text-center text-green-800 mb-12">Bizning Maxsus Takliflarimiz
+			</h2>
+			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+				<!-- Offer Card 1 -->
+				<!-- Offer Card 1 -->
+				<div class="offer-card bg-white rounded-xl shadow-lg overflow-hidden transition duration-300">
+					<img src="https://trustagro.uz/wp-content/uploads/2021/02/5-2.jpg"
+						alt="Premium Quruq Mevalar To'plami" class="h-48 w-full object-cover">
+					<div class="p-6">
+						<div class="text-green-600 text-sm font-semibold mb-2">25% CHEGIRMA</div>
+						<h3 class="text-xl font-bold mb-2">Premium Quruq Mevalar To'plami</h3>
+						<p class="text-gray-600 mb-4">Eng sifatli mahsulotlardan tashkil topgan maxsus to'plam</p>
+						<div class="flex justify-between items-center">
+
+							<a href="./aloqa.html" class="block">
+								<button
+									class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition">
+									Buyurtma Berish
+								</button>
+							</a>
+
+						</div>
+					</div>
+				</div>
+
+				<!-- Offer Card 2 -->
+				<div class="offer-card bg-white rounded-xl shadow-lg overflow-hidden transition duration-300">
+					<img src="https://trustagro.uz/wp-content/uploads/2021/02/photo_2021-02-18_12-46-08.jpg"
+						alt="Organik Yong'oqlar To'plami" class="h-48 w-full object-cover">
+					<div class="p-6">
+						<div class="text-green-600 text-sm font-semibold mb-2">YANGI</div>
+						<h3 class="text-xl font-bold mb-2">Organik Yong'oqlar To'plami</h3>
+						<p class="text-gray-600 mb-4">100% tabiiy usulda yetishtirilgan yong'oqlar</p>
+						<div class="flex justify-between items-center">
+
+							<a href="./aloqa.html" class="block">
+								<button
+									class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition">
+									Buyurtma Berish
+								</button>
+							</a>
+						</div>
+					</div>
+				</div>
+
+				<!-- Offer Card 3 -->
+				<div class="offer-card bg-white rounded-xl shadow-lg overflow-hidden transition duration-300">
+					<img src="https://trustagro.uz/wp-content/uploads/2021/02/23.jpg" alt="Aralash Quruq Mevalar"
+						class="h-48 w-full object-cover">
+					<div class="p-6">
+						<div class="text-green-600 text-sm font-semibold mb-2">15% CHEGIRMA</div>
+						<h3 class="text-xl font-bold mb-2">Aralash Quruq Mevalar</h3>
+						<p class="text-gray-600 mb-4">Turli xil quruq mevalardan iborat to'plam</p>
+						<div class="flex justify-between items-center">
+							<a href="./aloqa.html" class="block">
+								<button
+									class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition">
+									Buyurtma Berish
+								</button>
+							</a>
+						</div>
+					</div>
+				</div>
+
 			</div>
 		</div>
 	</section>
+
+
+	<!-- Call to Action Section -->
+	<section class="bg-green-800 text-white py-20">
+		<div class="container mx-auto px-4 text-center">
+			<h2 class="text-4xl font-bold mb-6">Maxsus Taklifdan Foydalaning</h2>
+			<p class="text-xl mb-8 max-w-2xl mx-auto">Hoziroq biz bilan bog'laning va maxsus takliflarimizdan bahramand
+				bo'ling</p>
+			<div class="flex flex-wrap justify-center gap-4">
+				<a href="tel:+998900304868"
+					class="bg-white text-green-800 px-8 py-3 rounded-full font-semibold hover:bg-green-100 transition">
+					Qo'ng'iroq Qilish
+				</a>
+				<a href="https://t.me/Komil_KX"
+					class="bg-transparent border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-green-800 transition">
+					Telegram Orqali
+				</a>
+			</div>
+		</div>
+	</section>
+
 
 
 	<div id="telegram-manager" class="fixed bottom-5 right-5 z-50">
@@ -223,6 +325,24 @@
 	</footer>
 
 
+	<script>
+		// Loading Screen
+		window.onload = function () {
+			setTimeout(function () {
+				document.getElementById('loading').style.display = 'none';
+			}, 1000);
+		};
+
+		// Smooth scroll for anchor links
+		document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+			anchor.addEventListener('click', function (e) {
+				e.preventDefault();
+				document.querySelector(this.getAttribute('href')).scrollIntoView({
+					behavior: 'smooth'
+				});
+			});
+		});
+	</script>
 </body>
 
 </html>
