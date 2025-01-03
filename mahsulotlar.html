@@ -119,8 +119,12 @@
 			<p class="mt-4 text-lg">Har bir kategoriyadagi quruq mevalarni ko'ring.</p>
 		</div>
 		<div class="flex justify-center space-x-2 sm:space-x-4 mb-8 flex-wrap gap-2">
-			<button id="apricots"
+			<button id="all-products"
 				class="category-button active-category text-green-900 py-2 px-4 sm:px-6 font-semibold border border-green-800 rounded-[15px] hover:bg-green-800 hover:text-white transition duration-300">
+				Hamma mahsulotlar
+			</button>
+			<button id="apricots"
+				class="category-button text-green-900 py-2 px-4 sm:px-6 font-semibold border border-green-800 rounded-[15px] hover:bg-green-800 hover:text-white transition duration-300">
 				Ko'ragalar
 			</button>
 			<button id="raisons"
@@ -131,19 +135,15 @@
 				class="category-button text-green-900 py-2 px-4 sm:px-6 font-semibold border border-green-800 rounded-[15px] hover:bg-green-800 hover:text-white transition duration-300">
 				Sliva & Kampot
 			</button>
-
 			<button id="nuts"
 				class="category-button text-green-900 py-2 px-4 sm:px-6 font-semibold border border-green-800 rounded-[15px] hover:bg-green-800 hover:text-white transition duration-300">
 				Yong'oqlar
 			</button>
 		</div>
 
-
-
 		<div id="product-cards"
 			class="container mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
 			<!-- Cards will be dynamically inserted here -->
-
 		</div>
 	</section>
 
@@ -283,19 +283,22 @@
 		const categoryButtons = document.querySelectorAll(".category-button");
 
 		function displayProducts(category) {
-			productCards.innerHTML = ""; // Clear existing cards
+			productCards.innerHTML = "";
+			const selectedProducts = category === "all-products"
+				? Object.values(products).flat().slice(0, 24)
+				: products[category].slice(0, 8);
 
-			products[category].forEach(product => {
+			selectedProducts.forEach(product => {
 				const card = `
-					<div class="bg-white rounded-lg shadow-lg overflow-hidden max-w-full sm:max-w-xs w-96 mx-auto">
-						<img src="${product.img}" alt="${product.title}" loading="lazy" class="w-full h-48 object-cover">
-						<div class="p-4">
-							<h3 class="text-xl font-semibold">${product.title}</h3>
-							<p class="mt-2">${product.desc}</p>
-							<a href="/aloqa.html" class="block mt-4 bg-green-900 text-white py-2 px-4 rounded-lg text-center hover:bg-green-600 transition duration-300 ease-in-out">Buyurtma berish</a>
-						</div>
-					</div>
-				`;
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden max-w-full sm:max-w-xs w-96 mx-auto">
+          <img src="${product.img}" alt="${product.title}" loading="lazy" class="w-full h-48 object-cover">
+          <div class="p-4">
+            <h3 class="text-xl font-semibold">${product.title}</h3>
+            <p class="mt-2">${product.desc}</p>
+            <a href="./aloqa.html" class="block mt-4 bg-green-900 text-white py-2 px-4 rounded-lg text-center hover:bg-green-600 transition duration-300 ease-in-out">Buyurtma berish</a>
+          </div>
+        </div>
+      `;
 				productCards.innerHTML += card;
 			});
 		}
@@ -308,9 +311,10 @@
 			});
 		});
 
-		// Display default category (apricots) on load
-		displayProducts("apricots");
+		// Default
+		displayProducts("all-products");
 	</script>
+
 
 	<style>
 		.active-category {
