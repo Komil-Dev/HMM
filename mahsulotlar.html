@@ -121,20 +121,20 @@
 		<div class="flex justify-center space-x-2 sm:space-x-4 mb-8 flex-wrap gap-2">
 			<button id="apricots"
 				class="category-button active-category text-green-900 py-2 px-4 sm:px-6 font-semibold border border-green-800 rounded-[15px] hover:bg-green-800 hover:text-white transition duration-300">
-				Apricotlar
+				Ko'ragalar
 			</button>
 			<button id="raisons"
 				class="category-button text-green-900 py-2 px-4 sm:px-6 font-semibold border border-green-800 rounded-[15px] hover:bg-green-800 hover:text-white transition duration-300">
-				Raisons
+				Magizlar
 			</button>
 			<button id="prunes"
 				class="category-button text-green-900 py-2 px-4 sm:px-6 font-semibold border border-green-800 rounded-[15px] hover:bg-green-800 hover:text-white transition duration-300">
-				Prunes and mix fruits
+				Sliva & Kampot
 			</button>
 
-			<button id="orik"
+			<button id="nuts"
 				class="category-button text-green-900 py-2 px-4 sm:px-6 font-semibold border border-green-800 rounded-[15px] hover:bg-green-800 hover:text-white transition duration-300">
-				O'rik
+				Yong'oqlar
 			</button>
 		</div>
 
@@ -270,13 +270,14 @@
 			],
 
 
-			orik: [
-				{ title: "O'rik", img: "./assets/img/dried-orik.jpg", desc: "Tabiiy quruq o'rik." },
-				{ title: "O'rik Mix", img: "./assets/img/dried-orik.jpg", desc: "Aralashmalar." },
-				{ title: "O'rik Deluxe", img: "./assets/img/dried-orik.jpg", desc: "Yuqori sifat." },
-				{ title: "Sweet O'rik", img: "./assets/img/dried-orik.jpg", desc: "Mazali o'rik." },
-				{ title: "Premium O'rik", img: "./assets/img/dried-orik.jpg", desc: "Eksklyuziv mahsulot." },
-			],
+			nuts: [
+				{ title: "Oddiy Yong'oq", img: "https://trustagro.uz/wp-content/uploads/2021/02/photo_2021-02-18_12-46-08.jpg", desc: "Tabiiy va foydali oddiy yong'oq." },
+				{ title: "Premium Yong'oq", img: "https://trustagro.uz/wp-content/uploads/2021/02/photo_2021-02-17_16-44-43-1.jpg", desc: "Yuqori sifatli premium yong'oq." },
+				{ title: "Aralash Yong'oq", img: "https://trustagro.uz/wp-content/uploads/2021/02/photo_2021-02-17_16-45-05-1.jpg", desc: "Turli xil yong'oqlarning aralashmasi." },
+				{ title: "Mazali Yong'oq", img: "https://trustagro.uz/wp-content/uploads/2021/02/photo_2021-02-17_16-08-30.jpg", desc: "Mazasi yoqimli bo'lgan yong'oqlar." },
+				{ title: "Organik Yong'oq", img: "./assets/img/dried-yongoq.jpg", desc: "100% tabiiy usulda yetishtirilgan organik yong'oq." },
+			]
+
 		};
 		const productCards = document.getElementById("product-cards");
 		const categoryButtons = document.querySelectorAll(".category-button");
