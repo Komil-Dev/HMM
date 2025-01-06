@@ -14,9 +14,8 @@
 
 <body class="font-sans bg-gray-50">
 	<!-- Loading Screen -->
-	<div id="loading" class="fixed inset-0 bg-white flex justify-center items-center z-50">
-		<div class="animate-spin rounded-full border-t-4 border-green-600 w-16 h-16"></div>
-	</div>
+
+
 	<!-- Navbar -->
 	<header class="fixed top-0 left-0 w-full bg-transparent transition-all duration-300 z-10 h-[72px]" id="mainHeader">
 		<div class="container mx-auto px-4 py-3 flex items-center justify-between h-full">
@@ -177,40 +176,58 @@
 
 
 
-
-
-	<!-- Product Category Section -->
-	<section id="product-categories" class="products section py-10 mt-[10vh]">
-		<div class="container mx-auto text-center mb-8">
-			<h2 class="text-3xl font-semibold">Mahsulotlar Kategoriyalari</h2>
-			<p class="mt-4 text-lg">Har bir kategoriyadagi quruq mevalarni ko'ring.</p>
-		</div>
-		<div class="flex justify-center space-x-2 sm:space-x-4 mb-8 flex-wrap gap-2">
-			<button id="all-products"
-				class="category-button active-category text-green-900 py-2 px-4 sm:px-6 font-semibold border border-green-800 rounded-[15px] hover:bg-green-800 hover:text-white transition duration-300">
-				Hamma mahsulotlar
-			</button>
-			<button id="apricots"
-				class="category-button text-green-900 py-2 px-4 sm:px-6 font-semibold border border-green-800 rounded-[15px] hover:bg-green-800 hover:text-white transition duration-300">
-				Ko'ragalar
-			</button>
-			<button id="raisons"
-				class="category-button text-green-900 py-2 px-4 sm:px-6 font-semibold border border-green-800 rounded-[15px] hover:bg-green-800 hover:text-white transition duration-300">
-				Magizlar
-			</button>
-			<button id="prunes"
-				class="category-button text-green-900 py-2 px-4 sm:px-6 font-semibold border border-green-800 rounded-[15px] hover:bg-green-800 hover:text-white transition duration-300">
-				Sliva & Kampot
-			</button>
-			<button id="nuts"
-				class="category-button text-green-900 py-2 px-4 sm:px-6 font-semibold border border-green-800 rounded-[15px] hover:bg-green-800 hover:text-white transition duration-300">
-				Yong'oqlar
+	<section
+		class="min-h-screen flex items-center justify-center bg-gradient-to-r from-blue-500 to-purple-600 animate-fade-in">
+		<div class="container mx-auto px-6 py-16 text-center">
+			<h1 class="text-5xl md:text-6xl font-extrabold text-white mb-8 animate-bounce">
+				Yuqori sifatdagi mahsulotlar
+			</h1>
+			<p class="text-xl text-white mb-12 animate-pulse">
+				Har bir mahsulotda innovatsiya va sifatni his eting
+			</p>
+			<button
+				class="bg-white text-purple-600 px-8 py-3 rounded-full font-semibold hover:bg-purple-100 transition-all duration-300 transform hover:scale-105">
+				Aloqa
 			</button>
 		</div>
+	</section>
 
-		<div id="product-cards"
-			class="container mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-			<!-- Cards will be dynamically inserted here -->
+	</section>
+
+	<!-- Products Section -->
+	<section id="products" class="py-20 bg-white">
+		<div class="container mx-auto px-4">
+			<div class="text-center mb-16">
+				<h2 class="text-3xl md:text-4xl font-bold text-green-900 mb-4">Mahsulotlar Kategoriyalari</h2>
+				<p class="text-gray-600 text-lg">Eng sifatli quruq mevalarni toping</p>
+			</div>
+
+			<div class="flex justify-center flex-wrap gap-4 mb-12">
+				<button id="all-products"
+					class="category-button active-category px-6 py-3 rounded-full text-sm font-semibold transition-all duration-300">
+					Barcha Mahsulotlar
+				</button>
+				<button id="apricots"
+					class="category-button px-6 py-3 rounded-full text-sm font-semibold transition-all duration-300">
+					Ko'ragalar
+				</button>
+				<button id="raisons"
+					class="category-button px-6 py-3 rounded-full text-sm font-semibold transition-all duration-300">
+					Mayizlar
+				</button>
+				<button id="prunes"
+					class="category-button px-6 py-3 rounded-full text-sm font-semibold transition-all duration-300">
+					Qora O'rik
+				</button>
+				<button id="nuts"
+					class="category-button px-6 py-3 rounded-full text-sm font-semibold transition-all duration-300">
+					Yong'oqlar
+				</button>
+			</div>
+
+			<div id="product-cards" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+				<!-- Products will be dynamically inserted here -->
+			</div>
 		</div>
 	</section>
 
