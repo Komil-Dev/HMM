@@ -18,96 +18,163 @@
 		<div class="animate-spin rounded-full border-t-4 border-green-600 w-16 h-16"></div>
 	</div>
 	<!-- Navbar -->
-	<header class="fixed top-0 left-0 w-full bg-gradient-to-r from-green-800 to-green-600 shadow-md z-10 h-[10vh]">
+	<header class="fixed top-0 left-0 w-full bg-transparent transition-all duration-300 z-10 h-[72px]" id="mainHeader">
 		<div class="container mx-auto px-4 py-3 flex items-center justify-between h-full">
 			<!-- Left Side: Logo -->
-			<h1 class="text-white font-bold text-xl font-serif">HMM Export</h1>
+			<h1 class="font-bold text-2xl tracking-tight transition-colors duration-300" id="logoText">HMM Export</h1>
 
 			<!-- Menu Toggle for Mobile -->
-			<button id="menuButton" class="sm:hidden cursor-pointer text-white">
+			<button id="menuButton" class="sm:hidden cursor-pointer transition-colors duration-300">
 				<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-					class="w-6 h-6">
-					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+					class="w-7 h-7">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+						d="M4 6h16M4 12h16m-7 6h7" />
 				</svg>
 			</button>
 
 			<!-- Center: Navigation Menu (Hidden on Mobile, shows on desktop) -->
-			<nav id="navMenu" class="hidden sm:flex space-x-8 text-white">
-				<a href="./index.html" class="hover:text-green-200 font-semibold">Bosh sahifa</a>
-				<a href="./mahsulotlar.html" class="hover:text-green-200 font-semibold">Mahsulotlar</a>
-				<a href="./about.html" class="hover:text-green-200 font-semibold">Biz haqimizda</a>
-				<a href="./aloqa.html" class="hover:text-green-200 font-semibold">Aloqa</a>
-				<a href="./special.html" class="hover:text-green-200 font-semibold">Mahsus Takliflar</a>
+			<nav id="navMenu" class="hidden sm:flex space-x-8">
+				<a href="./index.html"
+					class="font-medium transition-all duration-200 border-b-2 border-transparent hover:border-white nav-link">Bosh
+					sahifa</a>
+				<a href="./mahsulotlar.html"
+					class="font-medium transition-all duration-200 border-b-2 border-transparent hover:border-white nav-link">Mahsulotlar</a>
+				<a href="./about.html"
+					class="font-medium transition-all duration-200 border-b-2 border-transparent hover:border-white nav-link">Biz
+					haqimizda</a>
+				<a href="./aloqa.html"
+					class="font-medium transition-all duration-200 border-b-2 border-transparent hover:border-white nav-link">Aloqa</a>
+				<a href="./special.html"
+					class="font-medium transition-all duration-200 border-b-2 border-transparent hover:border-white nav-link">Mahsus
+					Takliflar</a>
 			</nav>
 
 			<!-- Right Side: Phone Number (Hidden on Mobile) -->
-			<div class="hidden sm:flex items-center space-x-2 text-white">
-				<span class="font-semibold">📞 +998 90 030 48 68</span>
+			<div class="hidden sm:flex items-center space-x-2">
+				<span class="font-medium transition-colors duration-300" id="phoneNumber">
+					<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline-block mr-2" fill="none"
+						viewBox="0 0 24 24" stroke="currentColor">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+							d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+					</svg>
+					+998 90 030 48 68
+				</span>
 			</div>
 		</div>
 
 		<!-- Mobile Menu (Initially hidden) -->
 		<div id="mobileMenu"
-			class="absolute left-0 w-full top-0 h-[100vh] bg-white transform transition-transform duration-500 ease-in-out translate-x-[-100%] sm:hidden flex flex-col justify-center items-center py-4 px-6">
+			class="fixed left-0 w-full top-0 h-screen bg-white transform transition-transform duration-300 ease-in-out translate-x-[-100%] sm:hidden flex flex-col justify-center items-center py-4 px-6">
 			<!-- Close Button -->
-			<button id="closeButton" class="absolute top-4 right-6 text-green-800">
+			<button id="closeButton"
+				class="absolute top-6 right-6 text-green-800 hover:text-green-600 transition-colors">
 				<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-					class="w-6 h-6">
-					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+					class="w-7 h-7">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12" />
 				</svg>
 			</button>
 
-			<nav class="flex flex-col space-y-6 text-green-800 font-serif text-center">
+			<nav class="flex flex-col space-y-8 text-green-800 text-center">
 				<a href="./index.html"
-					class="hover:text-green-600 font-bold text-xl transition-transform transform hover:scale-110">
+					class="font-medium text-xl transition-all duration-200 hover:text-green-600 hover:scale-105">
 					Bosh sahifa
 				</a>
 				<a href="./mahsulotlar.html"
-					class="hover:text-green-600 font-bold text-xl transition-transform transform hover:scale-110">
+					class="font-medium text-xl transition-all duration-200 hover:text-green-600 hover:scale-105">
 					Mahsulotlar
 				</a>
 				<a href="./about.html"
-					class="hover:text-green-600 font-bold text-xl transition-transform transform hover:scale-110">
+					class="font-medium text-xl transition-all duration-200 hover:text-green-600 hover:scale-105">
 					Biz haqimizda
 				</a>
-
 				<a href="./aloqa.html"
-					class="hover:text-green-600 font-bold text-xl transition-transform transform hover:scale-110">
+					class="font-medium text-xl transition-all duration-200 hover:text-green-600 hover:scale-105">
 					Aloqa
 				</a>
 				<a href="./special.html"
-					class="hover:text-green-600 font-bold text-xl transition-transform transform hover:scale-110">
+					class="font-medium text-xl transition-all duration-200 hover:text-green-600 hover:scale-105">
 					Mahsus takliflar
 				</a>
 			</nav>
 
-			<div class="absolute bottom-4 flex items-center space-x-2 text-green-800 font-bold font-serif mb-[20%]">
-
-				<span class="text-green-800 font-bold">📞 +998 90 030 48 68</span>
+			<div class="absolute bottom-[15%] text-green-800 font-medium">
+				<span class="flex items-center justify-center">
+					<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline-block mr-2" fill="none"
+						viewBox="0 0 24 24" stroke="currentColor">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+							d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+					</svg>
+					+998 90 030 48 68
+				</span>
 			</div>
 		</div>
 	</header>
 
+	<style>
+		/* Initial state - white text */
+		.nav-link,
+		#logoText,
+		#phoneNumber,
+		#menuButton svg {
+			color: white;
+		}
 
-	<script>const menuButton = document.getElementById('menuButton');
+		/* Scrolled state - will be handled by JavaScript */
+		.header-scrolled {
+			background-color: white;
+			box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+		}
+
+		.header-scrolled .nav-link,
+		.header-scrolled #logoText,
+		.header-scrolled #phoneNumber,
+		.header-scrolled #menuButton svg {
+			color: rgb(6, 95, 70);
+			/* Dark green color */
+		}
+
+		.header-scrolled .nav-link:hover {
+			border-color: rgb(6, 95, 70) !important;
+		}
+	</style>
+
+	<script>
+		const header = document.getElementById('mainHeader');
+		const menuButton = document.getElementById('menuButton');
 		const mobileMenu = document.getElementById('mobileMenu');
 		const closeButton = document.getElementById('closeButton');
 
-		// Toggle menu open/close
+		// Handle scroll events
+		window.addEventListener('scroll', () => {
+			if (window.scrollY > 50) {
+				header.classList.add('header-scrolled');
+			} else {
+				header.classList.remove('header-scrolled');
+			}
+		});
+
+		// Toggle menu open/close with smooth transitions
 		menuButton.addEventListener('click', () => {
-			mobileMenu.style.transform = 'translateX(0%)'; // Slide in
+			mobileMenu.style.transform = 'translateX(0%)';
+			document.body.style.overflow = 'hidden';
 		});
 
 		closeButton.addEventListener('click', () => {
-			mobileMenu.style.transform = 'translateX(-100%)'; // Slide out
+			mobileMenu.style.transform = 'translateX(-100%)';
+			document.body.style.overflow = 'auto';
 		});
-		// Hide the loading screen after 2 seconds
-		window.onload = function () {
-			setTimeout(function () {
-				document.getElementById('loading').style.display = 'none'; // Hide loading screen
-			}, 1000); // 2 seconds delay
-		};
+
+		// Close mobile menu when clicking outside
+		document.addEventListener('click', (e) => {
+			if (mobileMenu.style.transform === 'translateX(0%)' &&
+				!mobileMenu.contains(e.target) &&
+				!menuButton.contains(e.target)) {
+				mobileMenu.style.transform = 'translateX(-100%)';
+				document.body.style.overflow = 'auto';
+			}
+		});
 	</script>
+
 
 
 
