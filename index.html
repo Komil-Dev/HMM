@@ -33,99 +33,164 @@
 
 <body class="bg-white text-white">
 	<!-- Loading Screen -->
-	<div id="loading" class="fixed inset-0 bg-white flex justify-center items-center z-50">
-		<div class="animate-spin rounded-full border-t-4 border-green-600 w-16 h-16"></div>
-	</div>
+
 	<!-- Navbar -->
-	<header class="fixed top-0 left-0 w-full bg-gradient-to-r from-green-800 to-green-600 shadow-md z-10 h-[10vh]">
+	<!-- Navbar -->
+	<header class="fixed top-0 left-0 w-full bg-transparent transition-all duration-300 z-10 h-[72px]" id="mainHeader">
 		<div class="container mx-auto px-4 py-3 flex items-center justify-between h-full">
 			<!-- Left Side: Logo -->
-			<h1 class="text-white font-bold text-xl font-serif">HMM Export</h1>
+			<h1 class="font-bold text-2xl tracking-tight transition-colors duration-300" id="logoText">HMM Export</h1>
 
 			<!-- Menu Toggle for Mobile -->
-			<button id="menuButton" class="sm:hidden cursor-pointer text-white">
+			<button id="menuButton" class="sm:hidden cursor-pointer transition-colors duration-300">
 				<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-					class="w-6 h-6">
-					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+					class="w-7 h-7">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+						d="M4 6h16M4 12h16m-7 6h7" />
 				</svg>
 			</button>
 
 			<!-- Center: Navigation Menu (Hidden on Mobile, shows on desktop) -->
-			<nav id="navMenu" class="hidden sm:flex space-x-8 text-white">
-				<a href="./index.html" class="hover:text-green-200 font-semibold">Bosh sahifa</a>
-				<a href="./mahsulotlar.html" class="hover:text-green-200 font-semibold">Mahsulotlar</a>
-				<a href="./about.html" class="hover:text-green-200 font-semibold">Biz haqimizda</a>
-				<a href="./aloqa.html" class="hover:text-green-200 font-semibold">Aloqa</a>
-				<a href="./special.html" class="hover:text-green-200 font-semibold">Mahsus Takliflar</a>
+			<nav id="navMenu" class="hidden sm:flex space-x-8">
+				<a href="./index.html"
+					class="font-medium transition-all duration-200 border-b-2 border-transparent hover:border-white nav-link">Bosh
+					sahifa</a>
+				<a href="./mahsulotlar.html"
+					class="font-medium transition-all duration-200 border-b-2 border-transparent hover:border-white nav-link">Mahsulotlar</a>
+				<a href="./about.html"
+					class="font-medium transition-all duration-200 border-b-2 border-transparent hover:border-white nav-link">Biz
+					haqimizda</a>
+				<a href="./aloqa.html"
+					class="font-medium transition-all duration-200 border-b-2 border-transparent hover:border-white nav-link">Aloqa</a>
+				<a href="./special.html"
+					class="font-medium transition-all duration-200 border-b-2 border-transparent hover:border-white nav-link">Mahsus
+					Takliflar</a>
 			</nav>
 
 			<!-- Right Side: Phone Number (Hidden on Mobile) -->
-			<div class="hidden sm:flex items-center space-x-2 text-white">
-				<span class="font-semibold">📞 +998 90 030 48 68</span>
+			<div class="hidden sm:flex items-center space-x-2">
+				<span class="font-medium transition-colors duration-300" id="phoneNumber">
+					<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline-block mr-2" fill="none"
+						viewBox="0 0 24 24" stroke="currentColor">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+							d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+					</svg>
+					+998 90 030 48 68
+				</span>
 			</div>
 		</div>
 
 		<!-- Mobile Menu (Initially hidden) -->
 		<div id="mobileMenu"
-			class="absolute left-0 w-full top-0 h-[100vh] bg-white transform transition-transform duration-500 ease-in-out translate-x-[-100%] sm:hidden flex flex-col justify-center items-center py-4 px-6">
+			class="fixed left-0 w-full top-0 h-screen bg-white transform transition-transform duration-300 ease-in-out translate-x-[-100%] sm:hidden flex flex-col justify-center items-center py-4 px-6">
 			<!-- Close Button -->
-			<button id="closeButton" class="absolute top-4 right-6 text-green-800">
+			<button id="closeButton"
+				class="absolute top-6 right-6 text-green-800 hover:text-green-600 transition-colors">
 				<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-					class="w-6 h-6">
-					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+					class="w-7 h-7">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12" />
 				</svg>
 			</button>
 
-			<nav class="flex flex-col space-y-6 text-green-800 font-serif text-center">
+			<nav class="flex flex-col space-y-8 text-green-800 text-center">
 				<a href="./index.html"
-					class="hover:text-green-600 font-bold text-xl transition-transform transform hover:scale-110">
+					class="font-medium text-xl transition-all duration-200 hover:text-green-600 hover:scale-105">
 					Bosh sahifa
 				</a>
 				<a href="./mahsulotlar.html"
-					class="hover:text-green-600 font-bold text-xl transition-transform transform hover:scale-110">
+					class="font-medium text-xl transition-all duration-200 hover:text-green-600 hover:scale-105">
 					Mahsulotlar
 				</a>
 				<a href="./about.html"
-					class="hover:text-green-600 font-bold text-xl transition-transform transform hover:scale-110">
+					class="font-medium text-xl transition-all duration-200 hover:text-green-600 hover:scale-105">
 					Biz haqimizda
 				</a>
-
 				<a href="./aloqa.html"
-					class="hover:text-green-600 font-bold text-xl transition-transform transform hover:scale-110">
+					class="font-medium text-xl transition-all duration-200 hover:text-green-600 hover:scale-105">
 					Aloqa
 				</a>
 				<a href="./special.html"
-					class="hover:text-green-600 font-bold text-xl transition-transform transform hover:scale-110">
+					class="font-medium text-xl transition-all duration-200 hover:text-green-600 hover:scale-105">
 					Mahsus takliflar
 				</a>
 			</nav>
 
-			<div class="absolute bottom-4 flex items-center space-x-2 text-green-800 font-bold font-serif mb-[20%]">
-
-				<span class="text-green-800 font-bold">📞 +998 90 030 48 68</span>
+			<div class="absolute bottom-[15%] text-green-800 font-medium">
+				<span class="flex items-center justify-center">
+					<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline-block mr-2" fill="none"
+						viewBox="0 0 24 24" stroke="currentColor">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+							d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+					</svg>
+					+998 90 030 48 68
+				</span>
 			</div>
 		</div>
 	</header>
 
+	<style>
+		/* Initial state - white text */
+		.nav-link,
+		#logoText,
+		#phoneNumber,
+		#menuButton svg {
+			color: white;
+		}
 
-	<script>const menuButton = document.getElementById('menuButton');
+		/* Scrolled state - will be handled by JavaScript */
+		.header-scrolled {
+			background-color: white;
+			box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+		}
+
+		.header-scrolled .nav-link,
+		.header-scrolled #logoText,
+		.header-scrolled #phoneNumber,
+		.header-scrolled #menuButton svg {
+			color: rgb(6, 95, 70);
+			/* Dark green color */
+		}
+
+		.header-scrolled .nav-link:hover {
+			border-color: rgb(6, 95, 70) !important;
+		}
+	</style>
+
+	<script>
+		const header = document.getElementById('mainHeader');
+		const menuButton = document.getElementById('menuButton');
 		const mobileMenu = document.getElementById('mobileMenu');
 		const closeButton = document.getElementById('closeButton');
 
-		// Toggle menu open/close
+		// Handle scroll events
+		window.addEventListener('scroll', () => {
+			if (window.scrollY > 50) {
+				header.classList.add('header-scrolled');
+			} else {
+				header.classList.remove('header-scrolled');
+			}
+		});
+
+		// Toggle menu open/close with smooth transitions
 		menuButton.addEventListener('click', () => {
-			mobileMenu.style.transform = 'translateX(0%)'; // Slide in
+			mobileMenu.style.transform = 'translateX(0%)';
+			document.body.style.overflow = 'hidden';
 		});
 
 		closeButton.addEventListener('click', () => {
-			mobileMenu.style.transform = 'translateX(-100%)'; // Slide out
+			mobileMenu.style.transform = 'translateX(-100%)';
+			document.body.style.overflow = 'auto';
 		});
-		// Hide the loading screen after 2 seconds
-		window.onload = function () {
-			setTimeout(function () {
-				document.getElementById('loading').style.display = 'none'; // Hide loading screen
-			}, 800); // 2 seconds delay
-		};
+
+		// Close mobile menu when clicking outside
+		document.addEventListener('click', (e) => {
+			if (mobileMenu.style.transform === 'translateX(0%)' &&
+				!mobileMenu.contains(e.target) &&
+				!menuButton.contains(e.target)) {
+				mobileMenu.style.transform = 'translateX(-100%)';
+				document.body.style.overflow = 'auto';
+			}
+		});
 	</script>
 
 
@@ -280,207 +345,159 @@
 		// Initialize carousel
 		updateCarousel();
 	</script>
-	<section id="about" class="bg-gray-100 py-12">
-		<div class="container mx-auto px-6 lg:px-12 flex flex-col lg:flex-row items-center">
-			<!-- Chap tomon: Rasmlar -->
-			<div class="relative w-full lg:w-1/2 flex justify-center items-center">
-				<!-- Rasm 1 -->
-				<div class="w-60 h-60 lg:w-72 lg:h-72 bg-cover bg-center rounded-lg shadow-lg"
-					style="background-image: url('./img/introduction-carousel-4.jpg');"></div>
-				<!-- Rasm 2 (ustma-ust joylashgan) -->
-				<div class="absolute top-10 left-16 lg:top-14 lg:left-20 w-40 h-40 lg:w-48 lg:h-48 bg-cover bg-center rounded-lg shadow-lg border-4 border-white"
-					style="background-image: url('./img/introduction-carousel-2.jpg');"></div>
-			</div>
-
-			<!-- O'ng tomon: Matn -->
-			<div class="w-full lg:w-1/2 text-center lg:text-left mt-8 lg:mt-0">
-				<h2 class="text-4xl font-bold text-green-800 mb-4">HMM Export haqida</h2>
-				<h3 class="text-2xl font-semibold text-gray-700 mb-4">Sifatli Quritilgan Mevalar</h3>
-				<p class="text-gray-600 text-lg leading-relaxed mb-6">
-					HMM Export 2021-yilda tashkil topgan bo‘lib, uning egasi Musurmon Hamdamovdir.
-					Biz yuqori sifatli quritilgan mevalarni yetkazib berishga ixtisoslashganmiz va mahsulotlarimizni eng
-					ishonchli fermerlardan olib kelamiz.
-					Har bir mahsulotimizda yangilik va maza kafolatlanadi. HMM Export o‘z mijozlariga doimo sifatli
-					bodom, mayiz, pista va boshqa mahsulotlarni taqdim etadi.
-				</p>
-
-				<!-- Mahsulot haqida ma'lumot (3 items in a row) -->
-				<div class="flex justify-between space-x-4">
-					<div class="text-center">
-						<p class="text-2xl font-bold text-green-800">1,000+ tons</p>
-
+	<!-- About Section -->
+	<section class="bg-white py-20">
+		<div class="container mx-auto px-4 md:px-8">
+			<div class="flex flex-col lg:flex-row items-center gap-16">
+				<!-- Image Section -->
+				<div class="lg:w-1/2 relative">
+					<div class="w-64 h-64 md:w-72 md:h-72 rounded-2xl shadow-xl overflow-hidden">
+						<img src="./img/introduction-carousel-4.jpg" alt="Company Image"
+							class="w-full h-full object-cover">
 					</div>
-					<div class="text-center">
-						<p class="text-2xl font-bold text-green-800">100+ clients</p>
-
+					<div
+						class="absolute top-20 -right-8 w-44 h-44 md:w-48 md:h-48 rounded-2xl shadow-xl overflow-hidden border-4 border-white">
+						<img src="./img/introduction-carousel-2.jpg" alt="Company Feature"
+							class="w-full h-full object-cover">
 					</div>
-					<div class="text-center">
-						<p class="text-2xl font-bold text-green-800">50+ types</p>
+				</div>
 
+				<!-- Content Section -->
+				<div class="lg:w-1/2 mt-16 lg:mt-0">
+					<h2 class="text-4xl font-bold text-gray-900 mb-4">HMM Export haqida</h2>
+					<h3 class="text-2xl font-semibold text-gray-700 mb-6">Sifatli Quritilgan Mevalar</h3>
+					<p class="text-gray-600 text-lg leading-relaxed mb-8">
+						HMM Export 2021-yilda tashkil topgan bo'lib, uning egasi Musurmon Hamdamovdir.
+						Biz yuqori sifatli quritilgan mevalarni yetkazib berishga ixtisoslashganmiz va mahsulotlarimizni
+						eng
+						ishonchli fermerlardan olib kelamiz.
+					</p>
+
+					<!-- Stats -->
+					<div class="grid grid-cols-3 gap-8">
+						<div class="text-center">
+							<p class="text-3xl font-bold text-green-800">1,000+</p>
+							<p class="text-gray-600">tons</p>
+						</div>
+						<div class="text-center">
+							<p class="text-3xl font-bold text-green-800">100+</p>
+							<p class="text-gray-600">clients</p>
+						</div>
+						<div class="text-center">
+							<p class="text-3xl font-bold text-green-800">50+</p>
+							<p class="text-gray-600">types</p>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</section>
-	<section id="client-request" class="bg-white py-12 font-robotoCondensed">
-		<div class="container mx-auto px-6 lg:px-12 flex flex-col lg:flex-row items-center">
-			<!-- Chap tomon: Matn va Form -->
-			<div class="w-full lg:w-1/2 text-center lg:text-left">
-				<h2 class="text-4xl font-bold text-green-800 mb-4">HMM Exportning Klienti Bo'ling</h2>
-				<p class="text-lg text-gray-600 mb-6">
-					Sizni bizning doimiy mijozlarimiz safida ko‘rishdan mamnunmiz! HMM Export quritilgan mevalar bilan
-					yuqori sifatni taqdim etadi. Agar bizning mahsulotlarimizni olishni istasangiz, so'rov yuboring va
-					tez orada siz bilan bog'lanamiz.
-				</p>
 
-				<!-- Form -->
-				<form id="contactForm" class="php-email-form space-y-4">
-					<div class="space-y-4">
-						<!-- Ism -->
+	<!-- Contact Form Section -->
+	<section class="bg-gray-50 py-20">
+		<div class="container mx-auto px-4 md:px-8">
+			<div class="flex flex-col lg:flex-row items-center gap-16">
+				<!-- Form Section -->
+				<div class="lg:w-1/2">
+					<h2 class="text-4xl font-bold text-gray-900 mb-6">HMM Exportning Klienti Bo'ling</h2>
+					<p class="text-lg text-gray-600 mb-8">
+						Sizni bizning doimiy mijozlarimiz safida ko'rishdan mamnunmiz! HMM Export quritilgan mevalar
+						bilan
+						yuqori sifatni taqdim etadi.
+					</p>
+
+					<form id="contactForm" class="space-y-6">
 						<div>
-							<label for="name-field" class="pb-2 text-white">Ismingiz</label>
+							<label for="name-field"
+								class="block text-sm font-medium text-gray-700 mb-2">Ismingiz</label>
 							<input type="text" name="name" id="name-field"
-								class="w-full py-3 px-6 rounded-lg border border-gray-300 text-gray-800" required
-								placeholder="Ismingiz">
+								class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-green-500 focus:border-green-500 transition"
+								required placeholder="Ismingiz">
 						</div>
 
-						<!-- Telefon Raqami -->
 						<div>
-							<label for="phone-field" class="pb-2 text-white">Telefon Raqamingiz</label>
-							<input type="text" name="phone" id="phone-field"
-								class="w-full py-3 px-6 rounded-lg border border-gray-300 text-gray-800" required
-								placeholder="+998 -- --- -- --">
+							<label for="phone-field" class="block text-sm font-medium text-gray-700 mb-2">Telefon
+								Raqamingiz</label>
+							<input type="tel" name="phone" id="phone-field"
+								class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-green-500 focus:border-green-500 transition"
+								required placeholder="+998 -- --- -- --">
 						</div>
 
-						<!-- Tugma -->
-						<div class="text-center">
-							<div class="loading" style="display: none;">Loading...</div>
-							<div class="error-message" style="display: none;"></div>
-							<div class="sent-message" style="display: none;">Xabaringiz yuborildi. Rahmat!</div>
-							<button type="submit"
-								class="inline-block bg-green-800 text-white py-3 px-8 rounded-full font-bold text-lg hover:bg-green-600 transition duration-300 w-full">
-								So'rov yuborish
-							</button>
-						</div>
+						<button type="submit"
+							class="w-full bg-green-800 text-white py-4 px-8 rounded-lg font-semibold hover:bg-green-700 transition duration-300 transform hover:scale-[1.02]">
+							So'rov yuborish
+						</button>
+					</form>
+				</div>
+
+				<!-- Image Section -->
+				<div class="lg:w-1/2 relative mt-16 lg:mt-0">
+					<div class="w-64 h-64 md:w-72 md:h-72 rounded-2xl shadow-xl overflow-hidden">
+						<img src="./img/introduction-carousel-2.jpg" alt="Contact Image"
+							class="w-full h-full object-cover">
 					</div>
-				</form>
-
-			</div>
-
-			<!-- O'ng tomon: Rasmlar -->
-			<div class="relative w-full lg:w-1/2 mt-8 lg:mt-0 flex justify-center items-center">
-				<!-- Rasm 1 -->
-				<div class="w-60 h-60 lg:w-72 lg:h-72 bg-cover bg-center rounded-lg shadow-lg"
-					style="background-image: url('./img/introduction-carousel-2.jpg');"></div>
-				<!-- Rasm 2 (ustma-ust joylashgan) -->
-				<div class="absolute top-10 left-16 lg:top-14 lg:left-20 w-40 h-40 lg:w-48 lg:h-48 bg-cover bg-center rounded-lg shadow-lg border-4 border-white"
-					style="background-image: url('./img/introduction-carousel-4.jpg');"></div>
+					<div
+						class="absolute top-20 -right-8 w-44 h-44 md:w-48 md:h-48 rounded-2xl shadow-xl overflow-hidden border-4 border-white">
+						<img src="./img/introduction-carousel-4.jpg" alt="Contact Feature"
+							class="w-full h-full object-cover">
+					</div>
+				</div>
 			</div>
 		</div>
 	</section>
 
+	<!-- Services Section -->
+	<section class="bg-white py-20">
+		<div class="container mx-auto px-4 md:px-8">
+			<div class="text-center max-w-3xl mx-auto mb-16">
+				<h2 class="text-4xl font-bold text-gray-900 mb-6">Bizning Xizmatlar</h2>
+				<p class="text-lg text-gray-600">
+					HMM Export kompaniyasi quruq mevalarni eksport qilishda yuqori sifat, zamonaviy qadoqlash va
+					ekologik
+					tozalash zavodi bilan xizmat ko'rsatadi.
+				</p>
+			</div>
 
-	<script>
-		document.addEventListener('DOMContentLoaded', function () {
-			const form = document.getElementById('contactForm');
-
-			form.addEventListener('submit', function (e) {
-				e.preventDefault();
-
-				const name = document.getElementById('name-field').value;
-				const phone = document.getElementById('phone-field').value;
-
-				const telegramBotToken = '7471873187:AAHyO1pnz30aXf-K7kJvKe3WsgPFdE4VyLE';
-				const chatId = '6681379041'; // Replace with your actual chat ID
-
-				const text = `Yangi xabar:\nIsm: ${name}\nTelefon: ${phone}`;
-
-				document.querySelector('.loading').style.display = 'block';
-
-				fetch(`https://api.telegram.org/bot${telegramBotToken}/sendMessage`, {
-					method: 'POST',
-					headers: {
-						'Content-Type': 'application/json',
-					},
-					body: JSON.stringify({
-						chat_id: chatId,
-						text: text
-					})
-				})
-					.then(response => {
-						if (!response.ok) {
-							throw new Error('Tarmoq javobi noto\'g\'ri');
-						}
-						return response.json();
-					})
-					.then(data => {
-						document.querySelector('.loading').style.display = 'none';
-						if (data.ok) {
-							document.querySelector('.sent-message').style.display = 'block';
-							form.reset();
-						} else {
-							throw new Error('Telegram API javobi noto\'g\'ri');
-						}
-					})
-					.catch(error => {
-						document.querySelector('.loading').style.display = 'none';
-						console.error('Xato:', error);
-						document.querySelector('.error-message').style.display = 'block';
-						document.querySelector('.error-message').textContent = 'Xato yuz berdi. Iltimos, qaytadan urinib ko\'ring.';
-					});
-			});
-		});
-	</script>
-	<!-- Bizning xizmatlar -->
-	<section id="bizning-xizmatlar" class="py-16 bg-gray-100">
-		<div class="container mx-auto px-6 lg:px-12">
-			<h2 class="text-4xl font-bold text-center text-green-800 mb-8">Bizning Xizmatlar</h2>
-			<p class="text-lg text-gray-700 text-center max-w-2xl mx-auto mb-12">
-				HMM Export kompaniyasi quruq mevalarni eksport qilishda yuqori sifat, zamonaviy qadoqlash va ekologik
-				tozalash zavodi bilan xizmat ko'rsatadi.
-			</p>
-
-			<!-- Xizmatlar kartalari -->
 			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-				<!-- Xizmat 1 -->
-				<div class="bg-white shadow-lg rounded-3xl overflow-hidden h-full">
-					<div class="h-48 w-full bg-gray-200">
+				<!-- Service Card 1 -->
+				<div class="bg-white rounded-2xl shadow-lg overflow-hidden transition duration-300 hover:shadow-xl">
+					<div class="h-56 overflow-hidden">
 						<img src="./img/why-we-1.jpg" alt="Quruq mevalar"
-							class="w-full h-full object-cover object-center">
+							class="w-full h-full object-cover hover:scale-110 transition duration-500">
 					</div>
-					<div class="p-6 text-center">
-						<h3 class="text-2xl font-semibold text-green-800 mb-4">Yuqori sifatli quruq mevalar</h3>
-						<p class="text-gray-700 text-base">
-							Bizning quruq mevalarimiz faqat eng yuqori sifat va ekologik tozalik me’zonlariga javob
+					<div class="p-8">
+						<h3 class="text-2xl font-semibold text-gray-900 mb-4">Yuqori sifatli quruq mevalar</h3>
+						<p class="text-gray-600">
+							Bizning quruq mevalarimiz faqat eng yuqori sifat va ekologik tozalik me'zonlariga javob
 							beradi.
 						</p>
 					</div>
 				</div>
 
-				<!-- Xizmat 2 -->
-				<div class="bg-white shadow-lg rounded-3xl overflow-hidden h-full">
-					<div class="h-48 w-full bg-gray-200">
+				<!-- Service Card 2 -->
+				<div class="bg-white rounded-2xl shadow-lg overflow-hidden transition duration-300 hover:shadow-xl">
+					<div class="h-56 overflow-hidden">
 						<img src="./img/why-we-3.jpg" alt="Mahsulot qadoqlash"
-							class="w-full h-full object-cover object-center">
+							class="w-full h-full object-cover hover:scale-110 transition duration-500">
 					</div>
-					<div class="p-6 text-center">
-						<h3 class="text-2xl font-semibold text-green-800 mb-4">Innovatsion mahsulot qadoqlash</h3>
-						<p class="text-gray-700 text-base">
+					<div class="p-8">
+						<h3 class="text-2xl font-semibold text-gray-900 mb-4">Innovatsion mahsulot qadoqlash</h3>
+						<p class="text-gray-600">
 							Mahsulotlarimizni qadoqlashda zamonaviy texnologiyalardan foydalanamiz, bu sifatni uzoq
 							muddat saqlaydi.
 						</p>
 					</div>
 				</div>
 
-				<!-- Xizmat 3 -->
-				<div class="bg-white shadow-lg rounded-3xl overflow-hidden h-full">
-					<div class="h-48 w-full bg-gray-200">
+				<!-- Service Card 3 -->
+				<div class="bg-white rounded-2xl shadow-lg overflow-hidden transition duration-300 hover:shadow-xl">
+					<div class="h-56 overflow-hidden">
 						<img src="./img/why-we-2.jpg" alt="Ekologik tozalash zavodi"
-							class="w-full h-full object-cover object-center">
+							class="w-full h-full object-cover hover:scale-110 transition duration-500">
 					</div>
-					<div class="p-6 text-center">
-						<h3 class="text-2xl font-semibold text-green-800 mb-4">Ekologik tozalash zavodi</h3>
-						<p class="text-gray-700 text-base">
+					<div class="p-8">
+						<h3 class="text-2xl font-semibold text-gray-900 mb-4">Ekologik tozalash zavodi</h3>
+						<p class="text-gray-600">
 							Mahsulotlarimiz ekologik xavfsizlikka mos ravishda zamonaviy zavodlarimizda tozalanadi.
 						</p>
 					</div>
@@ -489,64 +506,62 @@
 		</div>
 	</section>
 
+	<!-- Company Owner Section -->
+	<section class="bg-gray-50 py-20">
+		<div class="container mx-auto px-4 md:px-8">
+			<h2 class="text-4xl font-bold text-gray-900 text-center mb-16">Kompaniya Egasi</h2>
 
-
-
-	<section id="company-owner" class="bg-white py-16">
-		<div class="container mx-auto px-6 lg:px-12">
-			<!-- Title -->
-			<h2 class="text-5xl font-bold text-green-800 text-center mb-12">Kompaniya Egasi</h2>
-
-			<div class="flex flex-col lg:flex-row items-center lg:items-start lg:space-x-12">
-				<!-- Tasvir -->
-				<div class="w-full lg:w-1/3 text-center lg:text-left mb-8 lg:mb-0">
-					<img src="./img/photo_2025-01-02_11-08-19.jpg" alt="Kompaniya Egasi"
-						class="w-96 h-96 mx-auto lg:mx-0 rounded-lg shadow-2xl object-cover border-8 border-green-800">
+			<div class="flex flex-col lg:flex-row items-center gap-16">
+				<!-- Owner Image -->
+				<div class="lg:w-1/3">
+					<div class="relative">
+						<div
+							class="w-72 h-72 md:w-80 md:h-80 rounded-2xl shadow-xl overflow-hidden border-8 border-white">
+							<img src="./img/photo_2025-01-02_11-08-19.jpg" alt="Musurmon Hamdamov"
+								class="w-full h-full object-cover">
+						</div>
+						<div
+							class="absolute -bottom-6 -right-6 w-24 h-24 bg-green-800 rounded-full flex items-center justify-center">
+							<span class="text-white text-sm font-semibold text-center">Company Director</span>
+						</div>
+					</div>
 				</div>
 
-				<!-- Matn -->
-				<div class="w-full lg:w-2/3 text-gray-800">
-					<h3 class="text-3xl font-semibold text-green-800 mb-4">Musurmon Hamdamov</h3>
-					<p class="text-lg mb-6 leading-relaxed text-gray-700">
+				<!-- Owner Info -->
+				<div class="lg:w-2/3">
+					<h3 class="text-3xl font-bold text-gray-900 mb-6">Musurmon Hamdamov</h3>
+					<p class="text-lg text-gray-600 mb-8 italic">
 						"Bizning kompaniyamizni har bir mijozimizning ishonchi va mamnunligi asosida qurilgan deb
 						hisoblayman. Har bir mahsulotimizning yuqori sifati – bu bizning asosiy qadriyatimiz.
-						Hamkorlikka
-						har doim tayyormiz!"
+						Hamkorlikka har doim tayyormiz!"
 					</p>
 
-					<div class="text-gray-700 space-y-4">
-						<p><strong class="text-green-800">Lavozim:</strong> Kompaniya Direktori</p>
-						<p><strong class="text-green-800">Telefon:</strong> +998900304868</p>
-						<p><strong class="text-green-800">Telegram</strong> @Hmmexport</p>
+					<div class="space-y-4 mb-8">
+						<p class="text-gray-700"><span class="font-semibold">Lavozim:</span> Kompaniya Direktori</p>
+						<p class="text-gray-700"><span class="font-semibold">Telefon:</span> +998900304868</p>
+						<p class="text-gray-700"><span class="font-semibold">Telegram:</span> @Hmmexport</p>
 					</div>
-					<!-- Ijtimoiy Tarmoqlar -->
-					<div class="flex space-x-6 mt-6">
-						<!-- Instagram Icon -->
-						<!-- WhatsApp Icon -->
-						<a href="https://wa.me/+998900304868
-						" class="text-green-800 hover:text-green-600 transition">
-							<svg class="w-8 h-8 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+
+					<!-- Social Links -->
+					<div class="flex space-x-6">
+						<a href="https://wa.me/+998900304868" class="text-green-800 hover:text-green-600 transition">
+							<svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
 								<path
 									d="M12.075 1.977C6.706 1.977 2.301 6.432 2.301 11.73c0 1.972.583 3.805 1.583 5.358l-1.05 3.842 3.917-1.026c1.527.974 3.339 1.537 5.324 1.537 5.372 0 9.778-4.455 9.778-9.752-.002-5.296-4.404-9.752-9.778-9.752zm5.462 13.793c-.205.58-1.006 1.116-1.511 1.187-.405.058-.887.1-2.816-.582-2.355-1.037-3.864-3.599-3.981-3.763-.116-.163-.95-1.265-.95-2.41 0-1.145.603-1.707.815-1.943.211-.235.448-.294.605-.294.157 0 .314.007.452.013.141.007.352-.056.554.423.205.477.696 1.646.758 1.764.063.117.105.254.021.415-.083.16-.125.255-.249.389-.125.135-.249.301-.353.403-.105.103-.214.215-.09.432.124.217.549.909 1.176 1.471.809.718 1.488.94 1.721 1.045.233.104.369.087.501-.053.131-.14.576-.671.729-.904.153-.233.303-.194.509-.116.206.08 1.303.615 1.528.728.226.113.378.168.433.26.056.093.056.534-.15 1.114z" />
 							</svg>
 						</a>
-
-						<!-- Telegram Icon -->
 						<a href="https://t.me/Hmmexport" class="text-green-800 hover:text-green-600 transition">
-							<svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+							<svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
 								<path
 									d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm4.634 7.45l-1.513 7.16c-.11.494-.396.612-.802.38l-2.22-1.637-1.072 1.034c-.118.118-.217.217-.44.217l.157-2.24 4.087-3.708c.178-.157-.04-.245-.277-.088l-5.045 3.176-2.174-.68c-.474-.147-.483-.474.1-.698l9.336-3.602c.38-.147.713.088.593.645z" />
 							</svg>
 						</a>
-
-
 					</div>
-
 				</div>
 			</div>
 		</div>
 	</section>
-	<!-- Forma bo'limi -->
+
 	<h2 class="text-4xl font-bold text-center text-green-800 mb-8">Biz bilan bog'lanish</h2>
 
 
