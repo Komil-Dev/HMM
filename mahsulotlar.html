@@ -377,35 +377,47 @@
 
 			selectedProducts.forEach(product => {
 				const card = `
-<div class="bg-gradient-to-b from-amber-50 to-white rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden max-w-full sm:max-w-xs w-96 mx-auto border border-amber-100">
-  <div class="relative group">
+<div class="bg-gradient-to-b from-amber-50 to-white rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden w-[85vw] sm:w-80 md:w-96 mx-auto border border-amber-100">
+  <!-- Image Container with Aspect Ratio -->
+  <div class="relative group aspect-[4/3] sm:aspect-[4/3]">
     <img 
       src="${product.img}" 
       alt="${product.title}" 
       loading="lazy" 
-      class="w-full h-56 object-cover transform group-hover:scale-105 transition-transform duration-500"
+      class="absolute inset-0 w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
     >
-    <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+    <!-- Premium Overlay -->
+    <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+    
+    <!-- Premium Badge -->
+    <div class="absolute top-4 right-4">
+      <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-amber-100/90 text-amber-900 backdrop-blur-sm">
+        Premium Mahsulot
+      </span>
+    </div>
   </div>
   
-  <div class="p-6 space-y-4">
+  <div class="p-4 sm:p-5 space-y-3 sm:space-y-4">
     <!-- Product Title -->
-    <h3 class="text-xl font-semibold text-amber-900 font-serif">${product.title}</h3>
+    <h3 class="text-lg sm:text-xl font-semibold text-amber-900 font-serif leading-tight">${product.title}</h3>
     
     <!-- Description -->
-    <p class="text-gray-600 text-sm leading-relaxed">${product.desc}</p>
+    <p class="text-sm sm:text-base text-gray-600 leading-relaxed line-clamp-3">${product.desc}</p>
     
-    <!-- Quality Badge -->
-    <div class="flex items-center space-x-2">
+    <!-- Quality Indicators -->
+    <div class="flex flex-wrap gap-2 pt-1">
+      <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
+        100% Tabiiy
+      </span>
       <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-amber-100 text-amber-800">
-        Premium Quality
+        Yuqori sifat
       </span>
     </div>
     
     <!-- Order Button -->
     <a 
       href="./aloqa.html" 
-      class="block w-full text-center px-6 py-3 rounded-lg bg-amber-800 text-white font-medium hover:bg-amber-700 transform hover:-translate-y-0.5 transition-all duration-300 ease-in-out shadow-md hover:shadow-lg"
+      class="block w-full mt-4 text-center px-6 py-3.5 rounded-lg bg-amber-800 text-white font-medium hover:bg-amber-700 active:bg-amber-900 transform hover:-translate-y-0.5 transition-all duration-300 ease-in-out shadow-md hover:shadow-lg"
     >
       Buyurtma berish
     </a>
