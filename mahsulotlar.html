@@ -177,25 +177,28 @@
 
 
 	<section
-		class="min-h-screen flex items-center justify-center bg-gradient-to-r from-blue-500 to-purple-600 animate-fade-in">
-		<div class="container mx-auto px-6 py-16 text-center">
-			<h1 class="text-5xl md:text-6xl font-extrabold text-white mb-8 animate-bounce">
+		class="min-h-[80vh] md:h-[90vh] flex items-center justify-center bg-cover bg-center bg-no-repeat p-4 relative"
+		style="background-image: url('./img/introduction-carousel-2.jpg');">
+		<div class="container mx-auto px-4 md:px-6 py-8 md:py-16 text-center">
+			<h1
+				class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-4 md:mb-8 animate-bounce">
 				Yuqori sifatdagi mahsulotlar
 			</h1>
-			<p class="text-xl text-white mb-12 animate-pulse">
+			<p class="text-base sm:text-lg md:text-xl text-white mb-8 md:mb-12 animate-pulse">
 				Har bir mahsulotda innovatsiya va sifatni his eting
 			</p>
 			<button
-				class="bg-white text-purple-600 px-8 py-3 rounded-full font-semibold hover:bg-purple-100 transition-all duration-300 transform hover:scale-105">
+				class="w-48 sm:w-auto bg-green-600 text-white px-6 md:px-8 py-2 md:py-3 rounded-full font-semibold hover:bg-green-900 transition-all duration-300 transform hover:scale-105">
 				Aloqa
 			</button>
 		</div>
 	</section>
 
-	</section>
+
+
 
 	<!-- Products Section -->
-	<section id="products" class="py-20 bg-white">
+	<section id="products" class="py-20 bg-white mt-[-10%]">
 		<div class="container mx-auto px-4">
 			<div class="text-center mb-16">
 				<h2 class="text-3xl md:text-4xl font-bold text-green-900 mb-4">Mahsulotlar Kategoriyalari</h2>
@@ -374,14 +377,40 @@
 
 			selectedProducts.forEach(product => {
 				const card = `
-        <div class="bg-white rounded-lg shadow-lg overflow-hidden max-w-full sm:max-w-xs w-96 mx-auto">
-          <img src="${product.img}" alt="${product.title}" loading="lazy" class="w-full h-48 object-cover">
-          <div class="p-4">
-            <h3 class="text-xl font-semibold">${product.title}</h3>
-            <p class="mt-2">${product.desc}</p>
-            <a href="./aloqa.html" class="block mt-4 bg-green-900 text-white py-2 px-4 rounded-lg text-center hover:bg-green-600 transition duration-300 ease-in-out">Buyurtma berish</a>
-          </div>
-        </div>
+<div class="bg-gradient-to-b from-amber-50 to-white rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden max-w-full sm:max-w-xs w-96 mx-auto border border-amber-100">
+  <div class="relative group">
+    <img 
+      src="${product.img}" 
+      alt="${product.title}" 
+      loading="lazy" 
+      class="w-full h-56 object-cover transform group-hover:scale-105 transition-transform duration-500"
+    >
+    <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+  </div>
+  
+  <div class="p-6 space-y-4">
+    <!-- Product Title -->
+    <h3 class="text-xl font-semibold text-amber-900 font-serif">${product.title}</h3>
+    
+    <!-- Description -->
+    <p class="text-gray-600 text-sm leading-relaxed">${product.desc}</p>
+    
+    <!-- Quality Badge -->
+    <div class="flex items-center space-x-2">
+      <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-amber-100 text-amber-800">
+        Premium Quality
+      </span>
+    </div>
+    
+    <!-- Order Button -->
+    <a 
+      href="./aloqa.html" 
+      class="block w-full text-center px-6 py-3 rounded-lg bg-amber-800 text-white font-medium hover:bg-amber-700 transform hover:-translate-y-0.5 transition-all duration-300 ease-in-out shadow-md hover:shadow-lg"
+    >
+      Buyurtma berish
+    </a>
+  </div>
+</div>
       `;
 				productCards.innerHTML += card;
 			});
