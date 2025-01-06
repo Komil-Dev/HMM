@@ -205,30 +205,33 @@
 				<p class="text-gray-600 text-lg">Eng sifatli quruq mevalarni toping</p>
 			</div>
 
-			<div class="flex justify-center flex-wrap gap-4 mb-12">
-				<button id="all-products"
-					class="category-button active-category px-6 py-3 rounded-full text-sm font-semibold transition-all duration-300">
-					Barcha Mahsulotlar
-				</button>
-				<button id="apricots"
-					class="category-button px-6 py-3 rounded-full text-sm font-semibold transition-all duration-300">
-					Ko'ragalar
-				</button>
-				<button id="raisons"
-					class="category-button px-6 py-3 rounded-full text-sm font-semibold transition-all duration-300">
-					Mayizlar
-				</button>
-				<button id="prunes"
-					class="category-button px-6 py-3 rounded-full text-sm font-semibold transition-all duration-300">
-					Qora O'rik
-				</button>
-				<button id="nuts"
-					class="category-button px-6 py-3 rounded-full text-sm font-semibold transition-all duration-300">
-					Yong'oqlar
-				</button>
+			<!-- Category Navigation -->
+			<div class="container mx-auto px-4 py-6">
+				<div class="flex flex-wrap gap-4 justify-center mb-8">
+					<button id="all-products"
+						class="category-button px-6 py-2 rounded-full bg-green-900 text-white hover:bg-green-800 transition-colors">
+						Barcha Mahsulotlar
+					</button>
+					<button id="apricots"
+						class="category-button px-6 py-2 rounded-full bg-amber-100 text-amber-900 hover:bg-amber-200 transition-colors">
+						O'riklar
+					</button>
+					<button id="raisons"
+						class="category-button px-6 py-2 rounded-full bg-amber-100 text-amber-900 hover:bg-amber-200 transition-colors">
+						Mayizlar
+					</button>
+					<button id="prunes"
+						class="category-button px-6 py-2 rounded-full bg-amber-100 text-amber-900 hover:bg-amber-200 transition-colors">
+						Olxo'rilar
+					</button>
+					<button id="nuts"
+						class="category-button px-6 py-2 rounded-full bg-amber-100 text-amber-900 hover:bg-amber-200 transition-colors">
+						Yong'oqlar
+					</button>
+				</div>
 			</div>
 
-			<div id="product-cards" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-24">
+			<div id="product-cards" class="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-1 xl:grid-cols-1 gap-24">
 				<!-- Products will be dynamically inserted here -->
 			</div>
 		</div>
@@ -321,6 +324,7 @@
 	</footer>
 	<!-- JavaScript to Show Cards -->
 	<!-- JavaScript to Show Cards -->
+
 	<script>
 		const products = {
 			apricots: [
@@ -331,20 +335,18 @@
 				{ title: "Apricot Premium", img: "https://trustagro.uz/wp-content/uploads/2021/02/4.jpg", desc: "Eksklyuziv mahsulot." },
 				{ title: "Soft Apricot", img: "https://trustagro.uz/wp-content/uploads/2021/02/2.jpg", desc: "Yumshoq va shirin apricotlar." },
 				{ title: "Apricot Natural", img: "https://trustagro.uz/wp-content/uploads/2021/02/5.jpg", desc: "Tabiiy va foydali." },
-				{ title: "Mixed Apricots", img: "https://trustagro.uz/wp-content/uploads/2021/02/6.jpg", desc: "Turli xil quruq apricotlar." },
+				{ title: "Mixed Apricots", img: "https://trustagro.uz/wp-content/uploads/2021/02/6.jpg", desc: "Turli xil quruq apricotlar." }
 			],
-
 			raisons: [
 				{ title: "Golden Raisins", img: "https://trustagro.uz/wp-content/uploads/2021/02/13.jpg", desc: "Oltin rangli mazali mayiz." },
 				{ title: "Black Raisins", img: "https://trustagro.uz/wp-content/uploads/2021/02/17.jpg", desc: "Tabiiy qora mayiz." },
 				{ title: "Golden Raison Chalipar", img: "https://trustagro.uz/wp-content/uploads/2021/02/12.jpg", desc: "Yashil rangli foydali mayiz." },
-				{ title: " Raisins Obtobiy", img: "https://trustagro.uz/wp-content/uploads/2021/02/14.jpg", desc: "Uzumning urug‘siz turidan tayyorlangan." },
-				{ title: " Raisins Kunaki", img: "https://trustagro.uz/wp-content/uploads/2021/02/17.jpg", desc: "Sifatli va tanlangan mayiz." },
+				{ title: "Raisins Obtobiy", img: "https://trustagro.uz/wp-content/uploads/2021/02/14.jpg", desc: "Uzumning urug'siz turidan tayyorlangan." },
+				{ title: "Raisins Kunaki", img: "https://trustagro.uz/wp-content/uploads/2021/02/17.jpg", desc: "Sifatli va tanlangan mayiz." },
 				{ title: "Raisons Qizilcha", img: "https://trustagro.uz/wp-content/uploads/2021/02/18.jpg", desc: "Foydali va ekologik toza." },
 				{ title: "Sweet Raisins", img: "https://trustagro.uz/wp-content/uploads/2021/02/16.jpg", desc: "Tabiiy shirin mazali." },
-				{ title: "Mixed Raisins", img: "https://trustagro.uz/wp-content/uploads/2021/02/11.jpg", desc: "Turli xildagi mayizlar aralashmasi." },
+				{ title: "Mixed Raisins", img: "https://trustagro.uz/wp-content/uploads/2021/02/11.jpg", desc: "Turli xildagi mayizlar aralashmasi." }
 			],
-
 			prunes: [
 				{ title: "Quruq Prune", img: "https://trustagro.uz/wp-content/uploads/2021/02/19.jpg", desc: "Mazali va foydali prunelar." },
 				{ title: "Soft Prune", img: "https://trustagro.uz/wp-content/uploads/2021/02/20.jpg", desc: "Yumshoq va shirali." },
@@ -353,105 +355,136 @@
 				{ title: "Sweet Prune", img: "https://trustagro.uz/wp-content/uploads/2021/02/IMG_2836-1.jpg", desc: "Tabiiy shirin prunelar." },
 				{ title: "Premium Prune", img: "https://trustagro.uz/wp-content/uploads/2021/02/24.jpg", desc: "Eksklyuziv va mazali." },
 				{ title: "Natural Prune", img: "https://trustagro.uz/wp-content/uploads/2021/02/22.jpg", desc: "Tabiiy va foydali." },
-				{ title: "Golden Prune", img: "https://trustagro.uz/wp-content/uploads/2021/02/23.jpg", desc: "Yorqin va shirin." },
+				{ title: "Golden Prune", img: "https://trustagro.uz/wp-content/uploads/2021/02/23.jpg", desc: "Yorqin va shirin." }
 			],
-
-
 			nuts: [
 				{ title: "Oddiy Yong'oq", img: "https://trustagro.uz/wp-content/uploads/2021/02/photo_2021-02-18_12-46-08.jpg", desc: "Tabiiy va foydali oddiy yong'oq." },
 				{ title: "Premium Yong'oq", img: "https://trustagro.uz/wp-content/uploads/2021/02/photo_2021-02-17_16-44-43-1.jpg", desc: "Yuqori sifatli premium yong'oq." },
 				{ title: "Aralash Yong'oq", img: "https://trustagro.uz/wp-content/uploads/2021/02/photo_2021-02-17_16-45-05-1.jpg", desc: "Turli xil yong'oqlarning aralashmasi." },
 				{ title: "Mazali Yong'oq", img: "https://trustagro.uz/wp-content/uploads/2021/02/photo_2021-02-17_16-08-30.jpg", desc: "Mazasi yoqimli bo'lgan yong'oqlar." },
-				{ title: "Organik Yong'oq", img: "https://trustagro.uz/wp-content/uploads/2021/02/1-1.jpg", desc: "100% tabiiy usulda yetishtirilgan organik yong'oq." },
+				{ title: "Organik Yong'oq", img: "https://trustagro.uz/wp-content/uploads/2021/02/1-1.jpg", desc: "100% tabiiy usulda yetishtirilgan organik yong'oq." }
 			]
-
 		};
+
 		const productCards = document.getElementById("product-cards");
 		const categoryButtons = document.querySelectorAll(".category-button");
 
+		function getCategoryTitle(category) {
+			const titles = {
+				apricots: "Quritilgan O'riklar",
+				raisons: "Mayizlar",
+				prunes: "Olxo'rilar",
+				nuts: "Yong'oqlar",
+				"all-products": "Barcha Mahsulotlar"
+			};
+			return titles[category] || category;
+		}
+
 		function displayProducts(category) {
 			productCards.innerHTML = "";
-			const selectedProducts = category === "all-products"
-				? Object.values(products).flat().slice(0, 24)
-				: products[category].slice(0, 8);
 
-			selectedProducts.forEach(product => {
-				const card = `
-<!-- Container for grid layout -->
-<div class="container mx-auto px-4 py-8 ">
-  <!-- Grid container with responsive gaps -->
-  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 sm:gap-8 justify-items-center">
-    <!-- Individual Card -->
-    <div class="bg-gradient-to-b from-amber-50 to-white rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden w-[85vw] sm:w-80 md:w-96 mx-auto border border-amber-100">
-      <!-- Image Container with Aspect Ratio -->
-      <div class="relative group aspect-[4/3] sm:aspect-[4/3]">
-        <img 
-          src="${product.img}" 
-          alt="${product.title}" 
-          loading="lazy" 
-          class="absolute inset-0 w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
-        >
-        <!-- Premium Overlay -->
-        <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-        
-        <!-- Premium Badge -->
-        <div class="absolute top-4 right-4">
-          <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-amber-100/90 text-amber-900 backdrop-blur-sm">
-            Premium Mahsulot
-          </span>
-        </div>
-      </div>
-      
-      <div class="p-4 sm:p-5 space-y-3 sm:space-y-4">
-        <!-- Product Title -->
-        <h3 class="text-lg sm:text-xl font-semibold text-amber-900 font-serif leading-tight">${product.title}</h3>
-        
-        <!-- Description -->
-        <p class="text-sm sm:text-base text-gray-600 leading-relaxed line-clamp-3">${product.desc}</p>
-        
-        <!-- Quality Indicators -->
-        <div class="flex flex-wrap gap-2 pt-1">
-          <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
-            100% Tabiiy
-          </span>
-          <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-amber-100 text-amber-800">
-            Yuqori sifat
-          </span>
-        </div>
-        
-        <!-- Order Button -->
-        <div class="flex justify-center pt-2">
-          <a 
-            href="./aloqa.html" 
-            class="inline-block px-6 py-2 rounded-lg bg-green-900 text-white text-sm font-medium hover:bg-green-800 active:bg-green-950 transform hover:-translate-y-0.5 transition-all duration-300 ease-in-out shadow-md hover:shadow-lg"
-          >
-            Buyurtma berish
-          </a>
-        </div>
-      </div>
-    </div>
-    <!-- End Individual Card -->
-    
-    <!-- Repeat the card structure for each product -->
-    
-  </div>
-</div>
-      `;
-				productCards.innerHTML += card;
-			});
+			if (category === "all-products") {
+				Object.entries(products).forEach(([categoryName, items]) => {
+					const sectionHeader = `
+                        <div class="container mx-auto px-4 mb-12">
+                            <div class="flex justify-between items-center mb-6">
+                                <h2 class="text-2xl font-bold text-amber-900">${getCategoryTitle(categoryName)}</h2>
+                                <a href="#" class="text-green-900 hover:text-green-700 text-sm font-medium flex items-center gap-1">
+                                    Ko'proq ko'rish
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                                    </svg>
+                                </a>
+                            </div>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 sm:gap-8">
+                                ${items.slice(0, 4).map(product => createProductCard(product)).join('')}
+                            </div>
+                        </div>
+                    `;
+					productCards.innerHTML += sectionHeader;
+				});
+			} else {
+				const selectedProducts = products[category];
+				const categoryTitle = getCategoryTitle(category);
+
+				const sectionHeader = `
+                    <div class="container mx-auto px-4">
+                        <div class="flex justify-between items-center mb-6">
+                            <h2 class="text-2xl font-bold text-amber-900">${categoryTitle}</h2>
+                            <a href="#" class="text-green-900 hover:text-green-700 text-sm font-medium flex items-center gap-1">
+                                Ko'proq ko'rish
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                                </svg>
+                            </a>
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 sm:gap-8">
+                            ${selectedProducts.map(product => createProductCard(product)).join('')}
+                        </div>
+                    </div>
+                `;
+				productCards.innerHTML = sectionHeader;
+			}
+		}
+
+		function createProductCard(product) {
+			return `
+                <div class="bg-gradient-to-b from-amber-50 to-white rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden border border-amber-100">
+                    <div class="relative group aspect-[4/3]">
+                        <img 
+                            src="${product.img}" 
+                            alt="${product.title}" 
+                            loading="lazy" 
+                            class="absolute inset-0 w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
+                        >
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <div class="absolute top-4 right-4">
+                            <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-amber-100/90 text-amber-900 backdrop-blur-sm">
+                                Premium Mahsulot
+                            </span>
+                        </div>
+                    </div>
+                    
+                    <div class="p-4 sm:p-5 space-y-3">
+                        <h3 class="text-lg sm:text-xl font-semibold text-amber-900 font-serif leading-tight">${product.title}</h3>
+                        <p class="text-sm sm:text-base text-gray-600 leading-relaxed line-clamp-3">${product.desc}</p>
+                        <div class="flex flex-wrap gap-2 pt-1">
+                            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
+                                100% Tabiiy
+                            </span>
+                            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-amber-100 text-amber-800">
+                                Yuqori sifat
+                            </span>
+                        </div>
+                        <div class="flex justify-center pt-2">
+                            <a 
+                                href="./aloqa.html" 
+                                class="inline-block px-6 py-2 rounded-lg bg-green-900 text-white text-sm font-medium hover:bg-green-800 active:bg-green-950 transform hover:-translate-y-0.5 transition-all duration-300 ease-in-out shadow-md hover:shadow-lg"
+                            >
+                                Buyurtma berish
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            `;
 		}
 
 		categoryButtons.forEach(button => {
 			button.addEventListener("click", (e) => {
-				categoryButtons.forEach(btn => btn.classList.remove("active-category"));
-				e.target.classList.add("active-category");
+				categoryButtons.forEach(btn => {
+					btn.classList.remove("bg-green-900", "text-white");
+					btn.classList.add("bg-amber-100", "text-amber-900");
+				});
+				e.target.classList.remove("bg-amber-100", "text-amber-900");
+				e.target.classList.add("bg-green-900", "text-white");
 				displayProducts(button.id);
 			});
 		});
 
-		// Default
+		// Set default active category
 		displayProducts("all-products");
 	</script>
+
 
 
 	<style>
