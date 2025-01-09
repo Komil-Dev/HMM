@@ -41,7 +41,7 @@
 			</button>
 
 			<!-- Navigation Menu -->
-			<nav id="navMenu" class="hidden sm:flex space-x-8 text-white">
+			<nav id="navMenu" class="hidden sm:flex space-x-8 text-white ml-[1%]">
 				<a href="./index.html" data-lang-key="home" class="hover:text-green-200 font-semibold">Bosh sahifa</a>
 				<a href="./mahsulotlar.html" data-lang-key="products"
 					class="hover:text-green-200 font-semibold">Mahsulotlar</a>
@@ -51,21 +51,21 @@
 				<a href="./special.html" data-lang-key="special" class="hover:text-green-200 font-semibold">Mahsus
 					Takliflar</a>
 			</nav>
-
+			<!-- Language Switcher -->
+			<div class="hidden sm:flex items-center ml-[38%]">
+				<select id="language-select"
+					class="bg-green-700 text-white px-3 py-1 rounded-md focus:outline-none hover:bg-green-600">
+					<option value="uz"> UZ</option>
+					<option value="en"> EN</option>
+					<option value="ru"> RU</option>
+				</select>
+			</div>
 			<!-- Phone Number -->
 			<div class="hidden sm:flex items-center space-x-2 text-white">
 				<span class="font-semibold">📞 +998 90 030 48 68</span>
 			</div>
 
-			<!-- Language Switcher -->
-			<div class="hidden sm:flex items-center ml-4">
-				<select id="language-select"
-					class="bg-green-700 text-white px-3 py-1 rounded-md focus:outline-none hover:bg-green-600">
-					<option value="uz">🇺🇿 UZ</option>
-					<option value="en">🇬🇧 EN</option>
-					<option value="ru">🇷🇺 RU</option>
-				</select>
-			</div>
+
 		</div>
 
 		<!-- Mobile Menu -->
@@ -106,9 +106,9 @@
 			<div class="mt-6">
 				<select id="mobile-language-select"
 					class="bg-green-700 text-white px-3 py-1 rounded-md focus:outline-none hover:bg-green-600">
-					<option value="uz">🇺🇿 UZ</option>
-					<option value="en">🇬🇧 EN</option>
-					<option value="ru">🇷🇺 RU</option>
+					<option value="uz"> UZ</option>
+					<option value="en"> EN</option>
+					<option value="ru"> RU</option>
 				</select>
 			</div>
 
@@ -119,7 +119,7 @@
 	</header>
 
 	<!-- Hero Section -->
-	<section class="relative h-[60vh] flex items-center justify-center bg-fixed bg-cover bg-center"
+	<section class="relative h-[80vh] flex items-center justify-center bg-fixed bg-cover bg-center"
 		style="background-image: url('./img/introduction-carousel-2.jpg');">
 		<div class="absolute inset-0 bg-black bg-opacity-50"></div>
 		<div class="relative z-10 text-center text-white">
