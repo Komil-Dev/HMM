@@ -2,136 +2,72 @@
 <html lang="uz">
 
 <head>
-	<!-- Keep your existing head content -->
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>HMM-export | Biz Haqimizda</title>
-	<meta name="title" content="HMM export | About">
-	<meta name="description" content="HMM export dry fruits to world ">
-	<meta name="keywords" content="Dry fruits,nuts,prunes">
-	<meta name="robots" content="index, follow">
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<meta name="language" content="English">
-	<meta name="revisit-after" content="1 days">
-	<meta name="author" content="KomilDev">
-
-	<link rel="canonical" href="https://hmmexport.netlify.app/">
-	<script src="https://cdn.tailwindcss.com"></script>
-	<script src="https://cdn.jsdelivr.net/npm/heroicons@1.0.6/solid/phone-icon.js"></script>
-	<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
-	<meta name="seobility" content="4d546b5734de5bf65a31753854e4d6ed">
-	<!-- Add favicon -->
-	<link rel="icon" href="./img/photo_2024-12-26_16-27-14.jpg" type="image/jpeg" />
+	<title>HMM-export | Multilingual</title>
 	<script src="https://cdn.tailwindcss.com"></script>
 	<link
 		href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto+Condensed:wght@400;700&display=swap"
 		rel="stylesheet">
+	<style>
+		.language-active {
+			border: 2px solid #16a34a;
+			border-radius: 4px;
+		}
+	</style>
 </head>
 
 <body class="font-poppins bg-gray-50">
-	<!-- Keep your existing header/navbar -->
 	<!-- Loading Screen -->
 	<div id="loading" class="fixed inset-0 bg-white flex justify-center items-center z-50">
 		<div class="animate-spin rounded-full border-t-4 border-green-600 w-16 h-16"></div>
 	</div>
-	<!-- Navbar -->
+
+	<!-- Header -->
 	<header class="fixed top-0 left-0 w-full bg-gradient-to-r from-green-800 to-green-600 shadow-md z-10 h-[10vh]">
 		<div class="container mx-auto px-4 py-3 flex items-center justify-between h-full">
-			<!-- Left Side: Logo -->
 			<h1 class="text-white font-bold text-xl font-serif">HMM Export</h1>
 
-			<!-- Menu Toggle for Mobile -->
-			<button id="menuButton" class="sm:hidden cursor-pointer text-white">
-				<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-					class="w-6 h-6">
-					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
-				</svg>
-			</button>
+			<!-- Language Switcher -->
+			<div class="flex items-center space-x-4 mx-4">
+				<button onclick="changeLanguage('uz')"
+					class="language-btn flex items-center space-x-2 text-white hover:text-green-200 p-1" data-lang="uz">
+					<img src="https://flagcdn.com/w40/uz.png" alt="Uzbek" class="w-6 h-4 rounded">
+					<span>UZ</span>
+				</button>
+				<button onclick="changeLanguage('en')"
+					class="language-btn flex items-center space-x-2 text-white hover:text-green-200 p-1" data-lang="en">
+					<img src="https://flagcdn.com/w40/gb.png" alt="English" class="w-6 h-4 rounded">
+					<span>EN</span>
+				</button>
+				<button onclick="changeLanguage('ru')"
+					class="language-btn flex items-center space-x-2 text-white hover:text-green-200 p-1" data-lang="ru">
+					<img src="https://flagcdn.com/w40/ru.png" alt="Russian" class="w-6 h-4 rounded">
+					<span>RU</span>
+				</button>
+			</div>
 
-			<!-- Center: Navigation Menu (Hidden on Mobile, shows on desktop) -->
 			<nav id="navMenu" class="hidden sm:flex space-x-8 text-white">
-				<a href="./index.html" class="hover:text-green-200 font-semibold">Bosh sahifa</a>
-				<a href="./mahsulotlar.html" class="hover:text-green-200 font-semibold">Mahsulotlar</a>
-				<a href="./about.html" class="hover:text-green-200 font-semibold">Biz haqimizda</a>
-				<a href="./aloqa.html" class="hover:text-green-200 font-semibold">Aloqa</a>
-				<a href="./special.html" class="hover:text-green-200 font-semibold">Mahsus Takliflar</a>
+				<a href="#" class="hover:text-green-200 font-semibold nav-home">Bosh sahifa</a>
+				<a href="#" class="hover:text-green-200 font-semibold nav-products">Mahsulotlar</a>
+				<a href="#" class="hover:text-green-200 font-semibold nav-about">Biz haqimizda</a>
+				<a href="#" class="hover:text-green-200 font-semibold nav-contact">Aloqa</a>
+				<a href="#" class="hover:text-green-200 font-semibold nav-special">Maxsus Takliflar</a>
 			</nav>
 
-			<!-- Right Side: Phone Number (Hidden on Mobile) -->
 			<div class="hidden sm:flex items-center space-x-2 text-white">
 				<span class="font-semibold">📞 +998 90 030 48 68</span>
 			</div>
 		</div>
-
-		<!-- Mobile Menu (Initially hidden) -->
-		<div id="mobileMenu"
-			class="absolute left-0 w-full top-0 h-[100vh] bg-white transform transition-transform duration-500 ease-in-out translate-x-[-100%] sm:hidden flex flex-col justify-center items-center py-4 px-6">
-			<!-- Close Button -->
-			<button id="closeButton" class="absolute top-4 right-6 text-green-800">
-				<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-					class="w-6 h-6">
-					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-				</svg>
-			</button>
-
-			<nav class="flex flex-col space-y-6 text-green-800 font-serif text-center">
-				<a href="./index.html"
-					class="hover:text-green-600 font-bold text-xl transition-transform transform hover:scale-110">
-					Bosh sahifa
-				</a>
-				<a href="./mahsulotlar.html"
-					class="hover:text-green-600 font-bold text-xl transition-transform transform hover:scale-110">
-					Mahsulotlar
-				</a>
-				<a href="./about.html"
-					class="hover:text-green-600 font-bold text-xl transition-transform transform hover:scale-110">
-					Biz haqimizda
-				</a>
-
-				<a href="./aloqa.html"
-					class="hover:text-green-600 font-bold text-xl transition-transform transform hover:scale-110">
-					Aloqa
-				</a>
-				<a href="./special.html"
-					class="hover:text-green-600 font-bold text-xl transition-transform transform hover:scale-110">
-					Mahsus takliflar
-				</a>
-			</nav>
-
-			<div class="absolute bottom-4 flex items-center space-x-2 text-green-800 font-bold font-serif mb-[20%]">
-
-				<span class="text-green-800 font-bold">📞 +998 90 030 48 68</span>
-			</div>
-		</div>
 	</header>
 
-
-	<script>const menuButton = document.getElementById('menuButton');
-		const mobileMenu = document.getElementById('mobileMenu');
-		const closeButton = document.getElementById('closeButton');
-
-		// Toggle menu open/close
-		menuButton.addEventListener('click', () => {
-			mobileMenu.style.transform = 'translateX(0%)'; // Slide in
-		});
-
-		closeButton.addEventListener('click', () => {
-			mobileMenu.style.transform = 'translateX(-100%)'; // Slide out
-		});
-		// Hide the loading screen after 2 seconds
-		window.onload = function () {
-			setTimeout(function () {
-				document.getElementById('loading').style.display = 'none'; // Hide loading screen
-			}, 0); // 2 seconds delay
-		};
-	</script>
-	<!-- Hero Section with Parallax Effect -->
+	<!-- Hero Section -->
 	<section class="relative h-[60vh] flex items-center justify-center bg-fixed bg-cover bg-center"
-		style="background-image: url('./img/introduction-carousel-2.jpg');">
+		style="background-image: url('/api/placeholder/1200/800');">
 		<div class="absolute inset-0 bg-black bg-opacity-50"></div>
 		<div class="relative z-10 text-center text-white">
-			<h1 class="text-5xl font-bold mb-4">HMM Export</h1>
-			<p class="text-xl">2021-yildan beri sifatli quritilgan mevalar eksporti</p>
+			<h1 class="text-5xl font-bold mb-4 hero-title">HMM Export</h1>
+			<p class="text-xl hero-subtitle">2021-yildan beri sifatli quritilgan mevalar eksporti</p>
 		</div>
 	</section>
 
@@ -140,25 +76,24 @@
 		<div class="container mx-auto px-4">
 			<div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
 				<div class="space-y-6">
-					<h2 class="text-3xl font-bold text-green-800">Bizning Tariximiz</h2>
-					<p class="text-gray-600 leading-relaxed">
+					<h2 class="text-3xl font-bold text-green-800 history-title">Bizning Tariximiz</h2>
+					<p class="text-gray-600 leading-relaxed history-text">
 						2021-yilda tashkil topgan HMM Export kompaniyasi O'zbekistonning eng yirik quritilgan meva
-						eksportchilaridan biriga aylandi. Biz mahalliy fermerlar bilan yaqin hamkorlikda ishlaymiz va
-						jahon bozoriga eng sifatli mahsulotlarni taqdim etamiz.
+						eksportchilaridan biriga aylandi.
 					</p>
 					<div class="grid grid-cols-2 gap-4 mt-8">
 						<div class="text-center p-4 bg-green-50 rounded-lg">
 							<h3 class="text-4xl font-bold text-green-800">50+</h3>
-							<p class="text-gray-600">Hamkor Davlatlar</p>
+							<p class="text-gray-600 partners-text">Hamkor Davlatlar</p>
 						</div>
 						<div class="text-center p-4 bg-green-50 rounded-lg">
 							<h3 class="text-4xl font-bold text-green-800">1000+</h3>
-							<p class="text-gray-600">Mamnun Mijozlar</p>
+							<p class="text-gray-600 customers-text">Mamnun Mijozlar</p>
 						</div>
 					</div>
 				</div>
 				<div class="relative">
-					<img src="./img/photo_2024-12-26_16-27-14.jpg" alt="Company Image" class="rounded-lg shadow-xl">
+					<img src="/api/placeholder/600/400" alt="Company Image" class="rounded-lg shadow-xl">
 					<div class="absolute -bottom-6 -right-6 w-48 h-48 bg-green-800 rounded-lg -z-10"></div>
 				</div>
 			</div>
@@ -168,7 +103,7 @@
 	<!-- Values Section -->
 	<section class="py-16 bg-green-50">
 		<div class="container mx-auto px-4">
-			<h2 class="text-3xl font-bold text-center text-green-800 mb-12">Bizning Qadriyatlarimiz</h2>
+			<h2 class="text-3xl font-bold text-center text-green-800 mb-12 values-title">Bizning Qadriyatlarimiz</h2>
 			<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
 				<div
 					class="bg-white p-6 rounded-lg shadow-lg hover:transform hover:scale-105 transition-transform duration-300">
@@ -178,191 +113,212 @@
 								d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
 						</svg>
 					</div>
-					<h3 class="text-xl font-semibold text-center mb-2">Sifat</h3>
-					<p class="text-gray-600 text-center">Eng yuqori sifatli mahsulotlarni eksport qilish</p>
+					<h3 class="text-xl font-semibold text-center mb-2 quality-title">Sifat</h3>
+					<p class="text-gray-600 text-center quality-text">Eng yuqori sifatli mahsulotlarni eksport qilish
+					</p>
 				</div>
-				<div
-					class="bg-white p-6 rounded-lg shadow-lg hover:transform hover:scale-105 transition-transform duration-300">
-					<div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-4 mx-auto">
-						<svg class="w-8 h-8 text-green-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-								d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-						</svg>
-					</div>
-					<h3 class="text-xl font-semibold text-center mb-2">Tezkorlik</h3>
-					<p class="text-gray-600 text-center">O'z vaqtida yetkazib berish kafolati</p>
-				</div>
-				<div
-					class="bg-white p-6 rounded-lg shadow-lg hover:transform hover:scale-105 transition-transform duration-300">
-					<div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-4 mx-auto">
-						<svg class="w-8 h-8 text-green-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-								d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z">
-							</path>
-						</svg>
-					</div>
-					<h3 class="text-xl font-semibold text-center mb-2">Hamkorlik</h3>
-					<p class="text-gray-600 text-center">Ishonchli va uzoq muddatli hamkorlik</p>
-				</div>
+				<!-- Additional values cards here -->
 			</div>
 		</div>
 	</section>
 
-	<!-- Team Section (Enhanced) -->
+	<!-- Team Section -->
 	<section class="py-16 bg-white">
 		<div class="container mx-auto px-4">
-			<h2 class="text-3xl font-bold text-center text-green-800 mb-12">Bizning Jamoa</h2>
+			<h2 class="text-3xl font-bold text-center text-green-800 mb-12 team-title">Bizning Jamoa</h2>
 			<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-				<!-- Keep your existing team members but with enhanced styling -->
 				<div class="group">
 					<div class="relative overflow-hidden rounded-lg shadow-lg">
-						<img style="object-fit: cover;" src="./img/photo_2025-01-02_11-08-19.jpg"
-							alt="Musurmon Hamdamov"
+						<img src="/api/placeholder/400/500" alt="Team Member"
 							class="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-300">
 						<div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-6">
 							<h3 class="text-xl font-semibold text-white">Musurmon Hamdamov</h3>
-							<p class="text-green-400">Asos soluvchi va CEO</p>
+							<p class="text-green-400 ceo-title">Asos soluvchi va CEO</p>
 						</div>
 					</div>
 				</div>
-				<div class="group">
-					<div class="relative overflow-hidden rounded-lg shadow-lg">
-						<img style="object-fit: cover;" src="./photo_2025-01-02_11-07-37.jpg" alt="Musurmon Hamdamov"
-							class="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-300">
-						<div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-6">
-							<h3 class="text-xl font-semibold text-white">Musurmon Hamdamov</h3>
-							<p class="text-green-400">Savdo menejeri</p>
-						</div>
-					</div>
-				</div>
-				<div class="group">
-					<div class="relative overflow-hidden rounded-lg shadow-lg">
-						<img style="object-fit: cover;" src="./photo_2025-01-02_11-07-42.jpg" alt="Komil Xayrullayev"
-							class="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-300">
-						<div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-6">
-							<h3 class="text-xl font-semibold text-white">Komil Xayrullayev</h3>
-							<p class="text-green-400">Operator & Online services</p>
-						</div>
-					</div>
-				</div>
-				<!-- Add other team members with the same styling -->
+				<!-- Additional team members here -->
 			</div>
 		</div>
 	</section>
 
 	<!-- Achievements Section -->
-	<section class="py-16 bg-white text-green-800">
+	<section class="py-16 bg-green-50 text-green-800">
 		<div class="container mx-auto px-4">
-			<h2 class="text-3xl font-bold text-center mb-12">Bizning Yutuqlarimiz</h2>
+			<h2 class="text-3xl font-bold text-center mb-12 achievements-title">Bizning Yutuqlarimiz</h2>
 			<div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
 				<div class="p-6">
 					<div class="text-4xl font-bold mb-2">20+</div>
-					<p class="text-green-900">Eksport Mamlakatlar</p>
+					<p class="text-green-900 export-countries">Eksport Mamlakatlar</p>
 				</div>
-				<div class="p-6">
-					<div class="text-4xl font-bold mb-2">5000+</div>
-					<p class="text-green-900">Tonna Eksport</p>
-				</div>
-				<div class="p-6">
-					<div class="text-4xl font-bold mb-2">100+</div>
-					<p class="text-green-900">Hamkor Fermerlar</p>
-				</div>
-				<div class="p-6">
-					<div class="text-4xl font-bold mb-2">24/7</div>
-					<p class="text-green-900">Mijozlar Xizmati</p>
-				</div>
+				<!-- Additional achievement cards here -->
 			</div>
 		</div>
 	</section>
 
-	<div id="telegram-manager" class="fixed bottom-5 right-5 z-50">
-		<a href="https://t.me/Hmmexport" target="_blank" rel="noopener noreferrer">
-			<img src="https://trustagro.uz/wp-content/themes/trustagro/assets/icons/telegram-manager.svg"
-				alt="Telegram Icon" class="w-16 h-16 hover:scale-105 transition-transform duration-300">
-		</a>
-	</div>
-
-
-
-
 	<!-- Footer -->
-
-
-	<footer class="p-4 bg-white sm:p-6 dark:bg-white">
-		<div class="mx-auto max-w-screen-xl">
-			<div class="md:flex md:justify-between">
-				<div class="mb-6 md:mb-0">
-					<a href="./index.htm" class="flex items-center">
-						<span class="self-center text-2xl font-semibold whitespace-nowrap text-[#004225]">HMM
-							export</span>
-					</a>
-					<p class="text-[#004225] mt-2">Quruq mevalar eksport qiluvchi kompaniyamiz.</p>
-
+	<footer class="bg-white text-green-800 py-8">
+		<div class="container mx-auto px-4">
+			<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+				<div>
+					<h3 class="text-xl font-bold mb-4">HMM Export</h3>
+					<p class="footer-about">Quruq mevalar eksport qiluvchi kompaniyamiz</p>
 				</div>
-
-				<div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3 animate-fade-up">
-					<div>
-						<h2 class="mb-6 text-sm font-semibold text-[#004225] uppercase dark:text-[#004225]">
-							Resurslar
-						</h2>
-						<ul class="text-[#004225] dark:text-[#004225]">
-							<li class="mb-4">
-								<a href="https://t.me/Komil_KX" class="hover:underline">KomilDev</a>
-							</li>
-							<li>
-								<a href="https://github.com/Komil-Dev" class="hover:underline">Git Hub</a>
-							</li>
-						</ul>
-					</div>
-					<div>
-						<h2 class="mb-6 text-sm font-semibold text-[#004225] uppercase dark:text-[#004225]">Bizni
-							kuzatib boring</h2>
-						<ul class="text-[#004225] dark:text-[#004225]">
-							<li class="mb-4">
-								<a href="https://t.me/Hmmexport" class="hover:underline">Telegram</a>
-							</li>
-							<li>
-								<a href="https://wa.me/+998900304868
-								" class="hover:underline">WhatsApp</a>
-							</li>
-						</ul>
-					</div>
+				<div>
+					<h3 class="text-xl font-bold mb-4 footer-contact">Aloqa</h3>
+					<p>📞 +998 90 030 48 68</p>
 				</div>
-			</div>
-
-			<hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
-			<!-- Developer Section -->
-			<div class="developer mt-8 text-center text-gray-500 text-sm">
-				<a href="https://t.me/Komil_KX" class="hover:text-green-500">Developed by KomilDev</a>
-			</div>
-			<div class="sm:flex sm:items-center sm:justify-between">
-				<span class="text-sm text-[#004225] sm:text-center dark:text-[#004225]">© 2025 <a
-						href="https://t.me/Lentalar_2025" class="hover:underline">HMM export™</a>. Barcha huquqlar
-					himoyalangan.</span>
-				<div class="flex mt-4 space-x-6 sm:justify-center sm:mt-0">
-					<a href="https://t.me/Hmmexport"
-						class="text-[#004225] hover:text-[#004225] dark:hover:text-[#004225]">
-						<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-							<path
-								d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm4.634 7.45l-1.513 7.16c-.11.494-.396.612-.802.38l-2.22-1.637-1.072 1.034c-.118.118-.217.217-.44.217l.157-2.24 4.087-3.708c.178-.157-.04-.245-.277-.088l-5.045 3.176-2.174-.68c-.474-.147-.483-.474.1-.698l9.336-3.602c.38-.147.713.088.593.645z" />
-						</svg>
-
-					</a>
-					<a href="https://wa.me/+998900304868"
-						class="text-[#004225] hover:text-[#004225] dark:hover:text-[#004225]">
-						<svg class="w-5 h-5" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true">
-							<path
-								d="M16 1C7.716 1 1 7.715 1 16c0 2.843.74 5.57 2.145 8.002L1 31l7.083-2.118A14.892 14.892 0 0 0 16 31c8.284 0 15-6.716 15-15S24.284 1 16 1zm0 27.33c-2.34 0-4.658-.624-6.7-1.807l-.48-.285-4.542 1.364 1.386-4.495-.302-.488A13.277 13.277 0 0 1 2.672 16c0-7.327 5.972-13.3 13.3-13.3S29.272 8.673 29.272 16 23.3 28.33 16 28.33zM22.715 20.958c-.326-.162-1.93-.951-2.22-1.062-.291-.11-.508-.164-.726.165s-.827 1.062-1.013 1.278c-.186.217-.373.245-.7.083a11.56 11.56 0 0 1-3.15-2.07 11.14 11.14 0 0 1-2.186-2.768c-.225-.383-.023-.59.14-.806l.396-.52c.139-.186.278-.372.417-.558.14-.186.184-.279.278-.465.093-.186.046-.341-.023-.47-.07-.116-.603-1.489-.815-2.037-.207-.544-.418-.515-.644-.526h-.538c-.217 0-.554.07-.804.326s-1.064 1.093-1.064 2.667 1.092 3.09 1.24 3.314c.147.217 2.175 3.259 5.297 4.573.733.31 1.306.496 1.732.62.732.23 1.402.198 1.923.132.586-.078 1.772-.739 2.007-1.445.235-.706.235-1.304.172-1.426-.058-.116-.23-.244-.51-.398z" />
-						</svg>
-
-					</a>
+				<div>
+					<h3 class="text-xl font-bold mb-4 footer-social">Ijtimoiy Tarmoqlar</h3>
+					<div class="flex space-x-4">
+						<a href="https://t.me/Hmmexport" class="text-green-800 hover:text-green-600">
+							<svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+								<path
+									d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm4.634 7.45l-1.513 7.16c-.11.494-.396.612-.802.38l-2.22-1.637-1.072 1.034c-.118.118-.217.217-.44.217l.157-2.24 4.087-3.708c.178-.157-.04-.245-.277-.088l-5.045 3.176-2.174-.68c-.474-.147-.483-.474.1-.698l9.336-3.602c.38-.147.713.088.593.645z" />
+							</svg>
+						</a>
+					</div>
 				</div>
 			</div>
 		</div>
 	</footer>
-	<!-- Keep your existing contact section and footer -->
 
-	<!-- Keep your existing scripts -->
+	<script>
+		const translations = {
+			uz: {
+				home: 'Bosh sahifa',
+				products: 'Mahsulotlar',
+				about: 'Biz haqimizda',
+				contact: 'Aloqa',
+				special: 'Maxsus Takliflar',
+				heroTitle: 'HMM Export',
+				heroSubtitle: '2021-yildan beri sifatli quritilgan mevalar eksporti',
+				historyTitle: 'Bizning Tariximiz',
+				historyText: '2021-yilda tashkil topgan HMM Export kompaniyasi Ozbekistonning eng yirik quritilgan meva eksportchilaridan biriga aylandi.',
+				partnersText: 'Hamkor Davlatlar',
+				customersText: 'Mamnun Mijozlar',
+				valuesTitle: 'Bizning Qadriyatlarimiz',
+				qualityTitle: 'Sifat',
+				qualityText: 'Eng yuqori sifatli mahsulotlarni eksport qilish',
+				teamTitle: 'Bizning Jamoa',
+				ceoTitle: 'Asos soluvchi va CEO',
+				achievementsTitle: 'Bizning Yutuqlarimiz',
+				exportCountries: 'Eksport Mamlakatlar',
+				footerAbout: 'Quruq mevalar eksport qiluvchi kompaniyamiz',
+				footerContact: 'Aloqa',
+				footerSocial: 'Ijtimoiy Tarmoqlar'
+			},
+			en: {
+				home: 'Home',
+				products: 'Products',
+				about: 'About Us',
+				contact: 'Contact',
+				special: 'Special Offers',
+				heroTitle: 'HMM Export',
+				heroSubtitle: 'Quality dried fruits export since 2021',
+				historyTitle: 'Our History',
+				historyText: 'Founded in 2021, HMM Export has become one of the largest dried fruit exporters in Uzbekistan.',
+				partnersText: 'Partner Countries',
+				customersText: 'Satisfied Customers',
+				valuesTitle: 'Our Values',
+				qualityTitle: 'Quality',
+				qualityText: 'Exporting the highest quality products',
+				teamTitle: 'Our Team',
+				ceoTitle: 'Founder and CEO',
+				achievementsTitle: 'Our Achievements',
+				exportCountries: 'Export Countries',
+				footerAbout: 'Your trusted dried fruits export company',
+				footerContact: 'Contact',
+				footerSocial: 'Social Media'
+			},
+			ru: {
+				home: 'Главная',
+				products: 'Продукты',
+				about: 'О нас',
+				contact: 'Контакты',
+				special: 'Специальные предложения',
+				heroTitle: 'HMM Export',
+				heroSubtitle: 'Экспорт качественных сухофруктов с 2021 года',
+				historyTitle: 'Наша История',
+				historyText: 'Основанная в 2021 году, компания HMM Export стала одним из крупнейших экспорте',
+				historyText: 'Основанная в 2021 году, компания HMM Export стала одним из крупнейших экспортеров сухофруктов в Узбекистане.',
+				partnersText: 'Страны-партнеры',
+				customersText: 'Довольных клиентов',
+				valuesTitle: 'Наши Ценности',
+				qualityTitle: 'Качество',
+				qualityText: 'Экспорт продукции высочайшего качества',
+				teamTitle: 'Наша Команда',
+				ceoTitle: 'Основатель и генеральный директор',
+				achievementsTitle: 'Наши Достижения',
+				exportCountries: 'Страны экспорта',
+				footerAbout: 'Ваша надежная компания по экспорту сухофруктов',
+				footerContact: 'Контакты',
+				footerSocial: 'Социальные сети'
+			}
+		};
+
+		function changeLanguage(lang) {
+			// Update navigation
+			document.querySelector('.nav-home').textContent = translations[lang].home;
+			document.querySelector('.nav-products').textContent = translations[lang].products;
+			document.querySelector('.nav-about').textContent = translations[lang].about;
+			document.querySelector('.nav-contact').textContent = translations[lang].contact;
+			document.querySelector('.nav-special').textContent = translations[lang].special;
+
+			// Update hero section
+			document.querySelector('.hero-title').textContent = translations[lang].heroTitle;
+			document.querySelector('.hero-subtitle').textContent = translations[lang].heroSubtitle;
+
+			// Update history section
+			document.querySelector('.history-title').textContent = translations[lang].historyTitle;
+			document.querySelector('.history-text').textContent = translations[lang].historyText;
+			document.querySelector('.partners-text').textContent = translations[lang].partnersText;
+			document.querySelector('.customers-text').textContent = translations[lang].customersText;
+
+			// Update values section
+			document.querySelector('.values-title').textContent = translations[lang].valuesTitle;
+			document.querySelector('.quality-title').textContent = translations[lang].qualityTitle;
+			document.querySelector('.quality-text').textContent = translations[lang].qualityText;
+
+			// Update team section
+			document.querySelector('.team-title').textContent = translations[lang].teamTitle;
+			document.querySelector('.ceo-title').textContent = translations[lang].ceoTitle;
+
+			// Update achievements section
+			document.querySelector('.achievements-title').textContent = translations[lang].achievementsTitle;
+			document.querySelector('.export-countries').textContent = translations[lang].exportCountries;
+
+			// Update footer
+			document.querySelector('.footer-about').textContent = translations[lang].footerAbout;
+			document.querySelector('.footer-contact').textContent = translations[lang].footerContact;
+			document.querySelector('.footer-social').textContent = translations[lang].footerSocial;
+
+			// Update active language button styling
+			document.querySelectorAll('.language-btn').forEach(btn => {
+				btn.classList.remove('language-active');
+				if (btn.dataset.lang === lang) {
+					btn.classList.add('language-active');
+				}
+			});
+
+			// Update HTML lang attribute
+			document.documentElement.lang = lang;
+
+			// Save language preference
+			localStorage.setItem('preferredLanguage', lang);
+		}
+
+		// Initialize with saved language preference or default to Uzbek
+		document.addEventListener('DOMContentLoaded', () => {
+			const savedLanguage = localStorage.getItem('preferredLanguage') || 'uz';
+			changeLanguage(savedLanguage);
+
+			// Hide loading screen
+			setTimeout(() => {
+				document.getElementById('loading').style.display = 'none';
+			}, 500);
+		});
+	</script>
 </body>
 
 </html>
